@@ -101,7 +101,50 @@
                                
                             </div>
                         </div>
-{{-- Select alle categorie --}}  {{-- da fare --}}
+{{-- Select alle categorie --}}  
+
+                        <div class="form-group row">
+                            <label for="categories[]" class="col-md-4 col-form-label text-md-right">Categoria</label>
+                            <div class="col-md-6">
+                                <select  class="form-control @error('categories') is-invalid @enderror" name="categories[]" id="categories[]" multiple>
+                                    <option value="" disabled>Seleziona</option>
+                                    
+                                    @foreach($categories as $category )
+                                                                        
+                                    @if (old('categories'))
+                                        <option value="{{$category->id}}" {{in_array($category->id, old('categories'))? 'selected': ''}}>{{$category->name}}</option>
+                                        @else
+                                        <option value="{{$category->id}}" >{{$category->name}}</option>
+                                    @endif
+                                    @endforeach
+                                
+                                </select>
+                                @error('categories')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+
+{{-- versione con check box da sistemare grafica --}}
+
+                       {{--  @foreach ($categories as $category)
+                            <div class="form-check form-check-inline mb-4">
+
+                                <input name="categories[]" class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                    value={{ $category->id }}>
+                                <label class="form-check-label" for="inlineCheckbox1">{{ $category->name }}</label>
+
+                            </div>
+
+                         @endforeach
+
+                        @if ($errors->has('categories'))
+
+                            <p class="row justify-content-center" style="color:red">
+                            {{ $errors->first('categories') }} </p>
+
+                        @endif --}}
+
 
   {{-- Submit --}}                      
                         <div class="form-group row mb-0">

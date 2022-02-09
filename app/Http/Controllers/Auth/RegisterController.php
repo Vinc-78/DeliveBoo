@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -56,9 +57,20 @@ class RegisterController extends Controller
             'address' => ['required', 'string', 'max:255'],
             'p_iva' => ['required', 'numeric', 'min:11'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'categories'=>['required'],
 
-            /* da aggiungere categoria required */
+            
         ]);
+    }
+
+    /* sovrascrivere la funzione trovata su Illuminate\Foundation\Auth\RegistersUsers su RegisterController */
+    /* Serve a passare le variabili $categories al modulo di registrazione */
+    
+    public function showRegistrationForm()
+    {
+        $categories = Category::orderBy('name', 'asc')->get();
+        
+        return view('auth.register', compact('categories'));
     }
 
     /**
@@ -70,6 +82,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
        
+        $categories=Category::findOrFail($data['categories']);
         
         $user = User::create([
 
@@ -82,7 +95,7 @@ class RegisterController extends Controller
 
         ]);
 
-        /* $user->categories */
+        $user->categories()->attach($categories);
         
         return $user;
     }

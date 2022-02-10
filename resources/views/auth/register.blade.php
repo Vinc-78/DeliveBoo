@@ -125,6 +125,8 @@
                             </div>
                         </div>
 
+                        
+
 {{-- versione con check box da sistemare grafica --}}
 
                        {{--  @foreach ($categories as $category)

@@ -1,0 +1,561 @@
+SEEDER RISTORANTE 
+
+
+    $restaurant = [
+    'name' => 'La Taverna',
+    'address' => 'Via Garibaldi, 13',
+    'e-mail' => ''
+    'password' =>'' 
+    'p_iva' => '60028970626',
+    'coverImg' => 'la-taverna.jpg',
+    ];
+    [
+    'name' => 'Margherita',
+    'address' => 'Via della Posta , 89',
+    'e-mail' => ''
+    'password' =>'' 
+    'p_iva' => '60028970626',
+    'coverImg' => 'margherita.jpg',
+    ];
+    [
+    'name' => 'Il Chiostro',
+    'address' => 'Via del Municipio antico , 6',
+    'e-mail' => ''
+    'password' =>'' 
+    'p_iva' => '27178340389',
+    'coverImg' => 'il-chiostro.jpg',
+    ];
+    [
+    'name' => 'Due Passi',
+    'address' => 'Via della Speranza , 66',
+    'e-mail' => ''
+    'password' =>'' 
+    'p_iva' => '68207150167',
+    'coverImg' => 'due-passi.jpg',
+    ];
+    [
+    'name' => 'Itsu',
+    'address' => 'Via Alfredo Renzi , 3',
+    'e-mail' => ''
+    'password' =>'' 
+    'p_iva' => '47769490088',
+    'coverImg' => 'itsu.jpg',
+    ];
+     [
+    'name' => 'The Burger',
+    'address' => '	Via della Luna , 4',
+    'e-mail' => ''
+    'password' =>'' 
+    'p_iva' => '47769490088',
+    'coverImg' => 'the-burger.jpg',
+    ];
+     [
+    'name' => 'Alla Griglia',
+    'address' => 'Via del Domicilio , 3',
+    'e-mail' => ''
+    'password' =>'' 
+    'p_iva' => '47769490088',
+    'coverImg' => 'alla-griglia.jpg',
+    ];
+    [
+    'name' => 'Mi Scusi',
+    'address' => 'Via XVII ottobre , 23',
+    'e-mail' => ''
+    'password' =>'' 
+    'p_iva' => '47769490088',
+    'coverImg' => 'mi-scusi.jpg',
+    ];
+    [
+    'name' => 'Be Green',
+    'address' => 'Via Agostino , 23',
+    'e-mail' => ''
+    'password' =>'' 
+    'p_iva' => '47769490088',
+    'coverImg' => 'be-green.jpg',
+    ];
+    [
+    'name' => 'Zero',
+    'address' => 'Via Passatempo , 11',
+    'e-mail' => ''
+    'password' =>'' 
+    'p_iva' => '47769490088',
+    'coverImg' => 'zero.jpg',
+    ];
+
+
+
+//SEEDER CATEGORY
+
+public function run() {
+$restaurantCategory = [
+
+[
+    'id' => 1,
+    'name' => 'Italian',
+    'image_url' => 'italiano.jpg'
+    
+],
+[
+    'id' => 2,
+    'name' => 'Chinese',
+    'image_url' => 'orientale.jpg'
+    
+],
+[
+    'id' => 4,
+    'name' => 'Fish',
+    'image_url' => 'pesce.jpg'
+    
+],
+[
+    'id' => 5,
+    'name' => 'Vegetarian',
+    'image_url' => 'vegano'
+    
+],
+[
+    'id' => 6,
+    'name' => 'Indian',
+    'image_url' => 'indiano'
+    
+],
+[
+    'id' => 7,
+    'name' => 'Chicken',
+    'image_url' => 'carne.jpg'
+    
+],
+[
+    'id' => 8,
+    'name' => 'Pizza',
+    'image_url' => 'pizza.jpg'
+    
+],
+[
+    'id' => 9,
+    'name' => 'Dessert',
+    'image_url' => 'dessert.jpg'
+    
+],
+[
+    'id' => 10,
+    'name' => 'Burgers',
+    'image_url' => 'hamburger.jpg'
+   
+],
+],
+
+foreach($restaurantCategory as $category) {
+            $newRestaurantsType = new RestaurantType();
+            $newRestaurantsType->name = $category['name'];
+            $newRestaurantsType->imge_url = $category['img'];
+
+            $newRestaurantsType->save();
+        }
+}
+
+
+//SEEDER PIATTI
+
+
+$dish = [
+                'restaurant_id' => 1,
+                'name' => 'Marinara',
+                'price' => '6',
+                'visibility' => true,
+                'category_id' => 8,
+                'description' => "Pomodoro S.Marzano, aglio, origano, basilico, olio Evo",
+                'image_url' => 'pizza-marinara.jpg',
+            ],
+            [
+                'restaurant_id' => 1,
+                'name' => 'Margherita',
+                'price' => '6',
+                'visibility' => true,
+                'category_id' => 8,
+                'description' => "Pomodoro S.Marzano, Fior di Latte, basilico, olio Evo",
+                'image_url' => 'pizza-margherita.jpg',
+            ],
+            [
+                'restaurant_id' => 1,
+                'name' => 'Americana',
+                'price' => '8',
+                'visibility' => true,
+                'category_id' => 8,
+                'description' => "Pomodoro S.Marzano, Fior di Latte, Patatine, basilico, olio Evo",
+                'image_url' => 'pizza-patatine.jpg',
+            ],
+            [
+                'restaurant_id' => 1,
+                'name' => 'Napoli',
+                'price' => '8',
+                'visibility' => true,
+                'category_id' => 8,
+                'description' => "Pomodoro S.Marzano DOP, Fior di Latte, Olive di Gaeta, Acciughe di Sciacca",
+                'image_url' => 'pizza-pachino.jpg',
+            ],
+            [
+                'restaurant_id' => 1,
+                'name' => 'Bufalina',
+                'price' => '8',
+                'visibility' => true,
+                'category_id' => 8,
+                'description' => "Pomodoro S.Marzano DOP, Bufala Campana DOP, basilico, olio Evo",
+                'image_url' => 'pizza-Bufalina.jpg',
+            ],
+            [
+                'restaurant_id' => 1,
+                'name' => 'Carbonara',
+                'price' => '10',
+                'visibility' => true,
+                'category_id' => 1,
+                'description' => "Spaghetti,Guanciale, Tuorlo d'Uovo, Pecorino romano DOP",
+                'image_url' => 'carbonara.jpg',
+            ],
+            [
+                'restaurant_id' => 1,
+                'name' => 'Amatriciana',
+                'price' => '10',
+                'visibility' => true,
+                'category_id' => 1,
+                'description' => "Spaghetti,Guanciale, Pomodoro, Pecorino romano DOP",
+                'image_url' => 'amatriciana.jpg',
+            ],
+            [
+                'restaurant_id' => 1,
+                'name' => 'Cacio e Pepe',
+                'price' => '10',
+                'visibility' => true,
+                'category_id' => 1,
+                'description' => "Spaghetti,
+                Pecorino romano DOP, Pepe",
+                'image_url' => 'caciopepe.jpg',
+            ],
+            [
+                'restaurant_id' => 2,
+                'name' => 'Salmone al pepe Rosa',
+                'price' => '12',
+                'visibility' => true,
+                'category_id' => 4,
+                'description' => "Trancio di salmone di Alaska, prezzemolo,
+                olio Extra Vergine, Pepe Rosa",
+                'image_url' => 'salmone.jpg',
+            ],
+            [
+                'restaurant_id' => 2,
+                'name' => 'Tartare di Tonno',
+                'price' => '13',
+                'visibility' => true,
+                'category_id' => 4,
+                'description' => "Tartare di Tonno abbattuto, olio Evo, semi di papavero",
+                'image_url' => 'tartare.jpg',
+            ],
+            [
+                'restaurant_id' => 2,
+                'name' => 'Scaloppine di Pollo al Limone',
+                'price' => '13',
+                'visibility' => true,
+                'category_id' => 7,
+                'description' => "Fettine di pollo marinate al limone, olio, prezzemolo",
+                'image_url' => 'scaloppine.webp',
+            ],
+            [
+                'restaurant_id' => 2,
+                'name' => 'Petti di Tacchino alla Bolognese',
+                'price' => '14',
+                'visibility' => true,
+                'category_id' => 7,
+                'description' => "Tacchino, Prosciutto crudo, Parmigiano Reggiano DOP, Marsala, Tartufo Nero",
+                'image_url' => 'tacchino.webp',
+            ],
+            [
+                'restaurant_id' => 2,
+                'name' => 'Patatine Fritte',
+                'price' => '4',
+                'visibility' => true,
+                'category_id' => 10,
+                'description' => "Patatine, Sale",
+                'image_url' => 'patate-fritte.jpg',
+            ],
+            [
+                'restaurant_id' => 2,
+                'name' => 'Verdure Grigliate',
+                'price' => '5',
+                'visibility' => true,
+                'category_id' => 5,
+                'description' => "Zucchine, Melanzane, Zucca, Peperoni, Olio, Sale, Prezzemolo",
+                'image_url' => 'verdure.jpg',
+            ],
+            [
+                'restaurant_id' => 2,
+                'name' => 'Patate al Forno',
+                'price' => '5',
+                'visibility' => true,
+                'category_id' => 7,
+                'description' => "Patate, Rosmarino, Olio, Sale",
+                'image_url' => 'forno.webp',
+            ],
+            [
+                'restaurant_id' => 3,
+                'name' => 'Petti di Tacchino alla Bolognese',
+                'price' => '14',
+                'visibility' => true,
+                'category_id' => 87,
+                'description' => "Tacchino, Prosciutto crudo, Parmigiano Reggiano DOP, Marsala, Tartufo Nero",
+                'image_url' => 'tacchino.webp',
+            ],
+            [
+                'restaurant_id' => 3,
+                'name' => 'Classico',
+                'price' => '6',
+                'visibility' => true,
+                'category_id' => 10,
+                'description' => "Pane al Sesamo, Hamburger di Fassona 320g, Insalata, Pomodoro, *salse",
+                'image_url' => 'burger.jpg',
+            ],
+            [
+                'restaurant_id' => 3,
+                'name' => 'ChickenBurger',
+                'price' => '6',
+                'visibility' => true,
+                'category_id' => 10,
+                'description' => "Pane al Sesamo, Petto di Pollo impanato, Insalata, Pomodoro, *salse",
+                'image_url' => 'burger1.jpg',
+            ],
+            [
+                'restaurant_id' => 3,
+                'name' => 'BaconBurger',
+                'price' => '6',
+                'visibility' => true,
+                'category_id' => 10,
+                'description' => "Pane al Sesamo, Hamburger di Maiale, Formaggio, Bacon, *salse",
+                'image_url' => 'burger2.jpg',
+            ],
+            [
+                'restaurant_id' => 4,
+                'name' => 'Marinara',
+                'price' => '6',
+                'visibility' => true,
+                'category_id' => 4,
+                'description' => "Spaghetti sugo di mare, aglio, origano, basilico, olio Evo",
+                'image_url' => 'spaghetti-mare.jpg',
+            ],
+            [
+                'restaurant_id' => 4,
+                'name' => 'Samosa',
+                'price' => '6',
+                'visibility' => true,
+                'category_id' => 6 ;
+                'description' => "Triangolo fritto, ripieno di verdure ",
+                'image_url' => 'samosa.jpg',
+            ],
+            [
+                'restaurant_id' => 4,
+                'name' => 'Naan',
+                'price' => '8',
+                'visibility' => true,
+                'category_id' => 6 ;
+                'description' => "Pane cotto nel Tandoor (il tipico forno d’argilla)",
+                'image_url' => 'naan.jpg',
+            ],
+            [
+                'restaurant_id' => 4,
+                'name' => 'Pollo Tandoori',
+                'price' => '8',
+                'visibility' => true,
+                'category_id' => 6 ;
+                'description' => "Coscie marinare nello yogurt e altre spezie ",
+                'image_url' => 'pollo-tandori.jpg',
+            ],
+            [
+                'restaurant_id' => 4,
+                'name' => 'Hamburger di ceci',
+                'price' => '8',
+                'visibility' => true,
+                'category_id' => 5 ;
+                'description' => "Pane al Sesamo, Hamburger di Ceci, Formaggio, Bacon, *salse",
+                'image_url' => 'hamburger-ceci.jpg',
+            ],
+            [
+                'restaurant_id' => 4,
+                'name' => 'Focaccia',
+                'price' => '5',
+                'visibility' => true,
+                'category_id' => 5 ;
+                'description' => "Focaccia, Sale, Olio, ingredienti a scelta",
+                'image_url' => 'pizza-focaccia.jpg',
+            ],
+            [
+                'restaurant_id' => 5,
+                'name' => 'Temaki Roll',
+                'price' => '5',
+                'visibility' => true,
+                'category_id' => 7 ;
+                'description' => "Salmone, Riso, Avocado, Philadelphia, Alga Nori, Maionese",
+                'image_url' => 'temaki.jpg',
+            ],
+            [
+                'restaurant_id' => 5,
+                'name' => 'Sashimi',
+                'price' => '12',
+                'visibility' => true,
+                'category_id' => 7 ;
+                'description' => "Salmone o Tonno fresco abbattuto con Salsa di Soia agli Agrumi",
+                'image_url' => 'sashimi.jpg',
+            ],
+            [
+                'restaurant_id' => 5,
+                'name' => 'Uramaki Roll',
+                'price' => '8',
+                'visibility' => true,
+                'category_id' => 7 ;
+                'description' => "Roll di Riso con Salmone, Tonno o Gamberi, Avocado",
+                'image_url' => 'uramaki.jpg',
+            ],
+            [
+                'restaurant_id' => 6,
+                'name' => 'Churrasco',
+                'price' => '10',
+                'visibility' => true,
+                'category_id' => 7 ;
+                'description' => "Carne di Vitello e Maiale alla brace con verdure",
+                'image_url' => 'churrasco.jpg',
+            ],
+            [
+                'restaurant_id' => 6,
+                'name' => 'Barbecue',
+                'price' => '10',
+                'visibility' => true,
+                'category_id' => 7 ;
+                'description' => "Grigliata di carne mista",
+                'image_url' => 'grigliata-mista.jpg',
+            ],
+            [
+                'restaurant_id' => 7,
+                'name' => 'Sacher Torte',
+                'price' => '16',
+                'visibility' => true,
+                'category_id' => 9 ;
+                'description' => "Torta Sacher farcita con marmellata alle pesche, ricoperta di cioccolato fondente",
+                'image_url' => 'sacher.jpg',
+            ],
+            [
+                'restaurant_id' => 8,
+                'name' => 'Spaghetti al pesto di Rucola',
+                'price' => '7',
+                'visibility' => true,
+                'category_id' => 1 ;
+                'description' => "Spaghetti integrali, pesto di rucola, olio, mandorle",
+                'image_url' => 'spaghetti-pesto'.jpg',
+            ],
+            [
+                'restaurant_id' => 8,
+                'name' => 'Involtini di Melanzane al forno',
+                'price' => '8',
+                'visibility' => true,
+                'category_id' => 5;
+                'description' => "Involtini di Melanzane con Pomodoro e Zucca",
+                'image_url' => 'involtini-melanzane.jpg',
+            ],
+            [
+                'restaurant_id' => 9,
+                'name' => 'Fritto Misto',
+                'price' => '6',
+                'visibility' => true,
+                'category_id' => 4;
+                'description' => "Fritto misto di mare",
+                'image_url' => 'fritto-misto.jpg',
+            ],
+            [
+                'restaurant_id' => 10,
+                'name' => 'Classico',
+                'price' => '6',
+                'visibility' => true,
+                'category_id' => 10 ;
+                'description' => "Pane al Sesamo, Hamburger di Fassona 320g, Insalata, Pomodoro, *salse",
+                'image_url' => 'burger.jpg',
+            ],
+            [
+                'restaurant_id' => 10,
+                'name' => 'Pancakes',
+                'price' => '6',
+                'visibility' => true,
+                'category_id' => 9 ;
+                'description' => "Pancakes americani con frutta e cioccolato",
+                'image_url' => 'pancake.jpg',
+            ],
+            [
+                'restaurant_id' => 10,
+                'name' => 'Torta Mimosa',
+                'price' => '10',
+                'visibility' => true,
+                'category_id' => 9 ;
+                'description' => "Soffice pan di spagna aromatizzato al limone",
+                'image_url' => 'torta-mimosa.jpg',
+            ], 
+            [
+                'restaurant_id' => 10,
+                'name' => 'Torta al cioccolato',
+                'price' => '10',
+                'visibility' => true,
+                'category_id' => 9 ;
+                'description' => "Torta a tre diversi tipi di cioccolato",
+                'image_url' => 'torta-cioccolato.jpg',
+            ],
+
+            for( $i = 0; $i < 10; $i++ ) {
+                   $newPlate = new Plate();
+                   $newPlate->restaurant_id = 1;
+                   $newPlate-category_id = rand(1, 5);
+                   $newPlate->name = $names[$i];
+                   $newPlate->description = $descriprions[$i];
+                   $newPlate->price = rand(10, 500) / 10;
+                   $newPlate->image_url();
+                   $newPlate->visibility = true;
+                   $newPlate->save();
+                }
+            }
+
+MIGRATION DISH
+create_dishes_table
+
+  Schema::create('dishes', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->unsignedBigInteger("restaurant_id");
+            $table->foreign("user_id")->references("id")->on("users");
+            $table->string("name");
+            $table->string("price");
+            $table->boolean("visibility",true);
+            $table->text("description");
+            $table->longText("image_url");
+
+        });
+
+MIGRATION ORDER
+create_orders_table
+  Schema::create('orders', function (Blueprint $table) {
+            $table->id();
+            $table->string("total", 50);
+            $table->string("name_client", 128);
+            $table->string("surname_client", 128);
+            $table->string("email_client", 128);
+            $table->string("phone_client", 128);
+            $table->string("address_client", 512);
+            $table->string("payment");
+            $table->timestamps();
+            
+        })
+
+MIGRETION ORDINE - PIATTO
+create_dish_order_table
+
+  Schema::create('dish_order', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->unsignedBigInteger("dish_id");
+            $table->foreign("dish_id")->references("id")->on("dishes")->onDelete('cascade');
+            $table->unsignedBigInteger("order_id");
+            $table->foreign("order_id")->references("id")->on("orders")->onDelete('cascade');
+        });
+

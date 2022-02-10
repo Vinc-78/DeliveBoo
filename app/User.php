@@ -49,4 +49,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Category::class);
     } */
 
+    function dishes(){
+        return $this->hasMany('App\Dish');
+    }
 }

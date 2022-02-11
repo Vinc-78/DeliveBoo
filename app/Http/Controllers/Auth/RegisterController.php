@@ -90,7 +90,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'p_iva'=>$data['p_iva'],
             'email'=>$data['email'],
-            'cover_img'=>Storage::put("img", $data['cover_img']), 
+            'cover_img'=>Storage::put("img/restaurant", $data['cover_img']), 
             'password'=>Hash::make($data['password'])
 
         ]);

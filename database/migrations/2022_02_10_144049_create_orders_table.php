@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string("phone_client", 128);
             $table->string("address_client", 512);
             $table->string("payment");
+            $table->string("total_price");
             $table->timestamps();
             
         });

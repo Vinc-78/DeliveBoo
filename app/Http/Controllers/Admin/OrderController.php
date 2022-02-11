@@ -16,7 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orderList = Order::all()->with('dishes');
+        $orderList = Order::all();
         $dishList = Dish::all();
 
         
@@ -55,7 +55,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $order = Order::where("id", $id)->first();
+        $order = Order::where("id", $id);
 
         return view("admin.orders.show", [
             "order" => $order,

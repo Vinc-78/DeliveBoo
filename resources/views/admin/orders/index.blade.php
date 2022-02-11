@@ -11,7 +11,7 @@
                 <li class="list-group-item border border-dark">
                     
                     {{-- nome del cliente --}}
-                    <a href="{{ asset("admin.orders.show", $order->id) }}">
+                    <a href="{{ route("admin.orders.show", $order->id) }}">
 
                         <h5 class="mt-4">{{ $order->name_client . " " . $order->surname_client }}</h5>
                         

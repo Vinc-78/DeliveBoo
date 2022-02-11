@@ -25,17 +25,10 @@
 
                             {{-- piatti acquistati --}}
                             <li class="small">{{ $singleDish->name }}</li>
+        
 
                         @endforeach
                     </ul>
-                    {{-- <ul>
-                        @foreach ($order-> as $item)
-                            
-                        @endforeach
-                        <li>
-
-                        </li>
-                    </ul> --}}
                 </li>
                 @endforeach
             </ul>

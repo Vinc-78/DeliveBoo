@@ -17,13 +17,13 @@ class OrderController extends Controller
     public function index()
     {
         $orderList = Order::all();
-        $dishList = Dish::all();
+       /*  $dishList = Dish::all(); */
 
         
         return view('admin.orders.index', [
             "orderList" => $orderList,
-            "dishList" => $dishList,
-        ]);
+            /* "dishList" => $dishList, */
+        ]); 
     }
 
     /**
@@ -53,9 +53,8 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        $order = Order::where("id", $id);
 
         return view("admin.orders.show", [
             "order" => $order,

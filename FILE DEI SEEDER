@@ -559,3 +559,9 @@ create_dish_order_table
             $table->foreign("order_id")->references("id")->on("orders")->onDelete('cascade');
         });
 
+
+FOR EACH CON GIUSTO PERCORSO IMMAGINI
+
+  {{--  @foreach ($categories as $category)
+                         <img src="{{ asset('storage/img/category/' . $category->img_category)}}" alt="img">
+                         @endforeach --}}

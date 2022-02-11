@@ -6,7 +6,7 @@ return [
         'price' => '6',
         'visibility' => true,
         'description' => "Pomodoro S.Marzano, aglio, origano, basilico, olio Evo",
-        'image_url' => 'pizza-marinara.jpg',
+        'image_url' => 'pizza-marinara.jpg',    /*    img/restaurant/pizza-marinara.jpg    */
     ],
     [
         'restaurant_id' => 1,

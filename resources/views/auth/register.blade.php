@@ -11,8 +11,8 @@
                     <form method="POST" action="{{ route('register') }}"
                     enctype="multipart/form-data">
                         @csrf
-            {{-- Inizia inserimento dati  --}}
-{{-- Nome --}}
+                {{-- Inizia inserimento dati  --}}
+                {{-- Nome --}}
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -26,7 +26,7 @@
                                 @enderror
                             </div>
                         </div>
-{{-- email --}}
+                    {{-- email --}}
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -40,7 +40,7 @@
                                 @enderror
                             </div>
                         </div>
-{{-- Password --}}
+                    {{-- Password --}}
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
@@ -62,7 +62,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-{{-- address --}}
+                {{-- address --}}
                         <div class="form-group row">
                             <label for="address" class="col-md-4 col-form-label text-md-right">Indirizzo</label>
 
@@ -76,7 +76,7 @@
                                 @enderror
                             </div>
                         </div>
-{{-- p_iva --}}
+                {{-- p_iva --}}
                         <div class="form-group row">
                             <label for="p_iva" class="col-md-4 col-form-label text-md-right">P.IVA</label>
 
@@ -91,7 +91,7 @@
                             </div>
                         </div>
 
-{{-- immagini --}}
+                {{-- immagini --}}
                         <div class="form-group row">
                             <label for="cover_img" class="col-md-4 col-form-label text-md-right"></label>
 
@@ -101,7 +101,7 @@
                                
                             </div>
                         </div>
-{{-- Select alle categorie --}}  
+                {{-- Select alle categorie --}}  
 
                         <div class="form-group row">
                             <label for="categories[]" class="col-md-4 col-form-label text-md-right">Categoria</label>
@@ -127,7 +127,7 @@
 
                         
 
-{{-- versione con check box da sistemare grafica --}}
+                    {{-- versione con check box da sistemare grafica --}}
 
                        {{--  @foreach ($categories as $category)
                             <div class="form-check form-check-inline mb-4">
@@ -148,7 +148,7 @@
                         @endif --}}
 
 
-  {{-- Submit --}}                      
+                {{-- Submit --}}                      
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

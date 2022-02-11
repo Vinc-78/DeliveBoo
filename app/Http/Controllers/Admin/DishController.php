@@ -6,6 +6,8 @@ use App\Dish;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class DishController extends Controller
 {
@@ -22,11 +24,20 @@ class DishController extends Controller
 
         $dishes = Dish::where('user_id', $user)->get();
         
-        dd($dishes);
+        /* dd($dishes); */
 
         return view('admin.dishes.index', compact('dishes'));
     }
 
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'description' => ['required'],
+            'price' => ['required', 'min:1'],
+                       
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -34,7 +45,7 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.dishes.create');
     }
 
     /**
@@ -45,7 +56,31 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        
+        $data = $request->all(); 
+        $newDish = new Dish();
+
+        $newDish->fill($request->all());
+
+        
+        $newDish->user_id = Auth::user()->id; /* Qui specifico l'utente */
+
+        if($request->file("image_url")) {
+
+            $newDish->image_url = Storage::put("img/restaurant", $data['image_url']);
+
+        }
+
+       
+        $newDish->save();
+
+       
+    
+        return redirect()->route("admin.dishes.index")->with('status','Piatto Creato Correttamente .');
+        
+
     }
 
     /**
@@ -54,9 +89,14 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Dish $dish)
     {
-        //
+        if($dish->user_id != Auth::id()) {
+            abort("403");
+        }
+        
+        
+        return view('admin.dishes.show', compact('dish')); 
     }
 
     /**
@@ -65,9 +105,10 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dish $dish)
     {
-        //
+                
+        return view("admin.dishes.edit", compact('dish'));
     }
 
     /**
@@ -77,9 +118,13 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Dish $dish)
     {
-        //
+        $data = $request->all();
+
+        $dish->update($data);
+
+        return redirect()->route("admin.dishes.index")->with(["status"=> "Dati aggiornati correttamente!"]);
     }
 
     /**
@@ -90,6 +135,10 @@ class DishController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dish = Dish::where("id", $id)->first();
+        
+        $dish->delete();
+
+        return redirect()->route("admin.dishes.index")->with('status','Piatto rimosso dal menù');
     }
 }

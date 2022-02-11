@@ -25,6 +25,8 @@
         <div class="col-3">
             <h2> Aside  </h2>
 
+            <a href="{{route('admin.dishes.index')}}"> A tutti i piatti</a>
+
         </div>
 
         <div class="col-6">

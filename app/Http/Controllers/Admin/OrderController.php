@@ -17,7 +17,6 @@ class OrderController extends Controller
     {
         $orderList = Order::all();
 
-        dd($orderList);
         
         return view('admin.orders.index', [
             "orderList" => $orderList,

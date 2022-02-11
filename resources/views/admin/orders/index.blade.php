@@ -3,18 +3,43 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <h1>questa è la index di Ordini</h1>
-        <ul class="list-group">
-            <li class="list-group-item">
-                @foreach ($orderList as $order)
+        <div class="col">
 
-                <a href="{{ asset("admin.orders.show", $order->id) }}">
-                    <h5>{{ $order->name_client . " " . $order->surname_client }}</h5>
-                </a>
-                <p class="small">{{ $order->phone_client }}</p>
+            <h1>questa è la index di Ordini</h1>
+            <ul class="list-group">
+                @foreach ($orderList as $order)
+                <li class="list-group-item border border-dark">
+                    
+                    {{-- nome del cliente --}}
+                    <a href="{{ asset("admin.orders.show", $order->id) }}">
+
+                        <h5 class="mt-4">{{ $order->name_client . " " . $order->surname_client }}</h5>
+                        
+                    </a>
+
+                    {{-- numero di telefono --}}
+                    <p class="small">{{ $order->phone_client }}</p>
+
+                    <ul>
+                        @foreach ($order->dishes as $singleDish)    
+
+                            {{-- piatti acquistati --}}
+                            <li class="small">{{ $singleDish->name }}</li>
+
+                        @endforeach
+                    </ul>
+                    {{-- <ul>
+                        @foreach ($order-> as $item)
+                            
+                        @endforeach
+                        <li>
+
+                        </li>
+                    </ul> --}}
+                </li>
                 @endforeach
-            </li>
-        </ul>
+            </ul>
+        </div>
     </div>
 
 </div>

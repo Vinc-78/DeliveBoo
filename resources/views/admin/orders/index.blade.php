@@ -7,15 +7,37 @@
 
             <h1>questa è la index di Ordini</h1>
             <ul class="list-group">
-                <li class="list-group-item">
-                    @foreach ($orderList as $order)
+                @foreach ($orderList as $order)
+                <li class="list-group-item border border-dark">
                     
+                    {{-- nome del cliente --}}
                     <a href="{{ asset("admin.orders.show", $order->id) }}">
-                        <h5>{{ $order->name_client . " " . $order->surname_client }}</h5>
+
+                        <h5 class="mt-4">{{ $order->name_client . " " . $order->surname_client }}</h5>
+                        
                     </a>
+
+                    {{-- numero di telefono --}}
                     <p class="small">{{ $order->phone_client }}</p>
-                    @endforeach
+
+                    <ul>
+                        @foreach ($order->dishes as $singleDish)    
+
+                            {{-- piatti acquistati --}}
+                            <li class="small">{{ $singleDish->name }}</li>
+
+                        @endforeach
+                    </ul>
+                    {{-- <ul>
+                        @foreach ($order-> as $item)
+                            
+                        @endforeach
+                        <li>
+
+                        </li>
+                    </ul> --}}
                 </li>
+                @endforeach
             </ul>
         </div>
     </div>

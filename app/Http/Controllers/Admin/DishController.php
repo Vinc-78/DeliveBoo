@@ -18,8 +18,6 @@ class DishController extends Controller
     {
         $user=Auth::user()->id;
 
-      /* $dishes = $user['dishes']; */
-
         $dishes = Dish::where('user_id', $user)->get();
         
         dd($dishes);

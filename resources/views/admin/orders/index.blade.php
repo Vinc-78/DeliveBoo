@@ -7,7 +7,7 @@
 
             <h1>questa è la index di Ordini</h1>
             <ul class="list-group">
-                @foreach ($orderList as $order)
+                @foreach ($orders as $order)
                 <li class="list-group-item border border-dark">
                     
                     {{-- nome del cliente --}}

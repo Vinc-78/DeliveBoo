@@ -31,4 +31,5 @@ Route::middleware('auth')
     Route::get('/', 'HomeController@index' )->name('home'); 
 
     Route::resource("dishes", "DishController");
+    Route::resource("orders", "OrderController");
 });

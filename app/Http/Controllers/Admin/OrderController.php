@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,7 +15,13 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orderList = Order::all();
+
+        dd($orderList);
+        
+        return view('admin.orders.index', [
+            "orderList" => $orderList,
+        ]);
     }
 
     /**
@@ -46,7 +53,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

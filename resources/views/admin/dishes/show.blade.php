@@ -10,12 +10,18 @@
         <h1> Il tuto menu</h1>
 
                     <div class="card" style="width: 18rem;">
-                        <img style="height:250px; weight:250px" src="{{asset('storage/img/restaurant/' . $dish->image_url)}}" alt="{{$dish->name}}">
+                        <img style="height:250px; weight:250px" src="{{asset('storage/' . $dish->image_url)}}" alt="{{$dish->name}}">
                         <div class="card-body">
                         <h5 class="card-title">{{$dish->name}}</h5>
                         
                         <h5>Descrizione</h5>
                         <p>{{$dish->description}}</p>
+
+                        @if ($dish->visibility)
+                            <h6 class="card-title"> Il piatto è disponibile </h6>    
+                            @else
+                                <h6 class="card-title"> Il piatto non è disponibile </h6>  
+                         @endif
 
                         
                         <p>Price {{$dish->price}} $</p>

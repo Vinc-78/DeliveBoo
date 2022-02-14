@@ -7,7 +7,7 @@ return     [
         'e-mail' => 'taverna@email.it',
         'password' =>'123456',
         'p_iva' => '60028970626',
-        'coverImg' => 'la-taverna.jpg',
+        'coverImg' => 'img/restaurant/la-taverna.jpg',
         ],
         [
         'name' => 'Margherita',
@@ -15,7 +15,7 @@ return     [
         'e-mail' => 'margherita@email.it',
         'password' =>'123456' ,
         'p_iva' => '60028970626',
-        'coverImg' => 'margherita.jpg',
+        'coverImg' => 'img/restaurant/margherita.jpg',
         ],
         [
         'name' => 'Il Chiostro',
@@ -23,7 +23,7 @@ return     [
         'e-mail' => 'ilchiostro@email.it',
         'password' =>'123456' ,
         'p_iva' => '27178340389',
-        'coverImg' => 'il-chiostro.jpg',
+        'coverImg' => 'img/restaurant/il-chiostro.jpg',
         ],
         [
         'name' => 'Due Passi',
@@ -31,7 +31,7 @@ return     [
         'e-mail' => 'duepassi@email.it',
         'password' =>'123456' ,
         'p_iva' => '68207150167',
-        'coverImg' => 'due-passi.jpg',
+        'coverImg' => 'img/restaurant/due-passi.jpg',
         ],
         [
         'name' => 'Itsu',
@@ -39,7 +39,7 @@ return     [
         'e-mail' => 'itsu@email.it',
         'password' =>'123456' ,
         'p_iva' => '47769490088',
-        'coverImg' => 'itsu.jpg',
+        'coverImg' => 'img/restaurant/itsu.jpg',
         ],
          [
         'name' => 'The Burger',
@@ -47,7 +47,7 @@ return     [
         'e-mail' => 'theburger@emial.it',
         'password' =>'123456' ,
         'p_iva' => '47769490088',
-        'coverImg' => 'the-burger.jpg',
+        'coverImg' => 'img/restaurant/the-burger.jpg',
          ],
          [
         'name' => 'Alla Griglia',
@@ -55,7 +55,7 @@ return     [
         'e-mail' => 'allagriglia@email.it',
         'password' =>'123456' ,
         'p_iva' => '47769490088',
-        'coverImg' => 'alla-griglia.jpg',
+        'coverImg' => 'img/restaurant/alla-griglia.jpg',
          ],
         [
         'name' => 'Mi Scusi',
@@ -63,7 +63,7 @@ return     [
         'e-mail' => 'miscusi@email.it',
         'password' =>'123456' ,
         'p_iva' => '47769490088',
-        'coverImg' => 'mi-scusi.jpg',
+        'coverImg' => 'img/restaurant/mi-scusi.jpg',
         ],
         [
         'name' => 'Be Green',
@@ -71,7 +71,7 @@ return     [
         'e-mail' => 'begreen@email.it',
         'password' =>'123456', 
         'p_iva' => '47769490088',
-        'coverImg' => 'be-green.jpg',
+        'coverImg' => 'img/restaurant/be-green.jpg',
         ],
         [
         'name' => 'Zero',
@@ -79,6 +79,6 @@ return     [
         'e-mail' => 'zero@email.it',
         'password' =>'123456', 
         'p_iva' => '47769490088',
-        'coverImg' => 'zero.jpg',
+        'coverImg' => 'img/restaurant/zero.jpg',
         ],
     ];

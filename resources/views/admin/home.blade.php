@@ -33,7 +33,7 @@
             <h2>Dati Utente</h2>
 
             <h3 style="color:red">Attività  <span>{{Auth::user()->name}}</span> </h3> 
-            <img style="width: 450px" src="{{asset('storage/img/restaurant/'. Auth::user()->cover_img)}}" alt="ristorante">
+            <img style="width: 450px" src="{{asset('storage/'. Auth::user()->cover_img)}}" alt="ristorante">
             <h4>Partita I.V.A. {{Auth::user()->p_iva}}</h4>
             
         </div>

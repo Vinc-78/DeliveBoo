@@ -35,7 +35,8 @@ class DishController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'description' => ['required'],
             'price' => ['required', 'min:1'],
-                       
+            'image_url'=>['nullable|file']
+                                   
         ]);
     }
     /**
@@ -121,9 +122,29 @@ class DishController extends Controller
     public function update(Request $request, Dish $dish)
     {
         $data = $request->all();
+        $oldImg =$dish->image_url; 
+        
+        $dish->fill($data);
 
-        $dish->update($data);
+        if($request->file("image_url")) {
 
+            if($oldImg){
+
+                Storage::delete($oldImg);
+
+            }
+
+            /*  $dish->image_url = $request->file("image_url")->store("dishes"); */
+
+            $dish->image_url = Storage::put("img/restaurant", $data['image_url']);
+
+        }
+
+       
+
+        $dish->save(); 
+
+         
         return redirect()->route("admin.dishes.index")->with(["status"=> "Dati aggiornati correttamente!"]);
     }
 
@@ -136,7 +157,14 @@ class DishController extends Controller
     public function destroy($id)
     {
         $dish = Dish::where("id", $id)->first();
-        
+
+        if($dish->image_url) {
+
+            Storage::delete($dish->image_url);
+
+            }
+
+      
         $dish->delete();
 
         return redirect()->route("admin.dishes.index")->with('status','Piatto rimosso dal menù');

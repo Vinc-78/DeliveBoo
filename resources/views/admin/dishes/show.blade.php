@@ -34,18 +34,13 @@
                                 <a href="{{route('admin.dishes.edit', $dish->id)}}" class="btn btn-primary btn-sm mr-3">Modifica il tuo piatto</a>
                              {{-- Elimina il piatto --}} 
 
-                                <form action="{{route('admin.dishes.destroy', $dish->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">
-                                        Elimina piatto
-                                    </button>
+                             @include('partials.delete_btn_dish')
+
                               
-                                </form>
                                 
                             </div>
                         
-                            <a href="{{route('admin.dishes.index')}}" class="btn btn-primary btn-sm"><i class="fas fa-arrow-left fa-sm fa-fw"></i> Tutti</a>
+                            <a href="{{route('admin.dishes.index')}}" class="btn btn-primary btn-sm"><i class="fas fa-arrow-left fa-sm fa-fw"></i> Torna alla lista dei piatti</a>
 
                         </div>
                     </div>

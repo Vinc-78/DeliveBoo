@@ -5,7 +5,7 @@
 
         <a href="{{route('admin.home')}}"> Torna alla Dashaboard</a>
 
-        <h1> Il tuto menu</h1>
+        <h1> Il tuo menù</h1>
         <div class="my-4">
             <a href="{{route('admin.dishes.create')}}" class="btn btn-primary">Nuovo Piatto</a>
         </div>

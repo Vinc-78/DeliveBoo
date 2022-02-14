@@ -20,14 +20,20 @@
 
             @foreach ($dishes as $dish)
 
-                @if($dish->visibility) {{-- Se disponibile (true) lo vede --}}
+               {{--  @if($dish->visibility) --}} {{-- Da usare solo per il lato cliente Se disponibile (true) lo vede --}}
                     <div class="col">
 
                         <div class="card" style="width: 18rem;">
-                            <img style="height:250px; weight:250px" src="{{asset('storage/img/restaurant/' . $dish->image_url)}}" alt="{{$dish->name}}">
+                            <img style="height:250px; weight:250px" src="{{asset('storage/' . $dish->image_url)}}" alt="{{$dish->name}}">
                             <div class="card-body">
                             <h5 class="card-title">{{$dish->name}}</h5>
                             <h6 class="card-title">Price: {{$dish->price}} $</h6>
+
+                            @if ($dish->visibility)
+                                <h6 class="card-title"> Il piatto è disponibile </h6>    
+                                 @else
+                                     <h6 class="card-title"> Il piatto non è disponibile </h6>  
+                            @endif
                             
                             
                             <a href="{{route('admin.dishes.show' , $dish->id)}}" class="btn btn-primary">Vai al piatto</a>
@@ -35,7 +41,7 @@
                             </div>
                         </div>
                     </div>
-                @endif
+                {{-- @endif --}}
 
             @endforeach
 

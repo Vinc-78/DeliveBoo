@@ -21,8 +21,8 @@
                     <p class="small">{{ $order->phone_client }}</p>
 
                     <ul>
-                        @foreach ($order->dishes as $singleDish)    
-
+                        @foreach ($order->dish as $singleDish)    
+                            @dump($order->dish)
                             {{-- piatti acquistati --}}
                             <li class="small">{{ $singleDish->name }}</li>
         

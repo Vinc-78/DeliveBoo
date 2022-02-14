@@ -263,7 +263,7 @@ return [
         'name' => 'Involtini di Melanzane al forno',
         'price' => '8',
         'visibility' => true,
-               'description' => "Involtini di Melanzane con Pomodoro e Zucca",
+        'description' => "Involtini di Melanzane con Pomodoro e Zucca",
         'image_url' => 'involtini-melanzane.jpg',
     ],
     [
@@ -271,7 +271,7 @@ return [
         'name' => 'Fritto Misto',
         'price' => '6',
         'visibility' => true,
-               'description' => "Fritto misto di mare",
+        'description' => "Fritto misto di mare",
         'image_url' => 'fritto-misto.jpg',
     ],
     [
@@ -288,7 +288,7 @@ return [
         'name' => 'Pancakes',
         'price' => '6',
         'visibility' => true,
-                'description' => "Pancakes americani con frutta e cioccolato",
+        'description' => "Pancakes americani con frutta e cioccolato",
         'image_url' => 'pancake.jpg',
     ],
     [

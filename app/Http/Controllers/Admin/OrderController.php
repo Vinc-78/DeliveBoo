@@ -22,23 +22,17 @@ class OrderController extends Controller
 
         $users = DB::table('users')->join('dishes', 'dishes.user_id', '=', 'users.id')
         ->join('dish_order', 'dishes.id', '=', 'dish_order.dish_id')
-        ->join('orders', 'dish_order.dish_id', '=', 'orders.id')->where('dishes.user_id', '=', $user)
+        ->join('orders', 'dish_order.order_id', '=', 'orders.id')
+        ->where('users.id', '=', $user)
         ->get();
 
-        /* $orders = DB::table('orders')->join('dish_order', 'orders.id', '=', 'dish_order.order_id')
-        ->join('dishes', 'dish_order.dish_id', '=', 'dishes.user_id')
-        ->join('users', 'dishes.user_id', '=', 'users.id')->where('orders.name_client', '=', $user)->get(); */
 
-        dd($users);
+        //dd($users);
 
-      /*   SELECT * FROM `orders`
-        INNER JOIN `dish_order` ON `orders` . `id` = `dish_order` . `order_id`
-        INNER JOIN `dishes` ON `dish_order` . `dish_id` = `dishes` . `user_id`
-        INNER JOIN `users` ON `dishes` . `user_id` = `users` . `id` */
                 
         return view('admin.orders.index', [
             "orders" => $users,
-            /* "dishList" => $dishList, */
+    
         ]); 
     }
 

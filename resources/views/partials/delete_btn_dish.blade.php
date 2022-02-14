@@ -18,7 +18,7 @@
 
             e.preventDefault();
 
-            const result = confirm("Sei sicuro di voler canlcellare ? L'operazopne sarà irreversibile !!!");
+            const result = confirm("Sei sicuro di voler canlcellare ? L'operazione sarà irreversibile !!!");
 
             if(result){
                 form.submit();

@@ -15,4 +15,4 @@ yarn-error.log
 /public/js/vue.js
 
 public/*.js
-public/*.js
+public/*.css

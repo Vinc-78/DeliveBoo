@@ -13,3 +13,6 @@ yarn-error.log
 
 /public/js/app.js
 /public/js/vue.js
+
+public/*.js
+public/*.js

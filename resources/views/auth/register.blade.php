@@ -142,10 +142,8 @@
 
 
 
-                    {{-- immagini --}}
-                  
-                  
-                    {{--  <div class="form-group row">
+                    {{-- immagini 
+                    <div class="form-group row">
                         <label for="cover_img" class="col-md-4 col-form-label text-md-right"></label>
 
                         <div class="col-md-6">
@@ -154,9 +152,10 @@
                             
                         </div>
                     </div> --}}
-                        {{-- Select alle categorie --}}  
 
-                   {{--  <div class="form-group row">
+                    
+                    {{-- Select alle categorie 
+                    <div class="form-group row">
                         <label for="categories[]" class="col-md-4 col-form-label text-md-right">Categoria</label>
                         <div class="col-md-6">
                             <select  class="form-control @error('categories') is-invalid @enderror" name="categories[]" id="categories[]" multiple>

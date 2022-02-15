@@ -107,7 +107,7 @@
                             
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
                                 
-                                <input type="address" id="address" name="address" placeholder="Inserisci l'indirizzo dell'attività" class="form-control rounded-0 border  @error('address') is-invalid @enderror"
+                                <input type="text" id="address" name="address" placeholder="Inserisci l'indirizzo dell'attività" class="form-control rounded-0 border  @error('address') is-invalid @enderror"
                                 value="{{ old("address") }}" required autocomplete="address">
                                 
                                 @error('address')
@@ -128,7 +128,7 @@
                             
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
                                 
-                                <input type="p_iva" id="p_iva" name="p_iva" placeholder="Inserisci l'indirizzo dell'attività" class="form-control rounded-0 border  @error('p_iva') is-invalid @enderror"
+                                <input type="string" id="p_iva" name="p_iva" placeholder="Inserisci la partita IVA dell'attività" class="form-control rounded-0 border  @error('p_iva') is-invalid @enderror"
                                 value="{{ old("p_iva") }}" required minlength="11" maxlength="11">
                                 
                                 @error('p_iva')
@@ -140,18 +140,21 @@
                         </div>
                     </div>
 
+                    {{-- IMMAGINE --}}
+                    <div class="row text-left mb-5">
+                        
+                        <div class="col-12 p-0">
 
-
-                    {{-- immagini 
-                    <div class="form-group row">
-                        <label for="cover_img" class="col-md-4 col-form-label text-md-right"></label>
-
-                        <div class="col-md-6">
-                            <input id="cover_img" type="file" class="form-control" name="cover_img" >
-
+                            <label for="cover_img" class="p-0 col-12"><h5>Inserisci l'immagine di profilo dell'attività</h5></label>
                             
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
+                                <input type="file" id="cover_img" name="cover_img" class="rounded-0 border">
+                            </div>
                         </div>
-                    </div> --}}
+                    </div>
+
+                    {{-- CATEGORIE --}}
+                    
 
                     
                     {{-- Select alle categorie 
@@ -280,7 +283,18 @@
                             @enderror
                         </div>
                     </div> --}}
+                    {{-- immagini 
+                        <div class="form-group row">
+                            <label for="cover_img" class="col-md-4 col-form-label text-md-right"></label>
 
+                            <div class="col-md-6">
+                                <input id="cover_img" type="file" class="form-control" name="cover_img" >
+
+                                
+                            </div>
+                        </div>
+                    </div>  --}}
+                   
 
 
                     {{-- Submit --}}                      

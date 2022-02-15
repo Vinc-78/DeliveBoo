@@ -10,6 +10,11 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+<<<<<<< HEAD
 
 app.json
 vue.json
+=======
+app.js
+vue.js
+>>>>>>> e33366723f13cf1e98a24f6ab6650ffd58ac6e67

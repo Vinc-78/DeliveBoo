@@ -37341,12 +37341,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports, __webpack_require__) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\sass\app.scss */"./resources/sass/app.scss");
 =======
 __webpack_require__(/*! C:\Users\giuli\OneDrive\Desktop\Boolean\progetto finale\DeliveBoo\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\giuli\OneDrive\Desktop\Boolean\progetto finale\DeliveBoo\resources\sass\app.scss */"./resources/sass/app.scss");
 >>>>>>> origin/register-front-end-layout
+=======
+__webpack_require__(/*! C:\Users\eleal\Desktop\Progetto finale\DeliveBoo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\eleal\Desktop\Progetto finale\DeliveBoo\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> e33366723f13cf1e98a24f6ab6650ffd58ac6e67
 
 
 /***/ })

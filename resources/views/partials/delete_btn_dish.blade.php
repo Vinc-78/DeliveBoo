@@ -1,3 +1,4 @@
+
 <form action="{{route('admin.dishes.destroy', $dish->id)}}" method="POST"
     class="form-delete">
     @csrf

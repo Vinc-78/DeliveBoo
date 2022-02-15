@@ -1,19 +1,19 @@
 <template>
-  <div>
 
-      <router-view></router-view>
+    <div class="container">
 
-  </div>
+        <h1>{{msg}}</h1>
+
+    </div>
+  
 </template>
 
 <script>
-
 export default {
-    name:'App',
+ name:"App",
     data() {
         return{
-            
-
+            msg:" Funziona !!!",
         }
     }
 

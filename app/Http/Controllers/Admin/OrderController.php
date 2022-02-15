@@ -34,22 +34,22 @@ class OrderController extends Controller
         foreach ($users as $order) {
 
             if(isset($listOrders[$order->order_id], $listOrders)){
-                array_push($listOrders[$order->order_id], $order->name );
+                array_push($listOrders[$order->order_id]['dishes'], $order->name );
             } else {
-            $listOrders[$order->order_id] = [$order->name];
+            $listOrders[$order->order_id]['dishes'] = [$order->name];
             }
 
-            $listOrders['name_client'] = $order->name_client;
-            $listOrders['surname_client'] = $order->surname_client;
-            $listOrders['phone_client'] = $order->phone_client;
-            $listOrders['email_client'] = $order->email_client;
-            $listOrders['address_client'] = $order->address_client;
-            $listOrders['total_price'] = $order->total_price;
+            $listOrders[$order->order_id]['name_client'] = $order->name_client;
+            $listOrders[$order->order_id]['surname_client'] = $order->surname_client;
+            $listOrders[$order->order_id]['phone_client'] = $order->phone_client;
+            $listOrders[$order->order_id]['email_client'] = $order->email_client;
+            $listOrders[$order->order_id]['address_client'] = $order->address_client;
+            $listOrders[$order->order_id]['total_price'] = $order->total_price;
 
 
         }
 
-        dd($listOrders);
+        //dd($listOrders);
  
                 
         return view('admin.orders.index', [

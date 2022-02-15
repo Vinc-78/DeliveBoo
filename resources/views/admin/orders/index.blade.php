@@ -5,31 +5,32 @@
     <div class="row">
         <div class="col">
 
-            <h1>questa è la index di Ordini</h1>
+            <h1>Lista Ordini </h1>
             <ul class="list-group">
-                @foreach ($orders as $order)
+                @foreach ($listOrders as $order)
                 <li class="list-group-item border border-dark">
                     
                     {{-- nome del cliente --}}
-                    <a href="{{ route("admin.orders.show", $order->id) }}">
-
-                        <h5 class="mt-4">{{ $order->name_client . " " . $order->surname_client }}</h5>
-                        
-                    </a>
-
+                    <h5 class="mt-4 mb-3">Nome Cliente: {{ $order->name_client . " " . $order->surname_client }}</h5>
+                    {{-- Email cliente --}}
+                    <h5 class="mb-3">Email Cliente: {{ $order->email_client }}</h5>
+                    {{-- indirizzo cliente --}}
+                    <h5 class="mb-3">Indirizzo Consegna: {{ $order->address_client }}</h5>
                     {{-- numero di telefono --}}
-                    <p class="small">{{ $order->phone_client }}</p>
-
+                    <h6 class="mb-3">Telefono: {{ $order->phone_client }}</h6>
+                    {{-- importo da pagare --}}
+                    <h3 class="mb-3">Importo da pagare: {{ $order->total_price}}$</h3>
+                    <h4>Piatti Ordinati</h4>
                     <ul>
-                        @foreach ($order->dish as $singleDish)    
-                            @dump($order->dish)
-                            {{-- piatti acquistati --}}
-                            <li class="small">{{ $singleDish->name }}</li>
-        
-
-                        @endforeach
+                       
+                        <li>
+                            <h6></h6>
+                        </li>
+                       
                     </ul>
-                </li>
+
+
+                  
                 @endforeach
             </ul>
         </div>

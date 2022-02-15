@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Dish;
 use App\Http\Controllers\Controller;
 use App\Order;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -20,18 +21,39 @@ class OrderController extends Controller
     {
         $user=Auth::user()->id;
 
+      
+
         $users = DB::table('users')->join('dishes', 'dishes.user_id', '=', 'users.id')
         ->join('dish_order', 'dishes.id', '=', 'dish_order.dish_id')
         ->join('orders', 'dish_order.order_id', '=', 'orders.id')
         ->where('users.id', '=', $user)
         ->get();
 
+        $listOrders = array();
+       
+        foreach ($users as $order) {
 
-        //dd($users);
+            if(isset($listOrders[$order->order_id], $listOrders)){
+                array_push($listOrders[$order->order_id], $order->name );
+            } else {
+            $listOrders[$order->order_id] = [$order->name];
+            }
 
+            $listOrders['name_client'] = $order->name_client;
+            $listOrders['surname_client'] = $order->surname_client;
+            $listOrders['phone_client'] = $order->phone_client;
+            $listOrders['email_client'] = $order->email_client;
+            $listOrders['address_client'] = $order->address_client;
+            $listOrders['total_price'] = $order->total_price;
+
+
+        }
+
+        dd($listOrders);
+ 
                 
         return view('admin.orders.index', [
-            "orders" => $users,
+            "order_dishes" => $listOrders,
     
         ]); 
     }

@@ -27,7 +27,7 @@
                             <img style="height:250px; weight:250px" src="{{asset('storage/' . $dish->image_url)}}" alt="{{$dish->name}}">
                             <div class="card-body">
                             <h5 class="card-title">{{$dish->name}}</h5>
-                            <h6 class="card-title">Price: {{$dish->price}} $</h6>
+                            <h6 class="card-title">Price: {{$dish->price}}€</h6>
 
                             @if ($dish->visibility)
                                 <h6 class="card-title"> Il piatto è disponibile </h6>    

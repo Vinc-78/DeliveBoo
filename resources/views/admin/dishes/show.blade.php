@@ -24,7 +24,7 @@
                          @endif
 
                         
-                        <p>Price {{$dish->price}} $</p>
+                        <p>Price {{$dish->price}} €</p>
                         
                         
                        {{--  <a href="{{route('admin.dishes.edit' , $dish->id)}}" class="btn btn-primary">Modifica</a> --}}

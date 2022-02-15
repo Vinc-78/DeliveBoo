@@ -22,7 +22,7 @@
                     {{-- numero di telefono --}}
                     <h6 class="mb-3">Telefono: {{ $order['phone_client'] }}</h6>
                     {{-- importo da pagare --}}
-                    <h3 class="mb-3">Importo da pagare: {{ $order['total_price']}}$</h3>
+                    <h3 class="mb-3">Importo da pagare: {{ $order['total_price']}}€</h3>
                     <h4>Piatti Ordinati</h4>
                     <ul>
                        @foreach ($order['dishes'] as $dish)

@@ -72,7 +72,7 @@
                             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-8 px-0">
                                 
                                 <input type="password" id="password" name="password" placeholder="Inserisci password" class="form-control rounded-0 border  @error('password') is-invalid @enderror"
-                                value="{{ old("password") }}" required autocomplete="password">
+                                value="{{ old("password") }}" required autocomplete="new-password">
                                 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -91,19 +91,35 @@
                             <label for="password-confirm" class="p-0 col-12"><h5>Coferma password</h5></label>
                             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-8 px-0">
                                 
-                                <input type="password" id="password-confirm" name="pasword_confirmation" placeholder="Conferma password" class="form-control rounded-0 border  @error('password') is-invalid @enderror"
-                                value="{{ old("password") }}" required autocomplete="confirm-password">
+                                <input type="password" id="password-confirm" name="password_confirmation" placeholder="Conferma password" class="form-control rounded-0 border" required autocomplete="confirm-password">
                             </div>
                         </div>
                     </div>
 
-                    {{-- <div class="form-group row">
-                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                    {{-- 
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                        <div class="col-md-6">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="minimo 6 caratteri">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
-                    </div>  --}}
+
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div> 
+                     --}}
 
 
 

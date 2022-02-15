@@ -91,130 +91,61 @@
                             <label for="password-confirm" class="p-0 col-12"><h5>Coferma password</h5></label>
                             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-8 px-0">
                                 
-                                <input type="password" id="password-confirm" name="password_confirmation" placeholder="Conferma password" class="form-control rounded-0 border" required autocomplete="confirm-password">
+                                <input type="password" id="password-confirm" name="password_confirmation" placeholder="Conferma password" class="form-control rounded-0 border" required autocomplete="new-password">
                             </div>
                         </div>
                     </div>
 
-                    {{-- 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                    <hr>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="minimo 6 caratteri">
+                    {{-- INDIRIZZO --}}
+                    <div class="row text-left mb-5">
+                        
+                        <div class="col-12 p-0">
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                            <label for="address" class="p-0 col-12"><h5>Inserisci l'indirizzo del ristorante</h5></label>
+                            
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
+                                
+                                <input type="address" id="address" name="address" placeholder="Inserisci l'indirizzo dell'attività" class="form-control rounded-0 border  @error('address') is-invalid @enderror"
+                                value="{{ old("address") }}" required autocomplete="address">
+                                
+                                @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
                         </div>
+                    </div>
+                    
+                    {{-- PARTITA IVA --}}
+                    <div class="row text-left mb-5">
+                        
+                        <div class="col-12 p-0">
 
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            <label for="p_iva" class="p-0 col-12"><h5>Inserisci la partita IVA dell'attività</h5></label>
+                            
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
+                                
+                                <input type="p_iva" id="p_iva" name="p_iva" placeholder="Inserisci l'indirizzo dell'attività" class="form-control rounded-0 border  @error('p_iva') is-invalid @enderror"
+                                value="{{ old("p_iva") }}" required minlength="11" maxlength="11">
+                                
+                                @error('p_iva')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
-                        </div> 
-                     --}}
-
-
-
-
-
-
-
-                    {{-- Nome --}}
-                   {{--  <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Inserisci nome dell'attività">
-
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div> --}}
-                    {{-- email --}}
-                   {{--  <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="mario.rossi@email.it">
-
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div> --}}
-                    {{-- Password --}}
-                    {{-- <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="minimo 6 caratteri">
-
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
-                        <div class="col-md-6">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                        </div>
-                    </div> --}}
-
-
-
-
-                    {{-- address --}}
-                    {{-- <div class="form-group row">
-                        <label for="address" class="col-md-4 col-form-label text-md-right">Indirizzo</label>
-
-                        <div class="col-md-6">
-                            <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" required placeholder="Via Esempio n.civico">
-
-                            @error('address')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div> --}}
-                    {{-- p_iva --}}
-
-                    
-                  
-                    {{--  <div class="form-group row">
-                        <label for="p_iva" class="col-md-4 col-form-label text-md-right">P.IVA</label>
-
-                        <div class="col-md-6">
-                            <input id="p_iva" type="text" class="form-control @error('p_iva') is-invalid @enderror" name="p_iva" required minlength="11" maxlength="11">
-
-                            @error('p_iva')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div> --}}
 
                     {{-- immagini --}}
-                   {{--  <div class="form-group row">
+                  
+                  
+                    {{--  <div class="form-group row">
                         <label for="cover_img" class="col-md-4 col-form-label text-md-right"></label>
 
                         <div class="col-md-6">
@@ -268,6 +199,89 @@
                         {{ $errors->first('categories') }} </p>
 
                     @endif --}}
+
+
+                    {{-- vecchia versione --}}
+
+                     {{-- Nome 
+                        <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Inserisci nome dell'attività">
+
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div> --}}
+                    {{-- email 
+                        <div class="form-group row">
+                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="mario.rossi@email.it">
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div> --}}
+                    {{-- Password 
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="minimo 6 caratteri">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div> 
+                    --}}
+                    {{-- address 
+                        <div class="form-group row">
+                        <label for="address" class="col-md-4 col-form-label text-md-right">Indirizzo</label>
+
+                        <div class="col-md-6">
+                            <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" required placeholder="Via Esempio n.civico">
+
+                            @error('address')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div> --}}
+                    {{-- p_iva
+                        <div class="form-group row">
+                        <label for="p_iva" class="col-md-4 col-form-label text-md-right">P.IVA</label>
+
+                        <div class="col-md-6">
+                            <input id="p_iva" type="text" class="form-control @error('p_iva') is-invalid @enderror" name="p_iva" required minlength="11" maxlength="11">
+
+                            @error('p_iva')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div> --}}
+
 
 
                     {{-- Submit --}}                      

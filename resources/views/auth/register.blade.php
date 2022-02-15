@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         
-        <div class="col-xl-10 col-lg-8 col-md-12 col-sm-12">
+        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12">
             <div class="col-12 mb-5 text-center">
                 <h1>{{ __('Register') }}</h1>
             </div>
@@ -26,7 +26,7 @@
                     <div class="row text-left mb-5">
                         <label for="name" class="p-0 col-12"><h5>Inserisci il nome del ristorante</h5></label>
 
-                        <div class="col-5 px-0">
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
 
                             <input type="text" id="name" name="name" placeholder="Inserisci nome dell'attività" class="form-control rounded-0 border  @error('name') is-invalid @enderror"
                             value="{{ old("name") }}" required autocomplete="name" autofocus>
@@ -46,7 +46,7 @@
 
                             <label for="email" class="p-0 col-12"><h5>Inserisci la e-mail del ristorante</h5></label>
                             
-                            <div class="col-5 px-0">
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
                                 
                                 <input type="email" id="email" name="email" placeholder="Inserisci email dell'attività" class="form-control rounded-0 border  @error('email') is-invalid @enderror"
                                 value="{{ old("email") }}" required autocomplete="email">
@@ -60,14 +60,16 @@
                         </div>
                     </div>
 
+                    <hr>
+
                     {{-- PASSWORD --}}
-                    <div class="row text-left mb-5">
+                    <div class="row text-left">
                         
                         {{-- password --}}
-                        <div class="col-6 p-0">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 p-0 mb-5">
 
                             <label for="password" class="p-0 col-12"><h5>Inserisci la password del profilo</h5></label>
-                            <div class="col-10 px-0">
+                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-8 px-0">
                                 
                                 <input type="password" id="password" name="password" placeholder="Inserisci password" class="form-control rounded-0 border  @error('password') is-invalid @enderror"
                                 value="{{ old("password") }}" required autocomplete="password">
@@ -84,10 +86,10 @@
                         </div>
 
                         {{-- conferma password --}}
-                        <div class="col-6 p-0">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 p-0 mb-5">
 
                             <label for="password-confirm" class="p-0 col-12"><h5>Coferma password</h5></label>
-                            <div class="col-10 px-0">
+                            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-8 px-0">
                                 
                                 <input type="password" id="password-confirm" name="pasword_confirmation" placeholder="Conferma password" class="form-control rounded-0 border  @error('password') is-invalid @enderror"
                                 value="{{ old("password") }}" required autocomplete="confirm-password">

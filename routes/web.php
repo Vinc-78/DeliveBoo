@@ -31,6 +31,7 @@ Route::middleware('auth')
     Route::get('/', 'HomeController@index' )->name('home'); 
 
     Route::resource("dishes", "DishController");
+    Route::resource("orders", "OrderController");
 });
 
 Route::get("{any?}",function() {    // serve a creare una rotta generica che ho se clicco un url generico 

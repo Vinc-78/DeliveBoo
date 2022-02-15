@@ -12,7 +12,7 @@ class Dish extends Model
 
     public function orders() {
 
-        return $this->belongsToMany('App\Order', 'dish_order');
+        return $this->belongsToMany('App\Order', 'dish_order')->withPivot('quantity');
     
     }
 

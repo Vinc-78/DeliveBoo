@@ -154,33 +154,22 @@
                     </div>
 
                     {{-- CATEGORIE --}}
-                    
+                    <div class="row text-left mb-5">
+                        
+                        <div class="col-12 p-0">
 
-                    
-                    {{-- Select alle categorie 
-                    <div class="form-group row">
-                        <label for="categories[]" class="col-md-4 col-form-label text-md-right">Categoria</label>
-                        <div class="col-md-6">
-                            <select  class="form-control @error('categories') is-invalid @enderror" name="categories[]" id="categories[]" multiple>
-                                <option value="" disabled>Seleziona</option>
-                                
-                                @foreach($categories as $category )
-                                                                    
-                                @if (old('categories'))
-                                    <option value="{{$category->id}}" {{in_array($category->id, old('categories'))? 'selected': ''}}>{{$category->name}}</option>
-                                    @else
-                                    <option value="{{$category->id}}" >{{$category->name}}</option>
-                                @endif
+                            <h5>Inserisci la/le categorie di cui fa parte il tuo ristorante</h5>
+                            <div class="form-check">
+                                @foreach ($categories as $category)
+                                    <input name="categories[]" class="form-check-input" type="checkbox" value="{{ $category->id }}" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">{{ $category->name }}</label>
+
+                                    <br>
                                 @endforeach
-                            
-                            </select>
-                            @error('categories')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div> --}}
+                            </div>
 
-                    
+                        </div>
+                    </div>
 
                     {{-- versione con check box da sistemare grafica --}}
 

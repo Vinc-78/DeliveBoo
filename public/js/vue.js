@@ -16203,15 +16203,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\giuli\OneDrive\Desktop\Boolean\progetto finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
->>>>>>> origin/register-front-end-layout
-=======
-module.exports = __webpack_require__(/*! C:\Users\eleal\Desktop\Progetto finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
->>>>>>> e33366723f13cf1e98a24f6ab6650ffd58ac6e67
 
 
 /***/ })

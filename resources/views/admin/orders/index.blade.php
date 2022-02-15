@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+    <div class="mb-3">
+        <button class="btn btn-secondary"><a class="text-white" href={{ route('admin.home') }}>Torna alla dashboard</a></button>
+    </div>
     <div class="row">
         <div class="col">
 
@@ -37,6 +40,7 @@
             </ul>
         </div>
     </div>
+    
 
 </div>
 @endsection

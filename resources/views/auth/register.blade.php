@@ -9,7 +9,7 @@
                 <h1>{{ __('Register') }}</h1>
             </div>
 
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <h3>Crea il tuo account ristorante</h3>
                 <hr>
             </div>

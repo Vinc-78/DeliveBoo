@@ -66,7 +66,7 @@
                             <label for="price" class="p-0 col-12"><h5>Prezzo</h5></label>
 
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
-                                <input id="price" type="text" class="form-control rounded-0 border @error('price') is-invalid @enderror" name="price" placeholder="Costo 9.99 ">
+                                <input id="price" type="text" class="form-control rounded-0 border @error('price') is-invalid @enderror" name="price" placeholder="Costo">
 
                                 @error('price')
                                     <span class="invalid-feedback" role="alert">

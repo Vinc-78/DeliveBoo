@@ -5,7 +5,7 @@
       
       <div class="row d-flex justify-content-center align-items-center ">
       <div class="col-xs-12 col-sm-12 col-lg-6 d-flex justify-content-center align-items-center">
-        <img src="/storage/img/work-with-us.jpg" alt="" />
+        <img src="/storage/img/einstein.jpg" alt="" />
       </div>
       <div class="col-xs-12 col-sm-12 col-lg-6 d-flex flex-column  justify-content-center  align-items-xs-center align-items-sm-center">
           <h1>Welcome to Deliveboo.</h1>
@@ -27,7 +27,7 @@
 
     <div class="mt-5 mb-5 banner-container">
         <a href="/register">
-        <img src="/storage/img/work-with-us.jpg" alt="" class="imgBanner w-100">
+        <img src="/storage/img/einstein.jpg" alt="" class="imgBanner w-100">
         <h1 class="text-banner">Inizia a lavorare con noi</h1>
         </a>
     </div>

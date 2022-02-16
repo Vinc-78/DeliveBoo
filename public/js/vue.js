@@ -445,8 +445,106 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Search'
+  name: "App",
+  data: function data() {
+    return {
+      filtri: [],
+      usersList: [],
+      categoryList: []
+    };
+  },
+  methods: {
+    getUsers: function getUsers() {
+      var _this = this;
+
+      window.axios.get("/api/users").then(function (resp) {
+        _this.usersList = resp.data.data;
+      });
+    },
+    getCategory: function getCategory() {
+      var _this2 = this;
+
+      window.axios.get("/api/categories").then(function (resp) {
+        _this2.categoryList = resp.data;
+      });
+    }
+  },
+  computed: {
+    ricerca: function ricerca() {
+      var _this3 = this;
+
+      axios.post('/search', {
+        filtri: this.filtri
+      }).then(function (resp) {
+        _this3.usersList = resp.data.data;
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getUsers();
+    this.getCategory();
+  }
 });
 
 /***/ }),
@@ -2375,16 +2473,127 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center mx-sm-5" }, [
+      _c("div", { staticClass: "col-sm-12 d-md-flex altezza" }, [
+        _c("div", { staticClass: "container" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "row text-left d-flex align-items-start align-self-start mt-md-5 cartella",
+            },
+            [
+              _vm._l(_vm.categoryList, function (category) {
+                return _c(
+                  "label",
+                  { key: category.id, staticClass: "check col-4" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.filtri,
+                          expression: "filtri",
+                        },
+                      ],
+                      attrs: { type: "checkbox" },
+                      domProps: {
+                        value: category.name,
+                        checked: Array.isArray(_vm.filtri)
+                          ? _vm._i(_vm.filtri, category.name) > -1
+                          : _vm.filtri,
+                      },
+                      on: {
+                        change: [
+                          function ($event) {
+                            var $$a = _vm.filtri,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = category.name,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 && (_vm.filtri = $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  (_vm.filtri = $$a
+                                    .slice(0, $$i)
+                                    .concat($$a.slice($$i + 1)))
+                              }
+                            } else {
+                              _vm.filtri = $$c
+                            }
+                          },
+                          function ($event) {
+                            return _vm.ricerca()
+                          },
+                        ],
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("img", {
+                      staticStyle: { width: "150px", height: "200px" },
+                      attrs: {
+                        src: "/storage/img/category/" + category.img_category,
+                        alt: "category.name",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "nome-search" }, [
+                      _vm._v(_vm._s(category.name)),
+                    ]),
+                  ]
+                )
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "col-sm-12 col-md-10 d-flex flex-wrap align-items-start mt-md-5 mx-auto",
+                },
+                _vm._l(_vm.usersList, function (user) {
+                  return _c("div", { key: user.id, staticClass: "user" }, [
+                    _c("a", { attrs: { href: "" } }, [
+                      _c("div", { staticClass: "image" }, [
+                        _c("img", {
+                          attrs: { src: "storage/" + user.cover_img, alt: "" },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "p-3 " }, [
+                        _c("h4", [
+                          _c("strong", [
+                            _vm._v("  " + _vm._s(user.name) + "   "),
+                          ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(" Indirizzo  " + _vm._s(user.address) + " "),
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(" Partita IVA: " + _vm._s(user.p_iva)),
+                        ]),
+                      ]),
+                    ]),
+                  ])
+                }),
+                0
+              ),
+            ],
+            2
+          ),
+        ]),
+      ]),
+    ]),
+  ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("prova search")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -22,3 +22,6 @@ Route::get("/users", "Api\UserController@index");
 
 
 Route::get("/categories", "Api\CategoryController@index");
+
+
+Route::post('/search', 'Api\SearchController@Search')->name('search');

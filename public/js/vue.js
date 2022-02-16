@@ -133,6 +133,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   data: function data() {
@@ -147,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       window.axios.get("/api/users").then(function (resp) {
-        _this.usersList = resp.data;
+        _this.usersList = resp.data.data;
         console.log(_this.usersList);
       });
     },
@@ -675,9 +690,33 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v(_vm._s(_vm.msg))]),
-  ])
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _vm._l(_vm.categoryList, function (category) {
+        return _c("div", { key: category.id }, [
+          _c("h2", [_vm._v(_vm._s(category.name))]),
+          _vm._v(" "),
+          _c("img", {
+            attrs: {
+              src: "/storage/img/category/" + category.img_category,
+              alt: "",
+            },
+          }),
+        ])
+      }),
+      _vm._v(" "),
+      _vm._l(_vm.usersList, function (user) {
+        return _c("div", { key: user.id }, [
+          _c("h2", [_vm._v(_vm._s(user.name))]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/storage/" + user.cover_img, alt: "" } }),
+        ])
+      }),
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

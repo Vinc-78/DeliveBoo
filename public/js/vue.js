@@ -407,7 +407,7 @@ __webpack_require__.r(__webpack_exports__);
 
       window.axios.get("/api/users").then(function (resp) {
         _this.usersList = resp.data.data;
-        console.log(_this.usersList);
+        /*  console.log(this.usersList); */
       });
     },
     getCategory: function getCategory() {
@@ -415,7 +415,7 @@ __webpack_require__.r(__webpack_exports__);
 
       window.axios.get("/api/categories").then(function (resp) {
         _this2.categoryList = resp.data;
-        console.log(_this2.categoryList);
+        /* console.log(this.categoryList); */
       });
     }
   },
@@ -539,10 +539,24 @@ __webpack_require__.r(__webpack_exports__);
     },
 
     /* ricerca i ristoranti  */
+
+    /* ricerca: function() {
+          axios.get('/search', {
+          
+          filters: this.filters,
+          
+        })
+        .then(resp => {
+        
+          this.usersList = resp.data.data;
+        })
+    
+    }, */
     ricerca: function ricerca() {
       var _this3 = this;
 
-      window.axios.get('/api/search', {
+      var filtri = this.$route.query.filtri;
+      window.axios.post('/search', {
         params: {
           filters: this.filters
         }
@@ -550,18 +564,13 @@ __webpack_require__.r(__webpack_exports__);
         _this3.usersList = resp.data.data;
       });
     }
-    /*  ricerca() {
-         const filtri =this.$route.query.filtri;
-        window.axios.get('/api/search', {
-      params: {
-        filtri
-        }
-      })
-      .then(resp => {
-        this.usersList = resp.data.data;
-      });
-    },     */
-
+  },
+  watch: {
+    filters: {
+      reload: function reload() {
+        this.ricerca();
+      }
+    }
   },
   mounted: function mounted() {
     this.getUsers();

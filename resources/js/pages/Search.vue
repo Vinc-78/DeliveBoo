@@ -106,43 +106,53 @@ export default {
             },   
             /* ricerca i ristoranti  */
 
-          ricerca() {
+          /* ricerca: function() {
 
-              window.axios.get('/api/search', {
-                params:{
-                  filters: this.filters,
-                }
+              axios.get('/search', {
+                
+                filters: this.filters,
                 
               })
               .then(resp => {
-               
-                
+              
                 this.usersList = resp.data.data;
               })
           
-          },
+          }, */
 
-        /*  ricerca() {
+         ricerca() {
 
            const filtri =this.$route.query.filtri;
 
-          window.axios.get('/api/search', {
+          window.axios.post('/search', {
           params: {
-            filtri
+            filters: this.filters,
             }
           })
           .then(resp => {
             this.usersList = resp.data.data;
           });
-        },     */
+        },     
       
     },
+
+    watch: {
+
+      filters: {
+        reload: function() {
+          this.ricerca(); 
+        }
+      }
+
+    },
+    
 
    
 
     mounted() {
         this.getUsers();
         this.getCategory();
+        
        
     }
 

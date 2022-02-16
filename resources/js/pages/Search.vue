@@ -7,13 +7,13 @@
 
               <div class="container">
 
-                  <h1>Scegli cosa vuoi mangiare</h1>
+                  <h1 class="my-5">Scegli cosa vuoi mangiare</h1>
 
-                  <div class="row row-cols-4  mt-md-4">
+                  <div class="row row-cols-lg-4  row-cols-sm-2  row-cols-md-3  mt-mb-4">
 
                     <!--Stampa delle categorie  con check box-->
                    
-                    <label class="check col-sm" v-for="category in categoryList" :key="category.id">
+                    <label class="check col" v-for="category in categoryList" :key="category.id">
                       
                       <img  class="img-category" :src="'/storage/img/category/' + category.img_category" alt="category.name">
                       <br>
@@ -25,21 +25,27 @@
                       >
                     </label>
                  
+                </div>
 
-                 <!-- stampo i ristoranti  -->
-                <div class="col-sm-12 col-md-10 d-flex flex-wrap align-items-start mt-md-5 mx-auto">
+                <h1 class="my-5">I ristoranti che hai selezionato</h1>
 
+                <h3 class="my-3 text-center">Clicca per vedere il menu </h3>
+
+                <div class="row row-cols-lg-2  row-cols-sm-1   mt-mb-4">
+
+                      <!-- stampo i ristoranti  -->
+                
                     <div
                         v-for="user in usersList"
                         :key="user.id"
-                        class="user"
+                        class="col"
                     >
 
                         <a href=""> <!-- '/show/' + users.id -->  <!-- Serve il router-link -->
-                            <div class="image" >
-                                <img  :src="'storage/' + user.cover_img" alt="" >
+                            
+                            <img  class="img-restaurant" :src="'storage/' + user.cover_img" alt="" >
                                
-                            </div>
+                            
                             <div class="p-3 ">
                                 <h4> <strong>  {{ user.name }}   </strong> </h4>
                                 
@@ -47,14 +53,13 @@
                                
                                 
                             </div>
-                        </a>
+                       </a>
 
                     </div>
 
-                </div>
+                
 
-
-                </div>
+                 </div>
                 
               </div>
 
@@ -141,6 +146,12 @@ export default {
   margin-left:18px;
   height: 18px;
   width: 18px;
+}
+
+.img-restaurant{
+  width:400px; 
+  height:300px;
+  object-fit: cover;
 }
 
 </style>

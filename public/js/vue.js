@@ -508,6 +508,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   data: function data() {
@@ -602,7 +607,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".img-category {\n  width: 150px;\n  height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.nome-search {\n  font-weight: bold;\n  font-size: 25px;\n}\n.check-box {\n  margin-left: 18px;\n  height: 18px;\n  width: 18px;\n}", ""]);
+exports.push([module.i, ".img-category {\n  width: 150px;\n  height: 150px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.nome-search {\n  font-weight: bold;\n  font-size: 25px;\n}\n.check-box {\n  margin-left: 18px;\n  height: 18px;\n  width: 18px;\n}\n.img-restaurant {\n  width: 400px;\n  height: 300px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
 
 // exports
 
@@ -1830,7 +1835,7 @@ var staticRenderFns = [
                     _c(
                       "h3",
                       { staticClass: "text-muted mb-md-0 mb-5 bold-text" },
-                      [_vm._v("Pepper.")]
+                      [_vm._v("My-DeliveBoo")]
                     ),
                   ]
                 ),
@@ -2529,114 +2534,119 @@ var render = function () {
     _c("div", { staticClass: "row justify-content-center mx-sm-5" }, [
       _c("div", { staticClass: "col-sm-12 d-md-flex altezza" }, [
         _c("div", { staticClass: "container" }, [
-          _c("h1", [_vm._v("Scegli cosa vuoi mangiare")]),
+          _c("h1", { staticClass: "my-5" }, [
+            _vm._v("Scegli cosa vuoi mangiare"),
+          ]),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "row row-cols-4  mt-md-4" },
-            [
-              _vm._l(_vm.categoryList, function (category) {
-                return _c(
-                  "label",
-                  { key: category.id, staticClass: "check col-sm" },
-                  [
-                    _c("img", {
-                      staticClass: "img-category",
-                      attrs: {
-                        src: "/storage/img/category/" + category.img_category,
-                        alt: "category.name",
+            {
+              staticClass:
+                "row row-cols-lg-4  row-cols-sm-2  row-cols-md-3  mt-mb-4",
+            },
+            _vm._l(_vm.categoryList, function (category) {
+              return _c(
+                "label",
+                { key: category.id, staticClass: "check col" },
+                [
+                  _c("img", {
+                    staticClass: "img-category",
+                    attrs: {
+                      src: "/storage/img/category/" + category.img_category,
+                      alt: "category.name",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "nome-search" }, [
+                    _vm._v(_vm._s(category.name)),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.filtri,
+                        expression: "filtri",
                       },
-                    }),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "nome-search" }, [
-                      _vm._v(_vm._s(category.name)),
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.filtri,
-                          expression: "filtri",
+                    ],
+                    staticClass: "check-box",
+                    attrs: { type: "checkbox" },
+                    domProps: {
+                      value: category.name,
+                      checked: Array.isArray(_vm.filtri)
+                        ? _vm._i(_vm.filtri, category.name) > -1
+                        : _vm.filtri,
+                    },
+                    on: {
+                      change: [
+                        function ($event) {
+                          var $$a = _vm.filtri,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = category.name,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.filtri = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.filtri = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.filtri = $$c
+                          }
+                        },
+                        function ($event) {
+                          return _vm.ricerca()
                         },
                       ],
-                      staticClass: "check-box",
-                      attrs: { type: "checkbox" },
-                      domProps: {
-                        value: category.name,
-                        checked: Array.isArray(_vm.filtri)
-                          ? _vm._i(_vm.filtri, category.name) > -1
-                          : _vm.filtri,
-                      },
-                      on: {
-                        change: [
-                          function ($event) {
-                            var $$a = _vm.filtri,
-                              $$el = $event.target,
-                              $$c = $$el.checked ? true : false
-                            if (Array.isArray($$a)) {
-                              var $$v = category.name,
-                                $$i = _vm._i($$a, $$v)
-                              if ($$el.checked) {
-                                $$i < 0 && (_vm.filtri = $$a.concat([$$v]))
-                              } else {
-                                $$i > -1 &&
-                                  (_vm.filtri = $$a
-                                    .slice(0, $$i)
-                                    .concat($$a.slice($$i + 1)))
-                              }
-                            } else {
-                              _vm.filtri = $$c
-                            }
-                          },
-                          function ($event) {
-                            return _vm.ricerca()
-                          },
-                        ],
-                      },
-                    }),
-                  ]
-                )
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-sm-12 col-md-10 d-flex flex-wrap align-items-start mt-md-5 mx-auto",
-                },
-                _vm._l(_vm.usersList, function (user) {
-                  return _c("div", { key: user.id, staticClass: "user" }, [
-                    _c("a", { attrs: { href: "" } }, [
-                      _c("div", { staticClass: "image" }, [
-                        _c("img", {
-                          attrs: { src: "storage/" + user.cover_img, alt: "" },
-                        }),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "p-3 " }, [
-                        _c("h4", [
-                          _c("strong", [
-                            _vm._v("  " + _vm._s(user.name) + "   "),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("span", [
-                          _vm._v(" Indirizzo  " + _vm._s(user.address) + " "),
-                        ]),
-                        _vm._v(" "),
-                        _c("br"),
-                      ]),
+                    },
+                  }),
+                ]
+              )
+            }),
+            0
+          ),
+          _vm._v(" "),
+          _c("h1", { staticClass: "my-5" }, [
+            _vm._v("I ristoranti che hai selezionato"),
+          ]),
+          _vm._v(" "),
+          _c("h3", { staticClass: "my-3 text-center" }, [
+            _vm._v("Clicca per vedere il menu "),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row row-cols-lg-2  row-cols-sm-1   mt-mb-4" },
+            _vm._l(_vm.usersList, function (user) {
+              return _c("div", { key: user.id, staticClass: "col" }, [
+                _c("a", { attrs: { href: "" } }, [
+                  _c("img", {
+                    staticClass: "img-restaurant",
+                    attrs: { src: "storage/" + user.cover_img, alt: "" },
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "p-3 " }, [
+                    _c("h4", [
+                      _c("strong", [_vm._v("  " + _vm._s(user.name) + "   ")]),
                     ]),
-                  ])
-                }),
-                0
-              ),
-            ],
-            2
+                    _vm._v(" "),
+                    _c("span", [
+                      _vm._v(" Indirizzo  " + _vm._s(user.address) + " "),
+                    ]),
+                    _vm._v(" "),
+                    _c("br"),
+                  ]),
+                ]),
+              ])
+            }),
+            0
           ),
         ]),
       ]),

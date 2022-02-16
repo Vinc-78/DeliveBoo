@@ -131,12 +131,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   data: function data() {
     return {
-      msg: " Funziona !!!"
+      msg: " Funziona !!!",
+      usersList: [],
+      categoryList: []
     };
+  },
+  methods: {
+    getUsers: function getUsers() {
+      var _this = this;
+
+      window.axios.get("/api/users").then(function (resp) {
+        _this.usersList = resp.data;
+        console.log(_this.usersList);
+      });
+    },
+    getCategory: function getCategory() {
+      var _this2 = this;
+
+      window.axios.get("/api/categories").then(function (resp) {
+        _this2.categoryList = resp.data;
+        console.log(_this2.categoryList);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getUsers();
+    this.getCategory();
   }
 });
 
@@ -16203,7 +16229,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\giuli\OneDrive\Desktop\Boolean\progetto finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

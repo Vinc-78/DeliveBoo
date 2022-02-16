@@ -27,7 +27,7 @@ class UserController extends Controller
     if ($limit) {
       $usersList = $usersList->limit($limit)->get();
     } else {
-      $usersList = $usersList->paginate(2);
+      $usersList = $usersList->paginate(3);
     }
 
     return response()->json($usersList);

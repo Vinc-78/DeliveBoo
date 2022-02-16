@@ -7,21 +7,24 @@
 
               <div class="container">
 
-               
+                  <h1>Scegli cosa vuoi mangiare</h1>
 
-                  <div class="row text-left d-flex align-items-start align-self-start mt-md-5 cartella">
+                  <div class="row row-cols-4  mt-md-4">
 
                     <!--Stampa delle categorie  con check box-->
-                    <label class="check col-4" v-for="category in categoryList" :key="category.id">
-                      <input  type="checkbox"
+                   
+                    <label class="check col-sm" v-for="category in categoryList" :key="category.id">
+                      
+                      <img  class="img-category" :src="'/storage/img/category/' + category.img_category" alt="category.name">
+                      <br>
+                      <span class="nome-search">{{ category.name }}</span>
+                      <input class="check-box" type="checkbox"
                             :value="category.name"
                             v-model="filtri"
                             @change="ricerca()"
                       >
-                      <img style="width:150px; height:200px" :src="'/storage/img/category/' + category.img_category" alt="category.name">
-                      <span class="nome-search">{{ category.name }}</span>
                     </label>
-               
+                 
 
                  <!-- stampo i ristoranti  -->
                 <div class="col-sm-12 col-md-10 d-flex flex-wrap align-items-start mt-md-5 mx-auto">
@@ -41,7 +44,7 @@
                                 <h4> <strong>  {{ user.name }}   </strong> </h4>
                                 
                                 <span> Indirizzo  {{user.address}} </span>  <br>
-                                <span> Partita IVA: {{user.p_iva}}</span> 
+                               
                                 
                             </div>
                         </a>
@@ -121,5 +124,23 @@ export default {
 </script>
 
 <style lang="scss">
+
+.img-category{
+  width:150px; 
+  height:150px;
+  object-fit: cover;
+  
+}
+
+.nome-search{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.check-box {
+  margin-left:18px;
+  height: 18px;
+  width: 18px;
+}
 
 </style>

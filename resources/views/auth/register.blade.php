@@ -24,7 +24,7 @@
 
                     {{-- NOME --}}
                     <div class="row text-left mb-5">
-                        <label for="name" class="p-0 col-12"><h5>Inserisci il nome del ristorante *</h5></label>
+                        <label for="name" class="p-0 col-12"><h5>Inserisci il nome del ristorante <span class="small">*</span></h5></label>
 
                         <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
 
@@ -44,7 +44,7 @@
                         
                         <div class="col-12 p-0">
 
-                            <label for="email" class="p-0 col-12"><h5>Inserisci la e-mail del ristorante *</h5></label>
+                            <label for="email" class="p-0 col-12"><h5>Inserisci la e-mail del ristorante <span class="small">*</span></h5></label>
                             
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
                                 
@@ -68,7 +68,7 @@
                         {{-- password --}}
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 p-0 mb-5">
 
-                            <label for="password" class="p-0 col-12"><h5>Inserisci la password del profilo *</h5></label>
+                            <label for="password" class="p-0 col-12"><h5>Inserisci la password del profilo <span class="small">*</span></h5></label>
                             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-8 px-0">
                                 
                                 <input type="password" id="password" name="password" placeholder="Inserisci password" class="form-control rounded-0 border  @error('password') is-invalid @enderror"
@@ -88,7 +88,7 @@
                         {{-- conferma password --}}
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 p-0 mb-5">
 
-                            <label for="password-confirm" class="p-0 col-12"><h5>Coferma password *</h5></label>
+                            <label for="password-confirm" class="p-0 col-12"><h5>Coferma password <span class="small">*</span></h5></label>
                             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-8 px-0">
                                 
                                 <input type="password" id="password-confirm" name="password_confirmation" placeholder="Conferma password" class="form-control rounded-0 border" required autocomplete="new-password">
@@ -103,7 +103,7 @@
                         
                         <div class="col-12 p-0">
 
-                            <label for="address" class="p-0 col-12"><h5>Inserisci l'indirizzo del ristorante *</h5></label>
+                            <label for="address" class="p-0 col-12"><h5>Inserisci l'indirizzo del ristorante <span class="small">*</span></h5></label>
                             
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
                                 
@@ -124,7 +124,7 @@
                         
                         <div class="col-12 p-0">
 
-                            <label for="p_iva" class="p-0 col-12"><h5>Inserisci la partita IVA dell'attività *</h5></label>
+                            <label for="p_iva" class="p-0 col-12"><h5>Inserisci la partita IVA dell'attività <span class="small">*</span></h5></label>
                             
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
                                 
@@ -158,7 +158,7 @@
                         
                         <div class="col-12 p-0">
 
-                            <h5>Inserisci la/le categorie di cui fa parte il tuo ristorante *</h5>
+                            <h5>Inserisci la/le categorie di cui fa parte il tuo ristorante <span class="small">*</span></h5>
                             <div class="form-check">
                                 @foreach ($categories as $category)
                                     <input name="categories[]" class="form-check-input" type="checkbox" value="{{ $category->id }}" id="flexCheckDefault">
@@ -181,7 +181,7 @@
                     {{-- Submit --}}                      
                     <div class="form-group row mb-0">
                         <div class="col-12 text-center">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary rounded-0">
                                 {{ __('Register') }}
                             </button>
                         </div>

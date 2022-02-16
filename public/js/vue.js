@@ -517,7 +517,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "App",
   data: function data() {
     return {
-      filtri: [],
+      filters: [],
       usersList: [],
       categoryList: []
     };
@@ -538,19 +538,30 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
 
-    /* ricerca i ristoranti tramite passando le select */
+    /* ricerca i ristoranti  */
     ricerca: function ricerca() {
       var _this3 = this;
 
-      var filtri = this.$route.query.filtri;
       window.axios.get('/api/search', {
         params: {
-          filtri: filtri
+          filters: this.filters
         }
       }).then(function (resp) {
         _this3.usersList = resp.data.data;
       });
     }
+    /*  ricerca() {
+         const filtri =this.$route.query.filtri;
+        window.axios.get('/api/search', {
+      params: {
+        filtri
+        }
+      })
+      .then(resp => {
+        this.usersList = resp.data.data;
+      });
+    },     */
+
   },
   mounted: function mounted() {
     this.getUsers();
@@ -2571,37 +2582,37 @@ var render = function () {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.filtri,
-                        expression: "filtri",
+                        value: _vm.filters,
+                        expression: "filters",
                       },
                     ],
                     staticClass: "check-box",
                     attrs: { type: "checkbox" },
                     domProps: {
                       value: category.name,
-                      checked: Array.isArray(_vm.filtri)
-                        ? _vm._i(_vm.filtri, category.name) > -1
-                        : _vm.filtri,
+                      checked: Array.isArray(_vm.filters)
+                        ? _vm._i(_vm.filters, category.name) > -1
+                        : _vm.filters,
                     },
                     on: {
                       change: [
                         function ($event) {
-                          var $$a = _vm.filtri,
+                          var $$a = _vm.filters,
                             $$el = $event.target,
                             $$c = $$el.checked ? true : false
                           if (Array.isArray($$a)) {
                             var $$v = category.name,
                               $$i = _vm._i($$a, $$v)
                             if ($$el.checked) {
-                              $$i < 0 && (_vm.filtri = $$a.concat([$$v]))
+                              $$i < 0 && (_vm.filters = $$a.concat([$$v]))
                             } else {
                               $$i > -1 &&
-                                (_vm.filtri = $$a
+                                (_vm.filters = $$a
                                   .slice(0, $$i)
                                   .concat($$a.slice($$i + 1)))
                             }
                           } else {
-                            _vm.filtri = $$c
+                            _vm.filters = $$c
                           }
                         },
                         function ($event) {

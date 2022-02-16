@@ -20,7 +20,7 @@
                       <span class="nome-search">{{ category.name }}</span>
                       <input class="check-box" type="checkbox"
                             :value="category.name"
-                            v-model="filtri"
+                            v-model="filters"
                             @change="ricerca()"
                       >
                     </label>
@@ -80,7 +80,7 @@ export default {
  name:"App",
     data() {
         return{
-             filtri:[],
+             filters: [],
              usersList: [],
              categoryList: [],
         }
@@ -92,7 +92,7 @@ export default {
                 window.axios.get("/api/users").then((resp) => {
                  this.usersList = resp.data.data;
 
-               
+                
                 
                  });
             },
@@ -100,12 +100,29 @@ export default {
         getCategory(){
                   window.axios.get("/api/categories").then((resp)=> {
                     this.categoryList =resp.data;
-
+                
                    
                 });
             },   
-            /* ricerca i ristoranti tramite passando le select */
-         ricerca() {
+            /* ricerca i ristoranti  */
+
+          ricerca() {
+
+              window.axios.get('/api/search', {
+                params:{
+                  filters: this.filters,
+                }
+                
+              })
+              .then(resp => {
+               
+                
+                this.usersList = resp.data.data;
+              })
+          
+          },
+
+        /*  ricerca() {
 
            const filtri =this.$route.query.filtri;
 
@@ -117,7 +134,7 @@ export default {
           .then(resp => {
             this.usersList = resp.data.data;
           });
-        },    
+        },     */
       
     },
 
@@ -126,6 +143,7 @@ export default {
     mounted() {
         this.getUsers();
         this.getCategory();
+       
     }
 
 }

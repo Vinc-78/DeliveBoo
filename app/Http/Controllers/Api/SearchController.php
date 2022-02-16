@@ -8,16 +8,19 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
     {
         public function search(Request $request) {
-            $filtri = $request->query('filtri');
+
+            $filters = $request->query('filters');
+
             
-            $users = User::with('categories')->orderBy('name');
-            
-            foreach ($filtri as $filtro) {
-                
-                $users->whereHas('categories', function ($query) use ($filtro) {
-                            $query->where('name', $filtro);
-                        });
-                }
-            return response () -> json($users->get(), 200);
-    }
+            $usersList = User::with('categories')->get();
+
+            foreach ($filters as $filter) {
+              $usersList->whereHas('categories', function ($query) use ($filter) {
+                        $query->where('name', $filter);
+                     });
+            }
+
+            return response()->json($usersList);
+           
+          }
 }

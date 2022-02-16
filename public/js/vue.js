@@ -536,14 +536,17 @@ __webpack_require__.r(__webpack_exports__);
       window.axios.get("/api/categories").then(function (resp) {
         _this2.categoryList = resp.data;
       });
-    }
-  },
-  computed: {
+    },
+
+    /* ricerca i ristoranti tramite passando le select */
     ricerca: function ricerca() {
       var _this3 = this;
 
-      axios.post('/search', {
-        filtri: this.filtri
+      var filtri = this.$route.query.filtri;
+      window.axios.get('/api/search', {
+        params: {
+          filtri: filtri
+        }
       }).then(function (resp) {
         _this3.usersList = resp.data.data;
       });

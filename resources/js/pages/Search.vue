@@ -103,22 +103,25 @@ export default {
 
                    
                 });
-            },       
-      
-    },
+            },   
+            /* ricerca i ristoranti tramite passando le select */
+         ricerca() {
 
-    computed: {
+           const filtri =this.$route.query.filtri;
 
-        ricerca: function() {
-          axios.post('/search', {
-            filtri: this.filtri,
+          window.axios.get('/api/search', {
+          params: {
+            filtri
+            }
           })
           .then(resp => {
             this.usersList = resp.data.data;
           });
-        },
-
+        },    
+      
     },
+
+   
 
     mounted() {
         this.getUsers();

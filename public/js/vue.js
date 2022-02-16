@@ -2474,7 +2474,7 @@ var staticRenderFns = [
         staticClass:
           "col-xs-12 col-sm-12 col-lg-6 d-flex justify-content-center align-items-center",
       },
-      [_c("img", { attrs: { src: "/storage/img/einstein.jpg", alt: "" } })]
+      [_c("img", { attrs: { src: "/storage/img/work-with-us.jpg", alt: "" } })]
     )
   },
   function () {
@@ -2499,7 +2499,7 @@ var staticRenderFns = [
       _c("a", { attrs: { href: "/register" } }, [
         _c("img", {
           staticClass: "imgBanner w-100",
-          attrs: { src: "/storage/img/einstein.jpg", alt: "" },
+          attrs: { src: "/storage/img/work-with-us.jpg", alt: "" },
         }),
         _vm._v(" "),
         _c("h1", { staticClass: "text-banner" }, [
@@ -18470,11 +18470,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\anto-\Desktop\Progetto Finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
-=======
 module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
->>>>>>> 5d6c54e4549a4d67f39b764715a6cb0c47bbb3b9
 
 
 /***/ })

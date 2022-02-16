@@ -5,21 +5,25 @@
     <div class="row justify-content-center mx-sm-5">
             <div class="col-sm-12 d-md-flex altezza">
 
-                <div class="text-left d-sm-flex flex-sm-wrap flex-md-column align-items-start align-self-start mt-md-5 cartella">
+              <div class="container">
+
+               
+
+                  <div class="row text-left d-flex align-items-start align-self-start mt-md-5 cartella">
 
                     <!--Stampa delle categorie  con check box-->
-                    <label class="check" v-for="category in categoryList" :key="category.id">
+                    <label class="check col-4" v-for="category in categoryList" :key="category.id">
                       <input  type="checkbox"
                             :value="category.name"
                             v-model="filtri"
                             @change="ricerca()"
                       >
-                      <img :src="'/storage/img/category/' + category.img_category" alt="category.name">
+                      <img style="width:150px; height:200px" :src="'/storage/img/category/' + category.img_category" alt="category.name">
                       <span class="nome-search">{{ category.name }}</span>
                     </label>
-                </div>
+               
 
-                <!-- stampo i ristoranti appartenenti alla categoria selezionata dall'utente -->
+                 <!-- stampo i ristoranti  -->
                 <div class="col-sm-12 col-md-10 d-flex flex-wrap align-items-start mt-md-5 mx-auto">
 
                     <div
@@ -30,7 +34,7 @@
 
                         <a href=""> <!-- '/show/' + users.id -->  <!-- Serve il router-link -->
                             <div class="image" >
-                                <img class="img-fluid" :src="'storage/img/restaurant' + user.cover_img" alt="" >
+                                <img  :src="'storage/' + user.cover_img" alt="" >
                                
                             </div>
                             <div class="p-3 ">
@@ -45,6 +49,15 @@
                     </div>
 
                 </div>
+
+
+                </div>
+                
+              </div>
+
+                
+
+               
             </div>
         </div>
         
@@ -59,7 +72,7 @@ export default {
  name:"App",
     data() {
         return{
-           
+             filtri:[],
              usersList: [],
              categoryList: [],
         }
@@ -71,7 +84,7 @@ export default {
                 window.axios.get("/api/users").then((resp) => {
                  this.usersList = resp.data.data;
 
-                 console.log(this.usersList);
+               
                 
                  });
             },
@@ -80,13 +93,13 @@ export default {
                   window.axios.get("/api/categories").then((resp)=> {
                     this.categoryList =resp.data;
 
-                    console.log(this.categoryList);
+                   
                 });
             },       
       
     },
 
-    computed:{
+    computed: {
 
         ricerca: function() {
           axios.post('/search', {

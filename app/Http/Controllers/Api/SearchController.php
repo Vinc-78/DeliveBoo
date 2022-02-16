@@ -12,6 +12,7 @@ class SearchController extends Controller
             
             $users = User::with('categories')->orderBy('name');
             foreach ($filtri as $filtro) {
+                
                 $users->whereHas('categories', function ($query) use ($filtro) {
                             $query->where('name', $filtro);
                         });

@@ -181,7 +181,7 @@
                     {{-- Submit --}}                      
                     <div class="form-group row mb-0">
                         <div class="col-12 text-center">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary rounded-0">
                                 {{ __('Register') }}
                             </button>
                         </div>

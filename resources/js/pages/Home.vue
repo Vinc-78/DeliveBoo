@@ -2,21 +2,14 @@
 
     <div class="container">
 
-        <div v-for="category in categoryList" :key="category.id">
-
+        <!-- <div v-for="category in categoryList" :key="category.id">
             <h2>{{category.name}}</h2>
-
             <img :src="'/storage/img/category/' + category.img_category" alt="">
-
         </div>
-
         <div v-for="user in usersList" :key="user.id">
-
             <h2>{{user.name}}</h2>
-
             <img :src="'/storage/' + user.cover_img" alt="">
-
-        </div>
+        </div> -->
 
         
         

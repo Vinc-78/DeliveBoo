@@ -25,7 +25,6 @@
 
                 <div class="mx-4">
 
-                    
                     <form method="POST" action="{{ route('admin.dishes.store') }}"
                     enctype="multipart/form-data">
                         @csrf

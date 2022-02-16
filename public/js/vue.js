@@ -141,13 +141,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   data: function data() {
@@ -690,33 +683,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _vm._l(_vm.categoryList, function (category) {
-        return _c("div", { key: category.id }, [
-          _c("h2", [_vm._v(_vm._s(category.name))]),
-          _vm._v(" "),
-          _c("img", {
-            attrs: {
-              src: "/storage/img/category/" + category.img_category,
-              alt: "",
-            },
-          }),
-        ])
-      }),
-      _vm._v(" "),
-      _vm._l(_vm.usersList, function (user) {
-        return _c("div", { key: user.id }, [
-          _c("h2", [_vm._v(_vm._s(user.name))]),
-          _vm._v(" "),
-          _c("img", { attrs: { src: "/storage/" + user.cover_img, alt: "" } }),
-        ])
-      }),
-    ],
-    2
-  )
+  return _c("div", { staticClass: "container" })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -16268,7 +16235,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\giuli\OneDrive\Desktop\Boolean\progetto finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

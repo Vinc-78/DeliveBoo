@@ -366,7 +366,8 @@ __webpack_require__.r(__webpack_exports__);
     getDishes: function getDishes() {
       var _this = this;
 
-      window.axios.get("/api/dishes").then(function (resp) {
+      var id = this.$route.params.id;
+      window.axios.get("/api/dishes/".concat(id)).then(function (resp) {
         _this.allDishes = resp.data;
       });
     }
@@ -2474,7 +2475,14 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" })
+  return _c(
+    "div",
+    { staticClass: "container" },
+    _vm._l(_vm.allDishes, function (dish) {
+      return _c("h1", { key: dish.id }, [_vm._v(_vm._s(dish.name))])
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2704,26 +2712,34 @@ var render = function () {
                 "div",
                 { key: user.id, staticClass: "col" },
                 [
-                  _c("router-link", { attrs: { to: { name: "dishes" } } }, [
-                    _c("img", {
-                      staticClass: "img-restaurant",
-                      attrs: { src: "storage/" + user.cover_img, alt: "" },
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "p-3 " }, [
-                      _c("h4", [
-                        _c("strong", [
-                          _vm._v("  " + _vm._s(user.name) + "   "),
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: { name: "dishes", params: { id: user.id } },
+                      },
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "img-restaurant",
+                        attrs: { src: "storage/" + user.cover_img, alt: "" },
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "p-3 " }, [
+                        _c("h4", [
+                          _c("strong", [
+                            _vm._v("  " + _vm._s(user.name) + "   "),
+                          ]),
                         ]),
+                        _vm._v(" "),
+                        _c("span", [
+                          _vm._v(" Indirizzo  " + _vm._s(user.address) + " "),
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
                       ]),
-                      _vm._v(" "),
-                      _c("span", [
-                        _vm._v(" Indirizzo  " + _vm._s(user.address) + " "),
-                      ]),
-                      _vm._v(" "),
-                      _c("br"),
-                    ]),
-                  ]),
+                    ]
+                  ),
                 ],
                 1
               )
@@ -18585,7 +18601,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "search",
     component: _pages_Search_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: "/dishes",
+    path: "/dishes/:id",
 
     /*  /:id */
     name: "dishes",

@@ -11,11 +11,10 @@ class DishController extends Controller
     public function index($id) {
 
          
-        $allDishes = User::with('dishes')->get();
+        $allDishes = User::all();
 
-       dd($allDishes);
 
-        return json_encode($allDishes);
+        return response()->json(['allDishes'=> $allDishes]);
 }
 
 }

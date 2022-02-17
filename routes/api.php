@@ -23,7 +23,7 @@ Route::get("/users", "Api\UserController@index");
 
 Route::get("/categories", "Api\CategoryController@index");
 
-Route::get('/dishes', 'Api\DishController@index');  /* Controller per menù */
+Route::get('/dishes/{id}', 'Api\AllDishesController@index');  /* Controller per menù */
 
 
 /* Route::post('/search', 'Api\SearchController@search'); */

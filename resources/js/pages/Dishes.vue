@@ -2,7 +2,7 @@
 
     <div class="container">
 
-    
+        <h1 v-for="dish in allDishes" :key="dish.id">{{dish.name}}</h1>
 
     </div>
   
@@ -21,7 +21,10 @@ export default {
     methods: {
 
         getDishes(){
-                window.axios.get("/api/dishes").then((resp) => {
+
+                let id = this.$route.params.id;
+
+                window.axios.get(`/api/dishes/${id}`).then((resp) => {
                  this.allDishes = resp.data;
 
                 

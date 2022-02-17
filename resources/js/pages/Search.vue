@@ -41,7 +41,7 @@
                         class="col"
                     >
 
-                        <router-link :to="{ name:'dishes' }" class="">  <!-- name:'dishes/' + user.id  Dovrebbe andare l'id -->
+                        <router-link :to="{ name:'dishes',params:{id:user.id} }" class="">  <!-- name:'dishes/' + user.id  Dovrebbe andare l'id -->
                             
                             <img  class="img-restaurant" :src="'storage/' + user.cover_img" alt="" >
                                

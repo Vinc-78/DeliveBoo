@@ -551,7 +551,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       var filtri = this.filters;
-      window.axios.get('/search', {
+      window.axios.post('/search', {
         params: {
           filtri: filtri
         }
@@ -560,13 +560,14 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  watch: {
-    filters: {
-      reload: function reload() {
-        this.ricerca();
+
+  /* watch: {
+      filters: {
+      reload: function() {
+        this.ricerca(); 
       }
     }
-  },
+    }, */
   mounted: function mounted() {
     this.getUsers();
     this.getCategory();
@@ -2619,9 +2620,7 @@ var render = function () {
                             _vm.filters = $$c
                           }
                         },
-                        function ($event) {
-                          return _vm.ricerca()
-                        },
+                        _vm.ricerca,
                       ],
                     },
                   }),
@@ -18488,7 +18487,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\eleal\Desktop\Progetto finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

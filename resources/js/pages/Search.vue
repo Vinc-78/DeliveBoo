@@ -119,7 +119,7 @@ export default {
 
           const filtri =this.filters;
 
-          window.axios.get('/search', {
+          window.axios.post('/search', {
                 params: {
                       filtri
                   }
@@ -131,7 +131,7 @@ export default {
       
     },
 
-    watch: {
+    /* watch: {
 
       filters: {
         reload: function() {
@@ -139,7 +139,7 @@ export default {
         }
       }
 
-    },
+    }, */
     
 
    

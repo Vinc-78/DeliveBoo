@@ -10,18 +10,9 @@ class SearchController extends Controller
     {
         public function search(Request $request) {
 
-          $usersList = User::withCount(['filters' => function($query){
-              $query->withFilters();
-          }])
-
-          ->get();
-
-          return response()->json($usersList);
-
-
-           /* versione n.2  
-           
+         
             $filter = $request->filters;
+            
             $usersList = User::with("categories");
 
             $categories =explode(",", $filter["categories"]);
@@ -31,7 +22,7 @@ class SearchController extends Controller
                     $query->where('categories.id', $category);
                 });
             }
-            return json_encode($usersList->get()); */
+            return json_encode($usersList->get());
         
 
         /*    versione n.1
@@ -49,6 +40,18 @@ class SearchController extends Controller
             }
 
             return response()->json($usersList); */
+
+
+            /*  versione 3  */
+
+            /* $usersList = User::withCount(['filters' => function($query){
+                $query->withFilters();
+            }])
+  
+            ->get();
+  
+            return response()->json($usersList); */
+  
            
           }
 }

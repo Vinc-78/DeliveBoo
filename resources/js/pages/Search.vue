@@ -57,15 +57,10 @@
 
                     </div>
 
-                
-
                  </div>
                 
               </div>
-
-                
-
-               
+ 
             </div>
         </div>
         
@@ -122,12 +117,12 @@ export default {
 
          ricerca() {
 
-           const filtri =this.$route.query.filtri;
+          const filtri =this.filters;
 
-          window.axios.post('/search', {
-          params: {
-            filters: this.filters,
-            }
+          window.axios.get('/search', {
+                params: {
+                      filtri
+                  }
           })
           .then(resp => {
             this.usersList = resp.data.data;

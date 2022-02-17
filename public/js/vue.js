@@ -508,11 +508,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   data: function data() {
@@ -555,10 +550,10 @@ __webpack_require__.r(__webpack_exports__);
     ricerca: function ricerca() {
       var _this3 = this;
 
-      var filtri = this.$route.query.filtri;
-      window.axios.post('/search', {
+      var filtri = this.filters;
+      window.axios.get('/search', {
         params: {
-          filters: this.filters
+          filtri: filtri
         }
       }).then(function (resp) {
         _this3.usersList = resp.data.data;

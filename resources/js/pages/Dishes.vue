@@ -19,18 +19,21 @@ export default {
     },
 
     methods: {
+/* 
+      getDishes() {
+            const url = "/api/dishes/" + this.$route.params.dish;
+            window.axios
+                .get(url)
+                .then((resp) => {
+                    this.category = resp.data;
+                })
+           }, */
 
         getDishes(){
-
-                let id = this.$route.params.id;
-
-                window.axios.get(`/api/dishes/${id}`).then((resp) => {
-                 this.allDishes = resp.data;
-
-                
-                 });
-            },
-
+            window.axios.get('/api/dishes/' + this.id).then(resp=>{
+                this.allDishes=resp.data
+            });
+        }
       
       
     },

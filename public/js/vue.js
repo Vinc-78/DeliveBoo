@@ -363,11 +363,19 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    /* 
+          getDishes() {
+                const url = "/api/dishes/" + this.$route.params.dish;
+                window.axios
+                    .get(url)
+                    .then((resp) => {
+                        this.category = resp.data;
+                    })
+               }, */
     getDishes: function getDishes() {
       var _this = this;
 
-      var id = this.$route.params.id;
-      window.axios.get("/api/dishes/".concat(id)).then(function (resp) {
+      window.axios.get('/api/dishes/' + this.id).then(function (resp) {
         _this.allDishes = resp.data;
       });
     }
@@ -18645,7 +18653,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\eleal\Desktop\Progetto finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

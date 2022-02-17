@@ -48,7 +48,6 @@
                      <!-- menu è il piatto -->
                 
                 </div>
-                
             </div>
 
             <div v-else>

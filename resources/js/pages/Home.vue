@@ -59,7 +59,7 @@ export default {
       window.axios.get("/api/users").then((resp) => {
         this.usersList = resp.data.data;
 
-        console.log(this.usersList);
+       /*  console.log(this.usersList); */
       });
     },
 
@@ -67,7 +67,7 @@ export default {
       window.axios.get("/api/categories").then((resp) => {
         this.categoryList = resp.data;
 
-        console.log(this.categoryList);
+        /* console.log(this.categoryList); */
       });
     },
   },

@@ -20,7 +20,7 @@
                       <span class="nome-search">{{ category.name }}</span>
                       <input class="check-box" type="checkbox"
                             :value="category.name"
-                            v-model="filtri"
+                            v-model="filters"
                             @change="ricerca()"
                       >
                     </label>
@@ -57,15 +57,10 @@
 
                     </div>
 
-                
-
                  </div>
                 
               </div>
-
-                
-
-               
+ 
             </div>
         </div>
         
@@ -80,7 +75,7 @@ export default {
  name:"App",
     data() {
         return{
-             filtri:[],
+             filters: [],
              usersList: [],
              categoryList: [],
         }
@@ -92,7 +87,7 @@ export default {
                 window.axios.get("/api/users").then((resp) => {
                  this.usersList = resp.data.data;
 
-               
+                
                 
                  });
             },
@@ -100,29 +95,60 @@ export default {
         getCategory(){
                   window.axios.get("/api/categories").then((resp)=> {
                     this.categoryList =resp.data;
-
+                
                    
                 });
-            },       
-      
-    },
+            },   
+            /* ricerca i ristoranti  */
 
-    computed: {
+          /* ricerca: function() {
 
-        ricerca: function() {
-          axios.post('/search', {
-            filtri: this.filtri,
+              axios.get('/search', {
+                
+                filters: this.filters,
+                
+              })
+              .then(resp => {
+              
+                this.usersList = resp.data.data;
+              })
+          
+          }, */
+
+         ricerca() {
+
+          const filtri =this.filters;
+
+          window.axios.get('/search', {
+                params: {
+                      filtri
+                  }
           })
           .then(resp => {
             this.usersList = resp.data.data;
           });
-        },
+        },     
+      
+    },
+
+    watch: {
+
+      filters: {
+        reload: function() {
+          this.ricerca(); 
+        }
+      }
 
     },
+    
+
+   
 
     mounted() {
         this.getUsers();
         this.getCategory();
+        
+       
     }
 
 }

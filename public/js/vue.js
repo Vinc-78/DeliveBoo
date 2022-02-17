@@ -407,7 +407,7 @@ __webpack_require__.r(__webpack_exports__);
 
       window.axios.get("/api/users").then(function (resp) {
         _this.usersList = resp.data.data;
-        console.log(_this.usersList);
+        /*  console.log(this.usersList); */
       });
     },
     getCategory: function getCategory() {
@@ -415,7 +415,7 @@ __webpack_require__.r(__webpack_exports__);
 
       window.axios.get("/api/categories").then(function (resp) {
         _this2.categoryList = resp.data;
-        console.log(_this2.categoryList);
+        /* console.log(this.categoryList); */
       });
     }
   },
@@ -508,16 +508,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   data: function data() {
     return {
-      filtri: [],
+      filters: [],
       usersList: [],
       categoryList: []
     };
@@ -536,17 +531,40 @@ __webpack_require__.r(__webpack_exports__);
       window.axios.get("/api/categories").then(function (resp) {
         _this2.categoryList = resp.data;
       });
-    }
-  },
-  computed: {
+    },
+
+    /* ricerca i ristoranti  */
+
+    /* ricerca: function() {
+          axios.get('/search', {
+          
+          filters: this.filters,
+          
+        })
+        .then(resp => {
+        
+          this.usersList = resp.data.data;
+        })
+    
+    }, */
     ricerca: function ricerca() {
       var _this3 = this;
 
-      axios.post('/search', {
-        filtri: this.filtri
+      var filtri = this.filters;
+      window.axios.get('/search', {
+        params: {
+          filtri: filtri
+        }
       }).then(function (resp) {
         _this3.usersList = resp.data.data;
       });
+    }
+  },
+  watch: {
+    filters: {
+      reload: function reload() {
+        this.ricerca();
+      }
     }
   },
   mounted: function mounted() {
@@ -2568,37 +2586,37 @@ var render = function () {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.filtri,
-                        expression: "filtri",
+                        value: _vm.filters,
+                        expression: "filters",
                       },
                     ],
                     staticClass: "check-box",
                     attrs: { type: "checkbox" },
                     domProps: {
                       value: category.name,
-                      checked: Array.isArray(_vm.filtri)
-                        ? _vm._i(_vm.filtri, category.name) > -1
-                        : _vm.filtri,
+                      checked: Array.isArray(_vm.filters)
+                        ? _vm._i(_vm.filters, category.name) > -1
+                        : _vm.filters,
                     },
                     on: {
                       change: [
                         function ($event) {
-                          var $$a = _vm.filtri,
+                          var $$a = _vm.filters,
                             $$el = $event.target,
                             $$c = $$el.checked ? true : false
                           if (Array.isArray($$a)) {
                             var $$v = category.name,
                               $$i = _vm._i($$a, $$v)
                             if ($$el.checked) {
-                              $$i < 0 && (_vm.filtri = $$a.concat([$$v]))
+                              $$i < 0 && (_vm.filters = $$a.concat([$$v]))
                             } else {
                               $$i > -1 &&
-                                (_vm.filtri = $$a
+                                (_vm.filters = $$a
                                   .slice(0, $$i)
                                   .concat($$a.slice($$i + 1)))
                             }
                           } else {
-                            _vm.filtri = $$c
+                            _vm.filters = $$c
                           }
                         },
                         function ($event) {

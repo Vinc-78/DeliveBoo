@@ -146,7 +146,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
 
 .img-category{
   width:150px; 

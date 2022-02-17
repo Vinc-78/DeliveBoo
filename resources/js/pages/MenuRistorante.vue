@@ -4,12 +4,11 @@
 
                 <div class="text-center title-menu mb-5 ">
 
-                    <h3>Menù</h3>
+                   <h1 class="border-bottom border-dark pb-4"> {{MyMenu.name}} </h1><!-- MyMenu è User -->  
 
                     <!-- <h4>Del ristorante :</h4> -->
 
-                     <h1 class="border-bottom border-dark "> {{MyMenu.name}} </h1><!-- MyMenu è User -->  
-
+                     <h3 class="pt-3">Menù</h3>
 
                 </div>
 

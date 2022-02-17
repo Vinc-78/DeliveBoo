@@ -6,7 +6,7 @@
 
                     <h3>Menù</h3>
 
-                    <h4>Del ristorante :</h4>
+                    <!-- <h4>Del ristorante :</h4> -->
 
                      <h1 class="border-bottom border-dark "> {{MyMenu.name}} </h1><!-- MyMenu è User -->  
 
@@ -23,7 +23,7 @@
                             <img style="object-fit: cover; 
                             
                             height: 150px;
-                            border-radius: 35px;" 
+                            " 
                             
                             :src="'/storage/' + menu.image_url" class="img-dish w-75" alt="">
 

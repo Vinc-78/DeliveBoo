@@ -41,7 +41,7 @@
                         class="col"
                     >
 
-                        <a href=""> <!-- '/show/' + users.id -->  <!-- Serve il router-link -->
+                        <router-link :to="{ name:'dishes' }" class="">  <!-- name:'dishes/' + user.id  Dovrebbe andare l'id -->
                             
                             <img  class="img-restaurant" :src="'storage/' + user.cover_img" alt="" >
                                
@@ -53,7 +53,7 @@
                                
                                 
                             </div>
-                       </a>
+                       </router-link>
 
                     </div>
 
@@ -131,16 +131,7 @@ export default {
       
     },
 
-    /* watch: {
-
-      filters: {
-        reload: function() {
-          this.ricerca(); 
-        }
-      }
-
-    }, */
-    
+   
 
    
 

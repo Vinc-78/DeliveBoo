@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 
 import Home from "./pages/Home.vue";
 import Search from "./pages/Search.vue";
+import Dishes from "./pages/Dishes.vue";
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,12 @@ const router = new VueRouter({
             path: "/search",
             name: "search",
             component: Search,
+        },
+        {
+            path: "/dishes", /*  /:id */
+            name: "dishes",
+            component: Dishes,
+           
         },
     ]
 });

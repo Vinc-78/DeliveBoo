@@ -5,12 +5,12 @@
                 <h1>sto nel menu ristorante singolo</h1>
                 
                 <h2>
-                    {{MyMenu.name}}
+                    {{MyMenu.name}} <!-- MyMenu è User -->
                 </h2>
 
                 <div v-for="menu in MyMenu.dishes" :key="menu.id">
 
-                    {{menu.name}}
+                    {{menu.name}}  <!-- menu è il piatto -->
                 
                 </div>
                 

@@ -21,7 +21,7 @@
                       <input class="check-box" type="checkbox"
                             :value="category.name"
                             v-model="filters"
-                            @change="ricerca()"
+                            @change="ricerca"
                       >
                     </label>
                  

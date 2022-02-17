@@ -11,7 +11,7 @@ class SearchController extends Controller
         public function search(Request $request) {
 
          
-            $filter = $request->filters;
+            $filter = $request->filtri;
             
             $usersList = User::with("categories");
 

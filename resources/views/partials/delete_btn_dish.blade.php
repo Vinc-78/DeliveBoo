@@ -2,7 +2,7 @@
     class="form-delete">
     @csrf
     @method('DELETE')
-    <button type="submit" class="">
+    <button class="btn btn-danger btn-lg mx-2" type="submit" class="">
         Elimina piatto
     </button>
 

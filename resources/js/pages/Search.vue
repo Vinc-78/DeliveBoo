@@ -21,7 +21,7 @@
                       <input class="check-box" type="checkbox"
                             :value="category.name"
                             v-model="filters"
-                            @change="ricerca()"
+                             
                       >
                     </label>
                  
@@ -78,17 +78,20 @@ export default {
              filters: [],
              usersList: [],
              categoryList: [],
+             
+
         }
     },
 
     methods: {
 
         getUsers(){
-                window.axios.get("/api/users").then((resp) => {
+                window.axios.get("/api/users",
+                )
+                .then((resp) => {
                  this.usersList = resp.data.data;
 
-                
-                
+    
                  });
             },
 
@@ -99,50 +102,36 @@ export default {
                    
                 });
             },   
-            /* ricerca i ristoranti  */
 
-          /* ricerca: function() {
+        filterUsers() {
 
-              axios.get('/search', {
-                
-                filters: this.filters,
-                
-              })
-              .then(resp => {
-              
-                this.usersList = resp.data.data;
-              })
-          
-          }, */
-
-         ricerca() {
-
-          const filtri =this.filters;
-
+        
+        
           window.axios.post('/search', {
                 params: {
-                      filtri
+                      filtri: this.filters
                   }
           })
-          .then(resp => {
-            this.usersList = resp.data.data;
+          .then((resp) => { 
+            this.usersList = [];   
+            console.log( this.usersList);
+            this.usersList = resp.data;
+            console.log( this.usersList);
+            
           });
         },     
       
     },
 
-    /* watch: {
+    watch: {
+        filters: {
+            handler: function() {
+                this.filterUsers();
+            },
 
-      filters: {
-        reload: function() {
-          this.ricerca(); 
+            deep:true
         }
-      }
-
-    }, */
-    
-
-   
+    },
 
     mounted() {
         this.getUsers();

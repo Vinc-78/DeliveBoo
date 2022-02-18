@@ -532,39 +532,27 @@ __webpack_require__.r(__webpack_exports__);
         _this2.categoryList = resp.data;
       });
     },
-
-    /* ricerca i ristoranti  */
-
-    /* ricerca: function() {
-          axios.get('/search', {
-          
-          filters: this.filters,
-          
-        })
-        .then(resp => {
-        
-          this.usersList = resp.data.data;
-        })
-    
-    }, */
-    ricerca: function ricerca() {
+    filterUsers: function filterUsers() {
       var _this3 = this;
 
-      var filtri = this.filters;
-      window.axios.get('/search', {
+      window.axios.post('/search', {
         params: {
-          filtri: filtri
+          filtri: this.filters
         }
       }).then(function (resp) {
-        _this3.usersList = resp.data.data;
+        _this3.usersList = [];
+        console.log(_this3.usersList);
+        _this3.usersList = resp.data;
+        console.log(_this3.usersList);
       });
     }
   },
   watch: {
     filters: {
-      reload: function reload() {
-        this.ricerca();
-      }
+      handler: function handler() {
+        this.filterUsers();
+      },
+      deep: true
     }
   },
   mounted: function mounted() {
@@ -2599,30 +2587,25 @@ var render = function () {
                         : _vm.filters,
                     },
                     on: {
-                      change: [
-                        function ($event) {
-                          var $$a = _vm.filters,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = category.name,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 && (_vm.filters = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.filters = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
+                      change: function ($event) {
+                        var $$a = _vm.filters,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = category.name,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.filters = $$a.concat([$$v]))
                           } else {
-                            _vm.filters = $$c
+                            $$i > -1 &&
+                              (_vm.filters = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
                           }
-                        },
-                        function ($event) {
-                          return _vm.ricerca()
-                        },
-                      ],
+                        } else {
+                          _vm.filters = $$c
+                        }
+                      },
                     },
                   }),
                 ]
@@ -18488,7 +18471,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\anto-\Desktop\Progetto Finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

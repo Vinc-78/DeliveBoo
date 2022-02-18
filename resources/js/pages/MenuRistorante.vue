@@ -5,7 +5,8 @@
                 <div class="text-center title-menu mb-5 ">
 
                    <h1 class="border-bottom border-dark pb-4"> {{MyMenu.name}} </h1><!-- MyMenu è User -->  
-
+                    
+                    <Cart></Cart>
                     <!-- <h4>Del ristorante :</h4> -->
 
                      <h3 class="pt-3">Menù</h3>
@@ -15,28 +16,30 @@
                             
                 <div class="row row-cols-lg-4  row-cols-sm-2  row-cols-md-3  mt-mb-4" >
 
-                    <div class="col text-center mb-3" v-for="menu in MyMenu.dishes" :key="menu.id" >
+                    <div class="col text-center mb-3" v-for="dishChoose in MyMenu.dishes" :key="dishChoose.id" >
 
-                        <div class="piatto"  v-if="menu.visibility">
+                        <div class="piatto"  v-if="dishChoose.visibility">
                             <!-- Lo stile dell'immagine funziona in line -->
                             <img style="object-fit: cover; 
                             
                             height: 150px;
                             " 
                             
-                            :src="'/storage/' + menu.image_url" class="img-dish w-75" alt="">
+                            :src="'/storage/' + dishChoose.image_url" class="img-dish w-75" alt="">
 
                             <div class="piatto">
-                                <p class="mt-3 mb-4 border-bottom border-dark font-weight-bold"> {{menu.name}}</p>
+                                <p class="mt-3 mb-4 border-bottom border-dark font-weight-bold"> {{dishChoose.name}}</p>
                                 
-                                <p style="height:80px" class="mb-3">{{menu.description}}</p>
+                                <p style="height:80px" class="mb-3">{{dishChoose.description}}</p>
 
                             </div>
 
                             <div>
-                                <p class="mb-4">{{menu.price}} € </p>
+                                <p class="mb-4">{{dishChoose.price}} € </p>
                             </div>
-
+                            
+                            <button class="btn btn-info" @click="addToCart(dishChoose)">+</button>
+                            <button class="btn btn-info" @click="addToCart(dishChoose)">-</button>
 
                         </div>
 
@@ -44,7 +47,7 @@
 
                     </div>
 
-                     <!-- menu è il piatto -->
+                     <!-- dishChoose è il piatto -->
                 
                 </div>
             </div>
@@ -56,8 +59,11 @@
 </template>
 
 <script>
+import Cart from "../components/Cart.vue";
+
 export default {
     name: "MenuRistorante",
+    components: { Cart },
     data(){
         return {
             MyMenu: []
@@ -70,7 +76,33 @@ export default {
             // console.log(resp.data.data/* .dishes */); 
             this.MyMenu = resp.data.data
         })
-    }
+    },
+
+    methods: {
+    addToCart(dishChoose) {
+      if (!localStorage.getItem("cart")) {
+        localStorage.setItem("cart", JSON.stringify([]));
+      }
+      /* /**
+       * @type array
+       */
+      const cart = JSON.parse(localStorage.getItem("cart"));
+      const exists = cart.find((el) => el.id === dishChoose.id);
+      if (exists) {
+        exists.qta++;
+      } else {
+        cart.push({
+          qta: 1,
+          id: dishChoose.id,
+          product: dishChoose,
+        });
+      }
+      /* console.log(JSON.parse(localStorage.getItem('cart'))) */
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.dispatchEvent(new CustomEvent("cartUpdated"))
+      
+    },
+  },
 }
 
 

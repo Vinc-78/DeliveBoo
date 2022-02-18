@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+            <div class="container for-delete " style="position: relative;">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     My-DeliveBoo
                 </a>

@@ -33,29 +33,22 @@
 
                 <div class="row row-cols-lg-2  row-cols-sm-1   mt-mb-4">
 
-                      <!-- stampo i ristoranti  -->
-                
-                    <div
-                        v-for="user in usersList"
-                        :key="user.id"
-                        class="col"
-                    >
+                    <!-- stampo i ristoranti  -->
+              
+                  <div v-for="user in usersList" :key="user.id" class="col">
 
-                        <a href=""> <!-- '/show/' + users.id -->  <!-- Serve il router-link -->
+                    <router-link :to="{ name: 'menu', params: { id: user.id }}"> 
+                      <img  class="img-restaurant" :src="'storage/' + user.cover_img" alt="" >
+                        
+                      <div class="p-3 ">
+                        <h4> <strong>  {{ user.name }}   </strong> </h4>
+                        
+                        <span> Indirizzo  {{user.address}} </span>  
+                        <br>
                             
-                            <img  class="img-restaurant" :src="'storage/' + user.cover_img" alt="" >
-                               
-                            
-                            <div class="p-3 ">
-                                <h4> <strong>  {{ user.name }}   </strong> </h4>
-                                
-                                <span> Indirizzo  {{user.address}} </span>  <br>
-                               
-                                
-                            </div>
-                       </a>
-
-                    </div>
+                      </div>
+                    </router-link>
+                  </div>
 
                  </div>
                 
@@ -143,7 +136,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
 
 .img-category{
   width:150px; 

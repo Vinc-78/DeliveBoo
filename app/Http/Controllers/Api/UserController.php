@@ -17,20 +17,29 @@ class UserController extends Controller
         $limit = 3;
         } */
 
-    $usersList = User::with("categories")
-      ->orderBy("created_at", "DESC")->paginate(10);
+        $usersList = User::with("categories")
+        ->orderBy("created_at", "DESC")->paginate(10);
 
         if ($category) {
-        $usersList = $usersList->where("category_id", $category);
+          $usersList = $usersList->where("category_id", $category);
         }
 
-   /*  if ($limit) {
-      $usersList = $usersList->limit($limit)->get();
-    } else {
-      $usersList = $usersList->paginate(3);
-    } */
+        /*  if ($limit) {
+          $usersList = $usersList->limit($limit)->get();
+        } else {
+          $usersList = $usersList->paginate(3);
+        } */
 
-    return response()->json($usersList);
+      return response()->json($usersList);
 
+    }
+
+    public function show($id){
+
+      $singelRestaurantData = User::where("id", $id)->with("dishes")->first();
+
+      return response()->json([
+        "data" => $singelRestaurantData
+      ]);
     }
 }

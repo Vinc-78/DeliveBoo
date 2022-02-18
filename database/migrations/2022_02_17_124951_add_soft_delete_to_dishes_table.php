@@ -1,9 +1,10 @@
-<!--
+<?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddQuantityToDishOrderTable extends Migration
+class AddSoftDeleteToDishesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +13,8 @@ class AddQuantityToDishOrderTable extends Migration
      */
     public function up()
     {
-        Schema::table('dish_order', function (Blueprint $table) {
-            
-            $table->string('quantity');
+        Schema::table('dishes', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -25,10 +25,8 @@ class AddQuantityToDishOrderTable extends Migration
      */
     public function down()
     {
-        Schema::table('dish_order', function (Blueprint $table) {
-            
-            $table->dropColumn('quantity');
+        Schema::table('dishes', function (Blueprint $table) {
+            $table->dropSoftDeletes();
         });
     }
 }
-

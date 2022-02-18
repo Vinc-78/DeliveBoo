@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 
 import Home from "./pages/Home.vue";
 import Search from "./pages/Search.vue";
+import MenuRistorante from "./pages/MenuRistorante.vue";
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,11 @@ const router = new VueRouter({
             name: "search",
             component: Search,
         },
+        {
+            path: "/menu/:id",
+            name: "menu",
+            component: MenuRistorante,
+        }
     ]
 });
 

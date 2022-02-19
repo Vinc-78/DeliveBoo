@@ -25,4 +25,4 @@ Route::get("/menu/{slug}", "Api\UserController@show");
 Route::get("/categories", "Api\CategoryController@index");
 
 
-Route::post('/search/{slug}', 'SearchController@search'); 
+Route::post('/search', 'SearchController@search'); 

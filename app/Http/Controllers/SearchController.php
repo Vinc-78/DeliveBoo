@@ -23,7 +23,7 @@ class SearchController extends Controller
             
             
             
-            return json_encode($usersList->get(['name', 'address', 'cover_img','id']));
+            return json_encode($usersList->get(['name', 'address', 'cover_img','slug']));
      
   
            

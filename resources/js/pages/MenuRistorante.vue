@@ -5,8 +5,27 @@
                 <div class="text-center title-menu mb-5 ">
 
                    <h1 class="border-bottom border-dark pb-4"> {{MyMenu.name}} </h1><!-- MyMenu è User -->  
-                    
-                    <Cart></Cart>
+                       
+                       <!-- Carello -->
+
+                       <div class="">
+                        <button @click="showCart = !showCart">
+                            Cart {{ totalQuantity }}
+                           <!--  <i class="fas fa-shopping-cart"></i> -->
+                        </button>
+                        <!-- <span class="total-quantity">{{ totalQuantity }}</span> -->
+                        <div v-if="showCart" class="">
+                            <ul class="">
+                            <li
+                                v-for="dishChoose in cart"
+                                :key="dishChoose.id"
+                            >
+                                {{ dishChoose.name }} ({{ dishChoose.quantity }})
+                            </li>
+                            </ul>
+                        </div>
+                        </div>
+                                        <!-- <Cart></Cart> -->
                     <!-- <h4>Del ristorante :</h4> -->
 
                      <h3 class="pt-3">Menù</h3>
@@ -38,9 +57,13 @@
                                 <p class="mb-4">{{dishChoose.price}} € </p>
                             </div>
                             
-                            <button class="btn btn-info" @click="addToCart(dishChoose)">+</button>
-                            <button class="btn btn-info" @click="addToCart(dishChoose)">-</button>
+                            <div class="cart">
 
+                            <button @click="updateCart(dishChoose, 'subtract')" class="cart-button"> - </button>
+                            <span class="cart__quantity">{{ product.quantity }}</span>
+                            <button @click="updateCart(dishChoose, 'add')" class="cart-button">  + </button>
+                            
+                            </div>
                         </div>
 
                         
@@ -59,15 +82,23 @@
 </template>
 
 <script>
-import Cart from "../components/Cart.vue";
+/* import Cart from "../components/Cart.vue"; */
 
 export default {
     name: "MenuRistorante",
-    components: { Cart },
+    /* components: { Cart }, */
     data(){
         return {
-            MyMenu: []
+            MyMenu: [],
+            dishChoose:[
+                {
+                qta: 1,
+                id: dishChoose.id,
+                }
+            ],
+            showCart: false,
         }
+       
     },
     mounted() {
         // console.log(this.$route.params.id);
@@ -78,14 +109,46 @@ export default {
         })
     },
 
+    computed: {
+    cart() {
+      return this.dishChoose.filter(dishChoose => dishChoose.quantity > 0);
+    },
+     totalQuantity() {
+      return this.dishChoose.reduce(
+        (total, dishChoose) => total + dishChoose.quantity,
+        0
+      );
+    }
+
+   /*  totalQuantity() {
+        return this.cart.map(item => item.price)
+        .reduce((total, amount) => total + amount);
+    } */
+  },
+
     methods: {
-    addToCart(dishChoose) {
+
+        updateCart(dishChoose, updateType) {      
+        for (let i = 0; i < this.dishChoose.length; i++) {
+          if (this.dishChoose[i].id === dishChoose.id) {
+            if (updateType === 'subtract') {
+              if (this.dishChoose[i].quantity !== 0) {
+                this.dishChoose[i].quantity--;
+              }
+            } else {
+              this.dishChoose[i].quantity++;
+            }
+            
+            break;
+          }
+        }
+      }
+    }
+   /*  addToCart(dishChoose) {
       if (!localStorage.getItem("cart")) {
         localStorage.setItem("cart", JSON.stringify([]));
       }
-      /* /**
-       * @type array
-       */
+      
       const cart = JSON.parse(localStorage.getItem("cart"));
       const exists = cart.find((el) => el.id === dishChoose.id);
       if (exists) {
@@ -97,13 +160,13 @@ export default {
           product: dishChoose,
         });
       }
-      /* console.log(JSON.parse(localStorage.getItem('cart'))) */
+       console.log(JSON.parse(localStorage.getItem('cart'))) 
       localStorage.setItem("cart", JSON.stringify(cart));
       window.dispatchEvent(new CustomEvent("cartUpdated"))
       
-    },
-  },
-}
+    }, */
+  };
+  
 
 
 </script>
@@ -120,12 +183,7 @@ export default {
         h4{
             color: rgb(172, 170, 170);
         }
-
-       
-      
-
-      
-
 }
+
 
 </style>

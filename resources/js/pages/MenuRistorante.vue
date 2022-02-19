@@ -65,8 +65,8 @@ export default {
     },
     mounted() {
         // console.log(this.$route.params.id);
-        let id = this.$route.params.id
-        window.axios.get(`/api/menu/${id}`).then((resp) => {
+        let slug = this.$route.params.slug
+        window.axios.get(`/api/menu/${slug}`).then((resp) => {
             // console.log(resp.data.data/* .dishes */); 
             this.MyMenu = resp.data.data
         })

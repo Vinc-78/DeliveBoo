@@ -504,8 +504,8 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     // console.log(this.$route.params.id);
-    var id = this.$route.params.id;
-    window.axios.get("/api/menu/".concat(id)).then(function (resp) {
+    var slug = this.$route.params.slug;
+    window.axios.get("/api/menu/".concat(slug)).then(function (resp) {
       // console.log(resp.data.data/* .dishes */); 
       _this.MyMenu = resp.data.data;
     });
@@ -2853,7 +2853,9 @@ var render = function () {
                   _c(
                     "router-link",
                     {
-                      attrs: { to: { name: "menu", params: { id: user.id } } },
+                      attrs: {
+                        to: { name: "menu", params: { slug: user.slug } },
+                      },
                     },
                     [
                       _c("img", {

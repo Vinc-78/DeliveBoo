@@ -13,7 +13,7 @@
               Tutti i tuoi piatti preferiti in un unico portale.
           </p>
           <!-- Qui ci andrà il bottone route-link -->
-          <router-link :to="{ name:'search'}" class="">Esplora i Ristoranti</router-link>
+          <router-link :to="{ name:'search' }" class="">Esplora i Ristoranti</router-link>
       </div>
       </div>
     

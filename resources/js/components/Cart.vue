@@ -1,4 +1,4 @@
-<template>
+ <template>
   <!-- <ul>
     <li v-for="item in cart" :key="item.id">
       {{ item.qta }} X {{ item.product.title }}
@@ -58,4 +58,4 @@ export default {
     margin-left: -10px; 
 }
 
-</style>
+</style> 

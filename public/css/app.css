@@ -10968,5 +10968,17 @@ a.text-dark:focus {
 
 .banner-restaurant img {
   width: 100%;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.box-info {
+  box-sizing: border-box;
+  width: 100%;
+  border: solid #bec2dacb 3px;
+  padding: 50px;
 }
 

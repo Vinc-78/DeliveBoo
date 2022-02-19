@@ -16,12 +16,12 @@ const router = new VueRouter({
             component: Home,
         },
         {
-            path: "/search",
+            path: "/search/:slug",
             name: "search",
             component: Search,
         },
         {
-            path: "/menu/:id",
+            path: "/menu/:slug",
             name: "menu",
             component: MenuRistorante,
         }

@@ -2638,7 +2638,7 @@ var staticRenderFns = [
         }),
         _vm._v(" "),
         _c("h1", { staticClass: "text-banner" }, [
-          _vm._v("Inizia a lavorare con noi"),
+          _vm._v("Aggiungi il tuo ristorante"),
         ]),
       ]),
     ])
@@ -18751,11 +18751,11 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "home",
     component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: "/search",
+    path: "/search/:slug",
     name: "search",
     component: _pages_Search_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: "/menu/:id",
+    path: "/menu/:slug",
     name: "menu",
     component: _pages_MenuRistorante_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
@@ -18797,7 +18797,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\anto-\Desktop\Progetto Finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

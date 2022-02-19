@@ -6,10 +6,26 @@ use App\User;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SearchController extends Controller
     {
         public function search(Request $request) {
+
+            /* $filter = $request->params;
+
+            $countFilter =count($filter['filtri']);
+
+            $usersList = DB::table('users')
+            ->select(DB::raw('users.name, address, cover_img, users.id, users.slug, COUNT(users.id)'))
+            ->join('user_category', 'user_category.user_id', '=', 'user.id')
+            ->join('categories','categories.id','=','user_category.category_id')
+            ->whereIn('categories.name',$filter['filtri'])
+            ->groupBy('users.id')
+            ->havingRaw("count(users.id) = '$countFilter'");
+
+
+            return json_encode($usersList->get());  */
 
             $filter = $request->params;
 

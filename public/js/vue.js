@@ -504,8 +504,8 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     // console.log(this.$route.params.id);
-    var id = this.$route.params.id;
-    window.axios.get("/api/menu/".concat(id)).then(function (resp) {
+    var slug = this.$route.params.slug;
+    window.axios.get("/api/menu/".concat(slug)).then(function (resp) {
       // console.log(resp.data.data/* .dishes */); 
       _this.MyMenu = resp.data.data;
     });
@@ -2638,7 +2638,7 @@ var staticRenderFns = [
         }),
         _vm._v(" "),
         _c("h1", { staticClass: "text-banner" }, [
-          _vm._v("Inizia a lavorare con noi"),
+          _vm._v("Aggiungi il tuo ristorante"),
         ]),
       ]),
     ])
@@ -2853,7 +2853,9 @@ var render = function () {
                   _c(
                     "router-link",
                     {
-                      attrs: { to: { name: "menu", params: { id: user.id } } },
+                      attrs: {
+                        to: { name: "menu", params: { slug: user.slug } },
+                      },
                     },
                     [
                       _c("img", {
@@ -18755,7 +18757,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "search",
     component: _pages_Search_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: "/menu/:id",
+    path: "/menu/:slug",
     name: "menu",
     component: _pages_MenuRistorante_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
@@ -18797,7 +18799,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\anto-\Desktop\Progetto Finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

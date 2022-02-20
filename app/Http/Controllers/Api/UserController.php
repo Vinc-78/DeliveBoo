@@ -34,9 +34,9 @@ class UserController extends Controller
 
     }
 
-    public function show($id){
+    public function show($slug){
 
-      $singelRestaurantData = User::where("id", $id)->with("dishes")->first();
+      $singelRestaurantData = User::where("slug", $slug)->with("dishes")->first();
 
       return response()->json([
         "data" => $singelRestaurantData

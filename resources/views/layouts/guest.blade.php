@@ -57,7 +57,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Lavora con noi</a>
+                                    <a class="nav-link" href="{{ route('register') }}">Join With Us</a>
                                 </li>
                             @endif
                         @else

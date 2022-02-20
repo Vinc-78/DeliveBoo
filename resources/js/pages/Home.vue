@@ -13,7 +13,7 @@
               Tutti i tuoi piatti preferiti in un unico portale.
           </p>
           <!-- Qui ci andrà il bottone route-link -->
-          <router-link :to="{ name:'search'}" class="">Esplora i Ristoranti</router-link>
+          <router-link :to="{ name:'search' }" class="">Esplora i Ristoranti</router-link>
       </div>
       </div>
     
@@ -28,7 +28,7 @@
     <div class="mt-5 mb-5 banner-container">
         <a href="/register">
         <img src="/storage/img/work-with-us.jpg" alt="" class="imgBanner w-100">
-        <h1 class="text-banner">Inizia a lavorare con noi</h1>
+        <h1 class="text-banner">Aggiungi il tuo ristorante</h1>
         </a>
     </div>
    

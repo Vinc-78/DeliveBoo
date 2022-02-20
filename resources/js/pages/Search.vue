@@ -37,7 +37,7 @@
               
                   <div v-for="user in usersList" :key="user.id" class="col">
 
-                    <router-link :to="{ name: 'menu', params: { id: user.id }}"> 
+                    <router-link :to="{ name: 'menu', params: { slug: user.slug }}"> 
                       <img  class="img-restaurant" :src="'storage/' + user.cover_img" alt="" >
                         
                       <div class="p-3 ">

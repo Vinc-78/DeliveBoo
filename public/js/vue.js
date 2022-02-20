@@ -493,22 +493,116 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MenuRistorante",
   data: function data() {
     return {
-      MyMenu: []
+      myMenu: [],
+      total: 0
     };
   },
   mounted: function mounted() {
-    var _this = this;
+    this.getData();
+    this.getTotal();
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
 
-    // console.log(this.$route.params.id);
-    var slug = this.$route.params.slug;
-    window.axios.get("/api/menu/".concat(slug)).then(function (resp) {
-      // console.log(resp.data.data/* .dishes */); 
-      _this.MyMenu = resp.data.data;
-    });
+      // console.log(this.$route.params.id);
+      var slug = this.$route.params.slug;
+      window.axios.get("/api/menu/".concat(slug)).then(function (resp) {
+        // console.log(resp.data.data/* .dishes */); 
+        _this.myMenu = resp.data.data;
+      });
+    },
+    addToCart: function addToCart(dish) {
+      //se nel local storage non esiste il carrello
+      if (!localStorage.getItem("cart")) {
+        //allora vado a creare la chiave cart e gli associo un array
+        localStorage.setItem("cart", JSON.stringify([]));
+      } //recupero la chiave cart dentro la funzione e gli associo l'array che si trova nel cart di local storage
+
+
+      var cart = JSON.parse(localStorage.getItem("cart")); //controllo se il piatto su cui ho cliccato è già presente nell'array 
+
+      var dishExists = cart.find(function (el) {
+        return el.product.id === dish.id;
+      }); //se il piatto è già presente nel cart  
+
+      if (dishExists) {
+        dishExists.qta++;
+      } else {
+        //altrimenti pusho tutto il piatto con una "qta = 1"
+        cart.push({
+          qta: 1,
+          product: dish
+        });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      this.setTotal("+");
+    },
+    removeToCart: function removeToCart(dish) {
+      var cart = JSON.parse(localStorage.getItem("cart")); //questo "if" previene errori in concole nel caso il cart è vuoto (cioè undefined)
+
+      if (cart) {
+        var dishExists = cart.find(function (el) {
+          return el.product.id === dish.id;
+        });
+
+        if (dishExists && dishExists.qta > 1) {
+          dishExists.qta--;
+        } else if (dishExists && dishExists.qta === 1) {
+          //recupero l'id del piatto esistente per poi cancellarlo
+          var dishRemove = cart.indexOf(dishExists); // console.log(dishRemove);
+
+          cart.splice(dishRemove, 1);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        this.setTotal("-");
+      }
+    },
+    getTotal: function getTotal() {
+      var _this2 = this;
+
+      var cart = JSON.parse(localStorage.getItem("cart")); // questo evita errori in console nel caso cart sie vuoto (undefined)
+
+      if (cart) {
+        cart.forEach(function (element) {
+          _this2.total += element.qta;
+        });
+      }
+    },
+
+    /** 
+     * @param {string} sign è il segno che indica se la funzione deve sommare o sottrarre
+    */
+    setTotal: function setTotal(sign) {
+      var cart = JSON.parse(localStorage.getItem("cart")); // questo evita errori in console nel caso cart sie vuoto (undefined)
+
+      if (cart) {
+        if (sign === "+") {
+          this.total += 1;
+        } else if (this.total > 0) {
+          this.total -= 1;
+        }
+      }
+    }
+  },
+  watch: {
+    myMenu: function myMenu() {
+      localStorage.clear();
+    }
   }
 });
 
@@ -2669,28 +2763,43 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    this.MyMenu != null
+    this.myMenu != null
       ? _c("div", [
-          _c("div", { staticClass: "text-center title-menu mb-5 " }, [
+          _c("div", { staticClass: "text-center title-menu mb-5" }, [
             _c("h1", { staticClass: "border-bottom border-dark pb-4" }, [
-              _vm._v(" " + _vm._s(_vm.MyMenu.name) + " "),
+              _vm._v(_vm._s(_vm.myMenu.name)),
             ]),
             _vm._v(" "),
             _c("h3", { staticClass: "pt-3" }, [_vm._v("Menù")]),
+            _vm._v(" "),
+            _c(
+              "div",
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-primary rounded-0",
+                    attrs: { to: "/cart" },
+                  },
+                  [_vm._v("Carrello " + _vm._s(_vm.total))]
+                ),
+              ],
+              1
+            ),
           ]),
           _vm._v(" "),
           _c(
             "div",
             {
               staticClass:
-                "row row-cols-lg-4  row-cols-sm-2  row-cols-md-3  mt-mb-4",
+                "row row-cols-lg-4 row-cols-sm-2 row-cols-md-3 mt-mb-4",
             },
-            _vm._l(_vm.MyMenu.dishes, function (menu) {
+            _vm._l(_vm.myMenu.dishes, function (dish) {
               return _c(
                 "div",
-                { key: menu.id, staticClass: "col text-center mb-3" },
+                { key: dish.id, staticClass: "col text-center mb-3" },
                 [
-                  menu.visibility
+                  dish.visibility
                     ? _c("div", { staticClass: "piatto" }, [
                         _c("img", {
                           staticClass: "img-dish w-75",
@@ -2698,7 +2807,10 @@ var render = function () {
                             "object-fit": "cover",
                             height: "150px",
                           },
-                          attrs: { src: "/storage/" + menu.image_url, alt: "" },
+                          attrs: {
+                            src: "/storage/" + dish.image_url,
+                            alt: dish.name,
+                          },
                         }),
                         _vm._v(" "),
                         _c("div", { staticClass: "piatto" }, [
@@ -2708,7 +2820,13 @@ var render = function () {
                               staticClass:
                                 "mt-3 mb-4 border-bottom border-dark font-weight-bold",
                             },
-                            [_vm._v(" " + _vm._s(menu.name))]
+                            [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(dish.name) +
+                                  "\n            "
+                              ),
+                            ]
                           ),
                           _vm._v(" "),
                           _c(
@@ -2717,14 +2835,42 @@ var render = function () {
                               staticClass: "mb-3",
                               staticStyle: { height: "80px" },
                             },
-                            [_vm._v(_vm._s(menu.description))]
+                            [_vm._v(_vm._s(dish.description))]
                           ),
                         ]),
                         _vm._v(" "),
                         _c("div", [
                           _c("p", { staticClass: "mb-4" }, [
-                            _vm._v(_vm._s(menu.price) + " € "),
+                            _vm._v(_vm._s(dish.price) + " €"),
                           ]),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-success rounded-0",
+                              on: {
+                                click: function ($event) {
+                                  return _vm.addToCart(dish)
+                                },
+                              },
+                            },
+                            [_vm._v("\n              +\n            ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-warning rounded-0",
+                              on: {
+                                click: function ($event) {
+                                  return _vm.removeToCart(dish)
+                                },
+                              },
+                            },
+                            [_vm._v("\n              -\n            ")]
+                          ),
                         ]),
                       ])
                     : _vm._e(),
@@ -18814,7 +18960,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\anto-\Desktop\Progetto Finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\giuli\OneDrive\Desktop\Boolean\progetto finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

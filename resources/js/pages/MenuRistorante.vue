@@ -8,7 +8,7 @@
         <h3 class="pt-3">Menù</h3>
 
         <div>
-          <router-link to="/cart" class="btn btn-primary"
+          <router-link to="/cart" class="btn btn-primary rounded-0"
             >Carrello {{ total }}</router-link
           >
         </div>
@@ -43,10 +43,10 @@
             </div>
 
             <div>
-              <button class="btn btn-success" @click="addToCart(dish)">
+              <button class="btn btn-success rounded-0" @click="addToCart(dish)">
                 +
               </button>
-              <button class="btn btn-warning" @click="removeToCart(dish)">
+              <button class="btn btn-warning rounded-0" @click="removeToCart(dish)">
                 -
               </button>
             </div>
@@ -92,20 +92,14 @@ export default {
                 localStorage.setItem("cart", JSON.stringify([]))
             }
 
-            // ! in questo modo assegno una chiave per ogni ristorante e poi devo andare a lavorare sul cart di ogni ristorante 
-            // localStorage.setItem("cart", JSON.stringify({prova : []}))
-            /* let prova = this.myMenu.slug.toString()
-            console.log(prova); */
-
-
             //recupero la chiave cart dentro la funzione e gli associo l'array che si trova nel cart di local storage
             const cart = JSON.parse(localStorage.getItem("cart"));
+
             //controllo se il piatto su cui ho cliccato è già presente nell'array 
             const dishExists = cart.find((el) => el.product.id === dish.id)
 
             //se il piatto è già presente nel cart  
             if(dishExists){
-                //allora aumento la quantità
                 dishExists.qta++
             }else{
                 //altrimenti pusho tutto il piatto con una "qta = 1"
@@ -119,7 +113,7 @@ export default {
 
             localStorage.setItem("cart", JSON.stringify(cart))
 
-            this.total++
+            this.setTotal("+")
         },
         removeToCart(dish){
             const cart = JSON.parse(localStorage.getItem("cart"));
@@ -140,12 +134,7 @@ export default {
 
                 localStorage.setItem("cart", JSON.stringify(cart))
 
-                // questo evita che il totale abbia numeri negativi
-                if(this.total){
-                    this.total--
-                }else{
-                    this.total = 0
-                }
+                this.setTotal("-")
                 
             }            
         },
@@ -158,6 +147,28 @@ export default {
                     this.total += element.qta
                 });
             }
+        },
+        /** 
+         * @param {string} sign è il segno che indica se la funzione deve sommare o sottrarre
+        */
+        setTotal(sign){
+            const cart = JSON.parse(localStorage.getItem("cart"))
+            
+            // questo evita errori in console nel caso cart sie vuoto (undefined)
+            if(cart){
+
+                if(sign === "+"){
+                    this.total += 1
+                }else if(this.total > 0){
+                    this.total -= 1
+                }
+
+            }
+        }
+    },
+    watch: {
+        myMenu: function() {
+            localStorage.clear()
         }
     }
 }

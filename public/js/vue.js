@@ -529,12 +529,7 @@ __webpack_require__.r(__webpack_exports__);
       if (!localStorage.getItem("cart")) {
         //allora vado a creare la chiave cart e gli associo un array
         localStorage.setItem("cart", JSON.stringify([]));
-      } // ! in questo modo assegno una chiave per ogni ristorante e poi devo andare a lavorare sul cart di ogni ristorante 
-      // localStorage.setItem("cart", JSON.stringify({prova : []}))
-
-      /* let prova = this.myMenu.slug.toString()
-      console.log(prova); */
-      //recupero la chiave cart dentro la funzione e gli associo l'array che si trova nel cart di local storage
+      } //recupero la chiave cart dentro la funzione e gli associo l'array che si trova nel cart di local storage
 
 
       var cart = JSON.parse(localStorage.getItem("cart")); //controllo se il piatto su cui ho cliccato è già presente nell'array 
@@ -544,7 +539,6 @@ __webpack_require__.r(__webpack_exports__);
       }); //se il piatto è già presente nel cart  
 
       if (dishExists) {
-        //allora aumento la quantità
         dishExists.qta++;
       } else {
         //altrimenti pusho tutto il piatto con una "qta = 1"
@@ -555,7 +549,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       localStorage.setItem("cart", JSON.stringify(cart));
-      this.total++;
+      this.setTotal("+");
     },
     removeToCart: function removeToCart(dish) {
       var cart = JSON.parse(localStorage.getItem("cart")); //questo "if" previene errori in concole nel caso il cart è vuoto (cioè undefined)
@@ -574,13 +568,8 @@ __webpack_require__.r(__webpack_exports__);
           cart.splice(dishRemove, 1);
         }
 
-        localStorage.setItem("cart", JSON.stringify(cart)); // questo evita che il totale abbia numeri negativi
-
-        if (this.total) {
-          this.total--;
-        } else {
-          this.total = 0;
-        }
+        localStorage.setItem("cart", JSON.stringify(cart));
+        this.setTotal("-");
       }
     },
     getTotal: function getTotal() {
@@ -593,6 +582,26 @@ __webpack_require__.r(__webpack_exports__);
           _this2.total += element.qta;
         });
       }
+    },
+
+    /** 
+     * @param {string} sign è il segno che indica se la funzione deve sommare o sottrarre
+    */
+    setTotal: function setTotal(sign) {
+      var cart = JSON.parse(localStorage.getItem("cart")); // questo evita errori in console nel caso cart sie vuoto (undefined)
+
+      if (cart) {
+        if (sign === "+") {
+          this.total += 1;
+        } else if (this.total > 0) {
+          this.total -= 1;
+        }
+      }
+    }
+  },
+  watch: {
+    myMenu: function myMenu() {
+      localStorage.clear();
     }
   }
 });
@@ -2765,7 +2774,10 @@ var render = function () {
               [
                 _c(
                   "router-link",
-                  { staticClass: "btn btn-primary", attrs: { to: "/cart" } },
+                  {
+                    staticClass: "btn btn-primary rounded-0",
+                    attrs: { to: "/cart" },
+                  },
                   [_vm._v("Carrello " + _vm._s(_vm.total))]
                 ),
               ],
@@ -2834,7 +2846,7 @@ var render = function () {
                           _c(
                             "button",
                             {
-                              staticClass: "btn btn-success",
+                              staticClass: "btn btn-success rounded-0",
                               on: {
                                 click: function ($event) {
                                   return _vm.addToCart(dish)
@@ -2847,7 +2859,7 @@ var render = function () {
                           _c(
                             "button",
                             {
-                              staticClass: "btn btn-warning",
+                              staticClass: "btn btn-warning rounded-0",
                               on: {
                                 click: function ($event) {
                                   return _vm.removeToCart(dish)

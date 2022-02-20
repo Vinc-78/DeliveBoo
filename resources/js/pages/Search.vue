@@ -106,10 +106,8 @@ export default {
                   }
           })
           .then((resp) => { 
-            this.usersList = [];   
-            console.log( this.usersList);
             this.usersList = resp.data;
-            console.log( this.usersList);
+            
             
           });
         },     

@@ -501,6 +501,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MenuRistorante",
   data: function data() {
@@ -520,29 +528,32 @@ __webpack_require__.r(__webpack_exports__);
       // console.log(this.$route.params.id);
       var slug = this.$route.params.slug;
       window.axios.get("/api/menu/".concat(slug)).then(function (resp) {
-        // console.log(resp.data.data/* .dishes */); 
+        // console.log(resp.data.data/* .dishes */);
         _this.myMenu = resp.data.data;
       });
     },
     addToCart: function addToCart(dish) {
       //se nel local storage non esiste il carrello
       if (!localStorage.getItem("cart")) {
-        //allora vado a creare la chiave cart e gli associo un array
-        localStorage.setItem("cart", JSON.stringify([]));
+        //allora vado a creare la chiave cart e gli associo lo slug del ristorante corrente e il contenuto che avrà il carrello
+        localStorage.setItem("cart", JSON.stringify({
+          name: this.myMenu.slug,
+          content: []
+        }));
       } //recupero la chiave cart dentro la funzione e gli associo l'array che si trova nel cart di local storage
 
 
-      var cart = JSON.parse(localStorage.getItem("cart")); //controllo se il piatto su cui ho cliccato è già presente nell'array 
+      var cart = JSON.parse(localStorage.getItem("cart")); //controllo se il piatto su cui ho cliccato è già presente nell'array
 
-      var dishExists = cart.find(function (el) {
+      var dishExists = cart.content.find(function (el) {
         return el.product.id === dish.id;
-      }); //se il piatto è già presente nel cart  
+      }); //se il piatto è già presente nel cart
 
       if (dishExists) {
         dishExists.qta++;
       } else {
         //altrimenti pusho tutto il piatto con una "qta = 1"
-        cart.push({
+        cart.content.push({
           qta: 1,
           product: dish
         });
@@ -554,8 +565,8 @@ __webpack_require__.r(__webpack_exports__);
     removeToCart: function removeToCart(dish) {
       var cart = JSON.parse(localStorage.getItem("cart")); //questo "if" previene errori in concole nel caso il cart è vuoto (cioè undefined)
 
-      if (cart) {
-        var dishExists = cart.find(function (el) {
+      if (cart.content) {
+        var dishExists = cart.content.find(function (el) {
           return el.product.id === dish.id;
         });
 
@@ -563,9 +574,9 @@ __webpack_require__.r(__webpack_exports__);
           dishExists.qta--;
         } else if (dishExists && dishExists.qta === 1) {
           //recupero l'id del piatto esistente per poi cancellarlo
-          var dishRemove = cart.indexOf(dishExists); // console.log(dishRemove);
+          var dishRemove = cart.content.indexOf(dishExists); // console.log(dishRemove);
 
-          cart.splice(dishRemove, 1);
+          cart.content.splice(dishRemove, 1);
         }
 
         localStorage.setItem("cart", JSON.stringify(cart));
@@ -578,19 +589,19 @@ __webpack_require__.r(__webpack_exports__);
       var cart = JSON.parse(localStorage.getItem("cart")); // questo evita errori in console nel caso cart sie vuoto (undefined)
 
       if (cart) {
-        cart.forEach(function (element) {
+        cart.content.forEach(function (element) {
           _this2.total += element.qta;
         });
       }
     },
 
-    /** 
+    /**
      * @param {string} sign è il segno che indica se la funzione deve sommare o sottrarre
-    */
+     */
     setTotal: function setTotal(sign) {
       var cart = JSON.parse(localStorage.getItem("cart")); // questo evita errori in console nel caso cart sie vuoto (undefined)
 
-      if (cart) {
+      if (cart.content) {
         if (sign === "+") {
           this.total += 1;
         } else if (this.total > 0) {
@@ -601,7 +612,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     myMenu: function myMenu() {
-      localStorage.clear();
+      var slug = JSON.parse(localStorage.getItem("cart")); //se lo slug del ristorante corrente è diverso da quello salvato in local storage, allora pulisco sia il carrello che il totale
+
+      if (this.myMenu.slug !== slug.name) {
+        this.total = 0;
+        localStorage.clear();
+      }
     }
   }
 });
@@ -2871,6 +2887,8 @@ var render = function () {
                             },
                             [_vm._v("\n              -\n            ")]
                           ),
+                          _vm._v(" "),
+                          _c("p"),
                         ]),
                       ])
                     : _vm._e(),

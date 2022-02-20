@@ -34,6 +34,10 @@ Route::middleware('auth')
     Route::resource("orders", "OrderController");
 
     
+    /* Route::get('/chart/months', 'OrderController@chartMonths'); */
+    Route::get("/chart", 'OrderController@getChart')->name('chart');
+
+    
 });
 
 Route::post('/search', 'SearchController@search')->name('search');

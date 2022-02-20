@@ -26,6 +26,8 @@
             <h4><a href="{{route('admin.dishes.index')}}"> A tutti i piatti</a></h4>
 
             <h4><a href="{{route('admin.orders.index')}}"> A tutti gli ordini</a></h4>
+
+            <h4><a href="{{route('admin.chart')}}"> Le tue statistiche</a></h4>
         </div>
 
         <div class="col-6">

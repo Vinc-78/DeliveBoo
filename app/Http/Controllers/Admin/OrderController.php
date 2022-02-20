@@ -126,4 +126,14 @@ class OrderController extends Controller
     {
         //
     }
+
+    /* Funzione per fare il grafico per anno */
+
+    public function getChart()
+    {
+
+        /* Qui va il controllo e elaborazione degli ordini  */
+        
+        return view('admin.orders.chart'); 
+    }
 }

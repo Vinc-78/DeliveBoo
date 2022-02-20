@@ -174,13 +174,6 @@ input[type="checkbox"]{
   display: none;
 }
 
-/* .checkbox-label {
-  border: 1px solid #fff;
-  padding: 10px;
-  display: block;
-  position: relative;
-  margin: 10px;
-} */
 
 .checkbox-label:before {
   background-color: white;

@@ -19,8 +19,6 @@
             </div>
         </div>
     </div> --}}
-    <h1>DashBoard</h1>
-
     <div class="row">
         <div class="col-3">
             <h2> Aside  </h2>
@@ -31,12 +29,20 @@
         </div>
 
         <div class="col-6">
-            <h2>Dati Utente</h2>
-
-            <h3 style="color:red">Attività  <span>{{Auth::user()->name}}</span> </h3> 
-            <img style="width: 450px" src="{{asset('storage/'. Auth::user()->cover_img)}}" alt="ristorante">
-            <h4>Partita I.V.A. {{Auth::user()->p_iva}}</h4>
-            
+            <div class="banner-restaurant">
+            <img src="{{asset('storage/'. Auth::user()->cover_img)}}" alt="ristorante">  
+            </div>
+            <div class="mt-3">
+            <h2 class="text-center">Bentornato,  <span>{{Auth::user()->name}}</span></h2>
+            <p class="text-center">Tieni sempre aggiornato il tuo menù e controlla i tuoi dati, basta un click per aggiornare.</p>
+            <h4 class="pb-2 text-center">I tuoi dati di registrazione</h4> 
+            <div class="box-info">
+            <h4>Nome del ristorante: {{Auth::user()->name}}</h4>
+            <h4>Il tuo indirizzo: {{Auth::user()->address}}</h4>
+            <h4>Partita I.V.A.: {{Auth::user()->p_iva}}</h4>
+            <h4>La tua e-mail: {{Auth::user()->email}}</h4>
+            </div>
+            </div>
         </div>
     
     </div>

@@ -1,0 +1,19 @@
+.banner-restaurant{
+    
+    width: 100%;
+   img{
+       width: 100%;
+       height: 150px;
+       object-fit: cover;
+       object-position: center;
+   }
+
+    
+}
+
+.box-info{
+    box-sizing: border-box;
+    width: 100%;
+    border: solid #bec2dacb 3px;
+    padding: 50px;  
+}

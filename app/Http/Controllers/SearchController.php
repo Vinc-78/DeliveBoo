@@ -37,12 +37,12 @@ class SearchController extends Controller
      
                  
                 $usersList = DB::table('users')
-                ->select(DB::raw('users.name, address ,cover_img, users.id, COUNT(users.id)'))
+                ->select(DB::raw('users.name, address ,cover_img, users.id, users.slug, COUNT(users.id)'))
                 ->join('user_category', 'user_category.user_id', '=', 'users.id')
                 ->join('categories', 'categories.id', '=', 'user_category.category_id')
                 ->whereIn('categories.name', $filter['filtri'])
-                ->groupBy('users.id')
-                ->havingRaw("count(users.id) = '$countFilter'");
+                ->groupBy('users.slug')
+                ->havingRaw("count(users.slug) = '$countFilter'");
                 
                  //$queries = DB::getQueryLog();
                  //dd($queries);
@@ -52,7 +52,7 @@ class SearchController extends Controller
             } else {
 
                 $usersList = DB::table('users')
-                ->select(DB::raw('users.name, address ,cover_img, users.id'));
+                ->select(DB::raw('users.name, address ,cover_img, users.id, users.slug'));
                 return json_encode($usersList->get());
             }
 

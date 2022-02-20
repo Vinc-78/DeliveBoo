@@ -620,10 +620,7 @@ __webpack_require__.r(__webpack_exports__);
           filtri: this.filters
         }
       }).then(function (resp) {
-        _this3.usersList = [];
-        console.log(_this3.usersList);
         _this3.usersList = resp.data;
-        console.log(_this3.usersList);
       });
     }
   },
@@ -18799,7 +18796,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\anto-\Desktop\Progetto Finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

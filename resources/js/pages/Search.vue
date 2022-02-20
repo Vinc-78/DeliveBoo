@@ -31,6 +31,8 @@
 
                 <h3 class="my-3 text-center">Clicca per vedere il menu </h3>
 
+                <h2 class="text-center font-weight-bold display-4 my-4" v-if='usersList.length === 0'>Non ci sono Ristoranti che rispettano la tua ricerca</h2>
+
                 <div class="row row-cols-lg-2  row-cols-sm-1   mt-mb-4">
 
                     <!-- stampo i ristoranti  -->
@@ -71,6 +73,7 @@ export default {
              filters: [],
              usersList: [],
              categoryList: [],
+             
              
 
         }

@@ -30,9 +30,11 @@ class SearchController extends Controller
 
             $filter = $request->params;
 
+            $countFilter = count($filter['filtri']);
+
             if(!empty($filter['filtri'])) {
 
-                $countFilter = count($filter['filtri']);
+                
                 //dd($countFilter);
      
                  
@@ -41,15 +43,16 @@ class SearchController extends Controller
                 ->join('user_category', 'user_category.user_id', '=', 'users.id')
                 ->join('categories', 'categories.id', '=', 'user_category.category_id')
                 ->whereIn('categories.name', $filter['filtri'])
-                ->groupBy('users.slug')
-                ->havingRaw("count(users.slug) = '$countFilter'");
+                ->groupBy('users.id')
+                ->havingRaw("count(users.id) = '$countFilter'");
                 
                  //$queries = DB::getQueryLog();
                  //dd($queries);
                  
                  return json_encode($usersList->get());
 
-            } else {
+            }   
+            else {
 
                 $usersList = DB::table('users')
                 ->select(DB::raw('users.name, address ,cover_img, users.id, users.slug'));

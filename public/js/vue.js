@@ -588,6 +588,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
   data: function data() {
@@ -2838,6 +2840,14 @@ var render = function () {
           _c("h3", { staticClass: "my-3 text-center" }, [
             _vm._v("Clicca per vedere il menu "),
           ]),
+          _vm._v(" "),
+          _vm.usersList.length === 0
+            ? _c(
+                "h2",
+                { staticClass: "text-center font-weight-bold display-4 my-4" },
+                [_vm._v("Non ci sono Ristoranti che rispettano la tua ricerca")]
+              )
+            : _vm._e(),
           _vm._v(" "),
           _c(
             "div",

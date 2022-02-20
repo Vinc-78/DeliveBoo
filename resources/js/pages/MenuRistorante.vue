@@ -124,31 +124,36 @@ export default {
         removeToCart(dish){
             const cart = JSON.parse(localStorage.getItem("cart"));
 
-            if(cart !== undefined){
+            //questo "if" previene errori in concole nel caso il cart è vuoto (cioè undefined)
+            if(cart){
+
                 const dishExists = cart.find((el) => el.product.id === dish.id)
 
-                if(dishExists !== undefined){
-                    if(dishExists && dishExists.qta > 1){
-                        dishExists.qta--
-                    }else if(dishExists.qta === 1){
-                        //recupero l'id del piatto esistente per poi cancellarlo
-                        let dishRemove = cart.indexOf(dishExists);
-                        // console.log(dishRemove);
-                        cart.splice(dishRemove, 1)
-                    }
-
-                    localStorage.setItem("cart", JSON.stringify(cart))
-
-                    this.total--
+                if(dishExists && dishExists.qta > 1){
+                    dishExists.qta--
+                }else if(dishExists && dishExists.qta === 1){
+                    //recupero l'id del piatto esistente per poi cancellarlo
+                    let dishRemove = cart.indexOf(dishExists);
+                    // console.log(dishRemove);
+                    cart.splice(dishRemove, 1)
                 }
+
+                localStorage.setItem("cart", JSON.stringify(cart))
+
+                // questo evita che il totale abbia numeri negativi
+                if(this.total){
+                    this.total--
+                }else{
+                    this.total = 0
+                }
+                
             }            
         },
         getTotal(){
             const cart = JSON.parse(localStorage.getItem("cart"))
             
-            if(!cart){
-                return
-            }else{
+            // questo evita errori in console nel caso cart sie vuoto (undefined)
+            if(cart){
                 cart.forEach(element => {
                     this.total += element.qta
                 });

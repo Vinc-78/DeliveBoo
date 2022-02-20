@@ -508,7 +508,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MenuRistorante",
   data: function data() {
@@ -2887,8 +2886,6 @@ var render = function () {
                             },
                             [_vm._v("\n              -\n            ")]
                           ),
-                          _vm._v(" "),
-                          _c("p"),
                         ]),
                       ])
                     : _vm._e(),

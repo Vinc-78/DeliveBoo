@@ -56,7 +56,6 @@
                 -
               </button>
 
-              <p></p>
             </div>
           </div>
         </div>

@@ -559,12 +559,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     removeToCart: function removeToCart(dish) {
       var cart = JSON.parse(localStorage.getItem("cart"));
+      var dishExists = cart.find(function (el) {
+        return el.product.id === dish.id;
+      });
 
-      if (cart.length !== 0) {
-        var dishExists = cart.find(function (el) {
-          return el.product.id === dish.id;
-        });
-
+      if (dishExists !== undefined) {
         if (dishExists && dishExists.qta > 1) {
           dishExists.qta--;
         } else if (dishExists.qta === 1) {

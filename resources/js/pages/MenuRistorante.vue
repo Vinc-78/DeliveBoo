@@ -124,9 +124,9 @@ export default {
         removeToCart(dish){
             const cart = JSON.parse(localStorage.getItem("cart"));
 
-            if(cart.length !== 0){
-                const dishExists = cart.find((el) => el.product.id === dish.id)
-
+            const dishExists = cart.find((el) => el.product.id === dish.id)
+            
+            if(dishExists !== undefined){
                 if(dishExists && dishExists.qta > 1){
                     dishExists.qta--
                 }else if(dishExists.qta === 1){

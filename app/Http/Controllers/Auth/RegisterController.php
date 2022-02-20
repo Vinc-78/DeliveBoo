@@ -59,6 +59,7 @@ class RegisterController extends Controller
             'p_iva' => ['required', 'numeric', 'min:11', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'categories'=>['required'],
+        
 
             
         ]);

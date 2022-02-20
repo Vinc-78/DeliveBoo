@@ -558,36 +558,37 @@ __webpack_require__.r(__webpack_exports__);
       this.total++;
     },
     removeToCart: function removeToCart(dish) {
-      var cart = JSON.parse(localStorage.getItem("cart"));
+      var cart = JSON.parse(localStorage.getItem("cart")); //questo "if" previene errori in concole nel caso il cart è vuoto (cioè undefined)
 
-      if (cart !== undefined) {
+      if (cart) {
         var dishExists = cart.find(function (el) {
           return el.product.id === dish.id;
         });
 
-        if (dishExists !== undefined) {
-          if (dishExists && dishExists.qta > 1) {
-            dishExists.qta--;
-          } else if (dishExists.qta === 1) {
-            //recupero l'id del piatto esistente per poi cancellarlo
-            var dishRemove = cart.indexOf(dishExists); // console.log(dishRemove);
+        if (dishExists && dishExists.qta > 1) {
+          dishExists.qta--;
+        } else if (dishExists && dishExists.qta === 1) {
+          //recupero l'id del piatto esistente per poi cancellarlo
+          var dishRemove = cart.indexOf(dishExists); // console.log(dishRemove);
 
-            cart.splice(dishRemove, 1);
-          }
+          cart.splice(dishRemove, 1);
+        }
 
-          localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem("cart", JSON.stringify(cart)); // questo evita che il totale abbia numeri negativi
+
+        if (this.total) {
           this.total--;
+        } else {
+          this.total = 0;
         }
       }
     },
     getTotal: function getTotal() {
       var _this2 = this;
 
-      var cart = JSON.parse(localStorage.getItem("cart"));
+      var cart = JSON.parse(localStorage.getItem("cart")); // questo evita errori in console nel caso cart sie vuoto (undefined)
 
-      if (!cart) {
-        return;
-      } else {
+      if (cart) {
         cart.forEach(function (element) {
           _this2.total += element.qta;
         });

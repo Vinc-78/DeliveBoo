@@ -91,7 +91,11 @@ export default {
                 //allora vado a creare la chiave cart e gli associo un array
                 localStorage.setItem("cart", JSON.stringify([]))
             }
-            
+
+            // ! in questo modo assegno una chiave per ogni ristorante e poi devo andare a lavorare sul cart di ogni ristorante 
+            // localStorage.setItem("cart", JSON.stringify({prova : []}))
+            /* let prova = this.myMenu.slug.toString()
+            console.log(prova); */
 
 
             //recupero la chiave cart dentro la funzione e gli associo l'array che si trova nel cart di local storage
@@ -140,7 +144,9 @@ export default {
         getTotal(){
             const cart = JSON.parse(localStorage.getItem("cart"))
             
-            if(cart.length !== 0 ){
+            if(!cart){
+                return
+            }else{
                 cart.forEach(element => {
                     this.total += element.qta
                 });

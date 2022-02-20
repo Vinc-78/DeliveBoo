@@ -529,7 +529,12 @@ __webpack_require__.r(__webpack_exports__);
       if (!localStorage.getItem("cart")) {
         //allora vado a creare la chiave cart e gli associo un array
         localStorage.setItem("cart", JSON.stringify([]));
-      } //recupero la chiave cart dentro la funzione e gli associo l'array che si trova nel cart di local storage
+      } // ! in questo modo assegno una chiave per ogni ristorante e poi devo andare a lavorare sul cart di ogni ristorante 
+      // localStorage.setItem("cart", JSON.stringify({prova : []}))
+
+      /* let prova = this.myMenu.slug.toString()
+      console.log(prova); */
+      //recupero la chiave cart dentro la funzione e gli associo l'array che si trova nel cart di local storage
 
 
       var cart = JSON.parse(localStorage.getItem("cart")); //controllo se il piatto su cui ho cliccato è già presente nell'array 
@@ -578,7 +583,9 @@ __webpack_require__.r(__webpack_exports__);
 
       var cart = JSON.parse(localStorage.getItem("cart"));
 
-      if (cart.length !== 0) {
+      if (!cart) {
+        return;
+      } else {
         cart.forEach(function (element) {
           _this2.total += element.qta;
         });

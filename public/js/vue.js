@@ -559,22 +559,25 @@ __webpack_require__.r(__webpack_exports__);
     },
     removeToCart: function removeToCart(dish) {
       var cart = JSON.parse(localStorage.getItem("cart"));
-      var dishExists = cart.find(function (el) {
-        return el.product.id === dish.id;
-      });
 
-      if (dishExists !== undefined) {
-        if (dishExists && dishExists.qta > 1) {
-          dishExists.qta--;
-        } else if (dishExists.qta === 1) {
-          //recupero l'id del piatto esistente per poi cancellarlo
-          var dishRemove = cart.indexOf(dishExists); // console.log(dishRemove);
+      if (cart !== undefined) {
+        var dishExists = cart.find(function (el) {
+          return el.product.id === dish.id;
+        });
 
-          cart.splice(dishRemove, 1);
+        if (dishExists !== undefined) {
+          if (dishExists && dishExists.qta > 1) {
+            dishExists.qta--;
+          } else if (dishExists.qta === 1) {
+            //recupero l'id del piatto esistente per poi cancellarlo
+            var dishRemove = cart.indexOf(dishExists); // console.log(dishRemove);
+
+            cart.splice(dishRemove, 1);
+          }
+
+          localStorage.setItem("cart", JSON.stringify(cart));
+          this.total--;
         }
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-        this.total--;
       }
     },
     getTotal: function getTotal() {

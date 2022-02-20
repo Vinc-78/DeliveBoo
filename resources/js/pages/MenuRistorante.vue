@@ -124,22 +124,24 @@ export default {
         removeToCart(dish){
             const cart = JSON.parse(localStorage.getItem("cart"));
 
-            const dishExists = cart.find((el) => el.product.id === dish.id)
-            
-            if(dishExists !== undefined){
-                if(dishExists && dishExists.qta > 1){
-                    dishExists.qta--
-                }else if(dishExists.qta === 1){
-                    //recupero l'id del piatto esistente per poi cancellarlo
-                    let dishRemove = cart.indexOf(dishExists);
-                    // console.log(dishRemove);
-                    cart.splice(dishRemove, 1)
+            if(cart !== undefined){
+                const dishExists = cart.find((el) => el.product.id === dish.id)
+
+                if(dishExists !== undefined){
+                    if(dishExists && dishExists.qta > 1){
+                        dishExists.qta--
+                    }else if(dishExists.qta === 1){
+                        //recupero l'id del piatto esistente per poi cancellarlo
+                        let dishRemove = cart.indexOf(dishExists);
+                        // console.log(dishRemove);
+                        cart.splice(dishRemove, 1)
+                    }
+
+                    localStorage.setItem("cart", JSON.stringify(cart))
+
+                    this.total--
                 }
-
-                localStorage.setItem("cart", JSON.stringify(cart))
-
-                this.total--
-            }
+            }            
         },
         getTotal(){
             const cart = JSON.parse(localStorage.getItem("cart"))

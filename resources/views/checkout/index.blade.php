@@ -116,6 +116,49 @@
                     </div>
                 </div>
             </div>
+
+             {{-- payment --}} {{-- da vedere --}}
+             <div class="row text-left mb-5">
+                
+                <div class="col-12 p-0">
+
+                    <label for="payment" class="p-0 col-12"><h5>Inserisci carta di credito <span class="small">*</span></h5></label>
+                    
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
+                        
+                        <input type="payment" id="payment" name="payment" placeholder="Numero della carta" class="form-control rounded-0 border  @error('payment') is-invalid @enderror"
+                        value="{{ old("payment") }}" required autocomplete="payment">
+                        
+                        @error('payment')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+
+             {{-- total price --}} {{-- da vedere --}}
+             <div class="row text-left mb-5">
+                
+                <div class="col-12 p-0">
+
+                    <label for="total_price" class="p-0 col-12"><h5>total_price <span class="small">*</span></h5></label>
+                    
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
+                        
+                        <input type="total_price" id="total_price" name="total_price" placeholder="total_price" class="form-control rounded-0 border  @error('total_price') is-invalid @enderror"
+                        value="{{ old("total_price") }}" required autocomplete="total_price">
+                        
+                        @error('total_price')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+
             
            
 

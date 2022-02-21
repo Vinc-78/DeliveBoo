@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use Faker\Provider\ar_EG\Payment;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
@@ -35,9 +36,16 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-       /*  $data = $request->all(); 
+        $data = $request->all(); 
         $newOrder = new Order();
-     */
+
+
+        $newOrder->fill($data);
+
+        $newOrder->save();
+
+        return view('home');
+    
     }
 
     /**

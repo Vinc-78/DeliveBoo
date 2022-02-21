@@ -13,9 +13,9 @@
                 <ul class="d-flex flex-column">
                     <li v-for="currentDish in currentCart" :key="currentDish.id" class="piatto-singolo">
 
-                        <h5>{{ currentDish.product.name }}</h5>
+                        <h4 class=" font-weight-bolder">{{ currentDish.product.name }}</h4>
 
-                        <p style="text-align: left;" class="">Qta {{ currentDish.qta }} X {{ currentDish.product.price }} € </p>
+                        <p style="text-align: left;" class=""><span class="font-weight-bolder">Qta {{ currentDish.qta }}  </span> X <span class="font-weight-bolder">{{ currentDish.product.price }} €  </span></p>
 
                                       
                     </li>
@@ -23,11 +23,16 @@
 
             </div>
 
-            <div class="col-6">
+            <div class="col-6 text-center">
 
                 <h3>Totale ordine </h3>
 
-                {{totalPrice}}
+               <h4 class=" font-weight-bolder"> {{totalPrice}} € </h4>
+
+
+               <a href="/"><button class="btn btn-success"> Completa l'ordine </button></a>
+
+                
                 
             </div>
 

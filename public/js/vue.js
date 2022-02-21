@@ -386,6 +386,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
   data: function data() {
@@ -2866,16 +2871,18 @@ var render = function () {
               "li",
               { key: currentDish.id, staticClass: "piatto-singolo" },
               [
-                _c("h5", [_vm._v(_vm._s(currentDish.product.name))]),
+                _c("h4", { staticClass: " font-weight-bolder" }, [
+                  _vm._v(_vm._s(currentDish.product.name)),
+                ]),
                 _vm._v(" "),
                 _c("p", { staticStyle: { "text-align": "left" } }, [
-                  _vm._v(
-                    "Qta " +
-                      _vm._s(currentDish.qta) +
-                      " X " +
-                      _vm._s(currentDish.product.price) +
-                      " € "
-                  ),
+                  _c("span", { staticClass: "font-weight-bolder" }, [
+                    _vm._v("Qta " + _vm._s(currentDish.qta) + "  "),
+                  ]),
+                  _vm._v(" X "),
+                  _c("span", { staticClass: "font-weight-bolder" }, [
+                    _vm._v(_vm._s(currentDish.product.price) + " €  "),
+                  ]),
                 ]),
               ]
             )
@@ -2884,18 +2891,30 @@ var render = function () {
         ),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-6" }, [
+      _c("div", { staticClass: "col-6 text-center" }, [
         _c("h3", [_vm._v("Totale ordine ")]),
-        _vm._v(
-          "\n\n            " +
-            _vm._s(_vm.totalPrice) +
-            "\n            \n        "
-        ),
+        _vm._v(" "),
+        _c("h4", { staticClass: " font-weight-bolder" }, [
+          _vm._v(" " + _vm._s(_vm.totalPrice) + " € "),
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
       ]),
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "/" } }, [
+      _c("button", { staticClass: "btn btn-success" }, [
+        _vm._v(" Completa l'ordine "),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 

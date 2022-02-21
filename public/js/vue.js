@@ -508,6 +508,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MenuRistorante",
   data: function data() {
@@ -527,7 +535,7 @@ __webpack_require__.r(__webpack_exports__);
       // console.log(this.$route.params.id);
       var slug = this.$route.params.slug;
       window.axios.get("/api/menu/".concat(slug)).then(function (resp) {
-        // console.log(resp.data.data/* .dishes */);
+        // console.log(resp.data.data);
         _this.myMenu = resp.data.data;
       });
     },
@@ -2812,98 +2820,128 @@ var render = function () {
             "div",
             {
               staticClass:
-                "row row-cols-lg-4 row-cols-sm-2 row-cols-md-3 mt-mb-4",
+                "row flex-lg-row flex-md-column-reverse flex-sm-column-reverse",
             },
-            _vm._l(_vm.myMenu.dishes, function (dish) {
-              return _c(
-                "div",
-                { key: dish.id, staticClass: "col text-center mb-3" },
-                [
-                  dish.visibility
-                    ? _c("div", { staticClass: "piatto" }, [
-                        _c("img", {
-                          staticClass: "img-dish w-75",
-                          staticStyle: {
-                            "object-fit": "cover",
-                            height: "150px",
-                          },
-                          attrs: {
-                            src: "/storage/" + dish.image_url,
-                            alt: dish.name,
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "piatto" }, [
-                          _c(
-                            "p",
-                            {
-                              staticClass:
-                                "mt-3 mb-4 border-bottom border-dark font-weight-bold",
-                            },
-                            [
-                              _vm._v(
-                                "\n              " +
-                                  _vm._s(dish.name) +
-                                  "\n            "
-                              ),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "p",
-                            {
-                              staticClass: "mb-3",
-                              staticStyle: { height: "80px" },
-                            },
-                            [_vm._v(_vm._s(dish.description))]
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("p", { staticClass: "mb-4" }, [
-                            _vm._v(_vm._s(dish.price) + " €"),
-                          ]),
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-success rounded-0",
-                              on: {
-                                click: function ($event) {
-                                  return _vm.addToCart(dish)
+            [
+              _c("div", { staticClass: "col-lg-8 col-md-12" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 mt-mb-4",
+                  },
+                  _vm._l(_vm.myMenu.dishes, function (dish) {
+                    return _c(
+                      "div",
+                      { key: dish.id, staticClass: "col text-center mb-3" },
+                      [
+                        dish.visibility
+                          ? _c("div", { staticClass: "piatto" }, [
+                              _c("img", {
+                                staticClass: "img-dish w-75",
+                                staticStyle: {
+                                  "object-fit": "cover",
+                                  height: "150px",
                                 },
-                              },
-                            },
-                            [_vm._v("\n              +\n            ")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass: "btn btn-warning rounded-0",
-                              on: {
-                                click: function ($event) {
-                                  return _vm.removeToCart(dish)
+                                attrs: {
+                                  src: "/storage/" + dish.image_url,
+                                  alt: dish.name,
                                 },
-                              },
-                            },
-                            [_vm._v("\n              -\n            ")]
-                          ),
-                        ]),
-                      ])
-                    : _vm._e(),
-                ]
-              )
-            }),
-            0
+                              }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "piatto" }, [
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass:
+                                      "mt-3 mb-4 border-bottom border-dark font-weight-bold",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                  " +
+                                        _vm._s(dish.name) +
+                                        "\n                "
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass: "mb-3",
+                                    staticStyle: { height: "80px" },
+                                  },
+                                  [_vm._v(_vm._s(dish.description))]
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", [
+                                _c("p", { staticClass: "mb-4" }, [
+                                  _vm._v(_vm._s(dish.price) + " €"),
+                                ]),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-success rounded-0",
+                                    on: {
+                                      click: function ($event) {
+                                        return _vm.addToCart(dish)
+                                      },
+                                    },
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                  +\n                "
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-warning rounded-0",
+                                    on: {
+                                      click: function ($event) {
+                                        return _vm.removeToCart(dish)
+                                      },
+                                    },
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                  -\n                "
+                                    ),
+                                  ]
+                                ),
+                              ]),
+                            ])
+                          : _vm._e(),
+                      ]
+                    )
+                  }),
+                  0
+                ),
+              ]),
+              _vm._v(" "),
+              _vm._m(0),
+            ]
           ),
         ])
       : _c("div", [_c("h1", [_vm._v("non ci sono menu al momento")])]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-4 col-md-12 my-4 text-center" }, [
+      _c("h3", [_vm._v("Nel tuo carrello")]),
+    ])
+  },
+]
 render._withStripped = true
 
 

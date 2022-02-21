@@ -8,60 +8,68 @@
         <h3 class="pt-3">Menù</h3>
 
         <div>
-          <router-link to="/cart" class="btn btn-primary rounded-0"
-            >Carrello {{ total }}</router-link
-          >
+          <router-link to="/cart" class="btn btn-primary rounded-0">Carrello {{ total }}</router-link>
         </div>
       </div>
 
-      <div class="row row-cols-lg-4 row-cols-sm-2 row-cols-md-3 mt-mb-4">
-        <!-- STAMPO TUTTI I PIATTI DEL RISTORANTE -->
-        <div
-          class="col text-center mb-3"
-          v-for="dish in myMenu.dishes"
-          :key="dish.id"
-        >
-          <div class="piatto" v-if="dish.visibility">
-            <!-- Lo stile dell'immagine funziona in line -->
-            <img
-              style="object-fit: cover; height: 150px"
-              :src="'/storage/' + dish.image_url"
-              class="img-dish w-75"
-              :alt="dish.name"
-            />
+      <div class="row flex-lg-row flex-md-column-reverse flex-sm-column-reverse">
+        
+        <div class="col-lg-8 col-md-12">
 
-            <div class="piatto">
-              <p class="mt-3 mb-4 border-bottom border-dark font-weight-bold">
-                {{ dish.name }}
-              </p>
+          <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 mt-mb-4">
+            <!-- STAMPO TUTTI I PIATTI DEL RISTORANTE -->
+            <div
+              class="col text-center mb-3"
+              v-for="dish in myMenu.dishes"
+              :key="dish.id"
+            >
+              <div class="piatto" v-if="dish.visibility">
+                <!-- Lo stile dell'immagine funziona in line -->
+                <img
+                  style="object-fit: cover; height: 150px"
+                  :src="'/storage/' + dish.image_url"
+                  class="img-dish w-75"
+                  :alt="dish.name"
+                />
 
-              <p style="height: 80px" class="mb-3">{{ dish.description }}</p>
-            </div>
+                <div class="piatto">
+                  <p class="mt-3 mb-4 border-bottom border-dark font-weight-bold">
+                    {{ dish.name }}
+                  </p>
 
-            <div>
-              <p class="mb-4">{{ dish.price }} €</p>
-            </div>
+                  <p style="height: 80px" class="mb-3">{{ dish.description }}</p>
+                </div>
 
-            <div>
-              <button
-                class="btn btn-success rounded-0"
-                @click="addToCart(dish)"
-              >
-                +
-              </button>
-              <button
-                class="btn btn-warning rounded-0"
-                @click="removeToCart(dish)"
-              >
-                -
-              </button>
+                <div>
+                  <p class="mb-4">{{ dish.price }} €</p>
+                </div>
 
+                <!-- bottoni -->
+                <div>
+                  <button
+                    class="btn btn-success rounded-0"
+                    @click="addToCart(dish)"
+                  >
+                    +
+                  </button>
+                  <button
+                    class="btn btn-warning rounded-0"
+                    @click="removeToCart(dish)"
+                  >
+                    -
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
 
-        <!-- menu è il piatto -->
+        <div class="col-lg-4 col-md-12 my-4 text-center">
+          <h3>Nel tuo carrello</h3>
+        </div>
       </div>
+
     </div>
 
     <div v-else>
@@ -88,7 +96,7 @@ export default {
       // console.log(this.$route.params.id);
       let slug = this.$route.params.slug;
       window.axios.get(`/api/menu/${slug}`).then((resp) => {
-        // console.log(resp.data.data/* .dishes */);
+        // console.log(resp.data.data);
         this.myMenu = resp.data.data;
       });
     },

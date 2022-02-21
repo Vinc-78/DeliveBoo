@@ -3,7 +3,9 @@
 @section('content')
 
 
-    <h1>Abbiamo inviato il tuo prodotto </h1>
+    <h1>Stiamo preparando il tuo ordine </h1>
+
+    <h2> Grazie per essere venuti da noi  </h2>
 
     
 

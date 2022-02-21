@@ -516,17 +516,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MenuRistorante",
   data: function data() {
     return {
       myMenu: [],
-      total: 0
+      total: 0,
+      currentCart: []
     };
   },
   mounted: function mounted() {
     this.getData();
     this.getTotal();
+    this.getCurrentCart();
   },
   methods: {
     getData: function getData() {
@@ -535,8 +551,7 @@ __webpack_require__.r(__webpack_exports__);
       // console.log(this.$route.params.id);
       var slug = this.$route.params.slug;
       window.axios.get("/api/menu/".concat(slug)).then(function (resp) {
-        // console.log(resp.data.data);
-        _this.myMenu = resp.data.data;
+        _this.myMenu = resp.data.data; // console.log(this.myMenu);
       });
     },
     addToCart: function addToCart(dish) {
@@ -567,7 +582,11 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       localStorage.setItem("cart", JSON.stringify(cart));
-      this.setTotal("+");
+      this.setTotal("+"); //aggiorna il carrello sidebar ogni volta che vengono aggiunti piatti
+
+      if (cart) {
+        this.currentCart = cart.content;
+      }
     },
     removeToCart: function removeToCart(dish) {
       var cart = JSON.parse(localStorage.getItem("cart")); //questo "if" previene errori in concole nel caso il cart è vuoto (cioè undefined)
@@ -590,6 +609,11 @@ __webpack_require__.r(__webpack_exports__);
 
         if (dishExists && dishExists.qta > 0) {
           this.setTotal("-");
+        } //aggiorna il carrello sidebar ogni volta che vengono rimossi piatti
+
+
+        if (cart) {
+          this.currentCart = cart.content;
         }
       }
     },
@@ -620,15 +644,24 @@ __webpack_require__.r(__webpack_exports__);
           this.total -= 1;
         }
       }
+    },
+    getCurrentCart: function getCurrentCart() {
+      var cart = JSON.parse(localStorage.getItem("cart"));
+
+      if (cart) {
+        this.currentCart = cart.content;
+      }
     }
   },
   watch: {
     myMenu: function myMenu() {
       var slug = JSON.parse(localStorage.getItem("cart")); //se lo slug del ristorante corrente è diverso da quello salvato in local storage, allora pulisco sia il carrello che il totale
 
-      if (this.myMenu.slug !== slug.name) {
-        this.total = 0;
-        localStorage.clear();
+      if (slug) {
+        if (this.myMenu.slug !== slug.name) {
+          this.total = 0;
+          localStorage.clear();
+        }
       }
     }
   }
@@ -2791,7 +2824,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    this.myMenu != null
+    _vm.myMenu.dishes.length !== 0
       ? _c("div", [
           _c("div", { staticClass: "text-center title-menu mb-5" }, [
             _c("h1", { staticClass: "border-bottom border-dark pb-4" }, [
@@ -2925,23 +2958,48 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
-              _vm._m(0),
+              _c(
+                "div",
+                { staticClass: "col-lg-4 col-md-12 my-4 text-center" },
+                [
+                  _vm.currentCart.length === 0
+                    ? _c("div", [_c("h4", [_vm._v("Il tuo carrello è vuoto")])])
+                    : _c("div", [
+                        _c("h4", [_vm._v("Il tuo carrello")]),
+                        _vm._v(" "),
+                        _c(
+                          "ul",
+                          { staticClass: "list-group" },
+                          _vm._l(_vm.currentCart, function (currentDish) {
+                            return _c(
+                              "li",
+                              {
+                                key: currentDish.id,
+                                staticClass: "list-group-item",
+                              },
+                              [
+                                _c("p", { staticClass: "m-0" }, [
+                                  _vm._v(
+                                    _vm._s(currentDish.qta) +
+                                      " X " +
+                                      _vm._s(currentDish.product.name)
+                                  ),
+                                ]),
+                              ]
+                            )
+                          }),
+                          0
+                        ),
+                      ]),
+                ]
+              ),
             ]
           ),
         ])
       : _c("div", [_c("h1", [_vm._v("non ci sono menu al momento")])]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-lg-4 col-md-12 my-4 text-center" }, [
-      _c("h3", [_vm._v("Nel tuo carrello")]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

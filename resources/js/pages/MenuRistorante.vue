@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div v-if="this.myMenu != null">
+    <div v-if="myMenu.dishes.length !== 0">
       <div class="text-center title-menu mb-5">
         <!-- NOME DEL RISTORANTE -->
         <h1 class="border-bottom border-dark pb-4">{{ myMenu.name }}</h1>
@@ -66,7 +66,21 @@
         </div>
 
         <div class="col-lg-4 col-md-12 my-4 text-center">
-          <h3>Nel tuo carrello</h3>
+
+          <div v-if="currentCart.length === 0 ">
+            <h4>Il tuo carrello è vuoto</h4>
+          </div>
+          
+          <div v-else>
+            <h4>Il tuo carrello</h4>
+
+            <ul class="list-group">
+              <li v-for="currentDish in currentCart" :key="currentDish.id" class="list-group-item">
+                <p class="m-0">{{ currentDish.qta }} X {{ currentDish.product.name }}</p>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
 
@@ -85,19 +99,21 @@ export default {
     return {
       myMenu: [],
       total: 0,
+      currentCart: []
     };
   },
   mounted() {
     this.getData();
     this.getTotal();
+    this.getCurrentCart();
   },
   methods: {
     getData() {
       // console.log(this.$route.params.id);
       let slug = this.$route.params.slug;
       window.axios.get(`/api/menu/${slug}`).then((resp) => {
-        // console.log(resp.data.data);
         this.myMenu = resp.data.data;
+        // console.log(this.myMenu);
       });
     },
     addToCart(dish) {
@@ -133,6 +149,11 @@ export default {
       localStorage.setItem("cart", JSON.stringify(cart));
 
       this.setTotal("+");
+
+      //aggiorna il carrello sidebar ogni volta che vengono aggiunti piatti
+      if(cart){
+        this.currentCart = cart.content
+      }
     },
     removeToCart(dish) {
       const cart = JSON.parse(localStorage.getItem("cart"));
@@ -154,6 +175,11 @@ export default {
 
         if(dishExists && dishExists.qta > 0){
           this.setTotal("-");
+        }
+
+        //aggiorna il carrello sidebar ogni volta che vengono rimossi piatti
+        if(cart){
+        this.currentCart = cart.content
         }
       }
     },
@@ -184,6 +210,13 @@ export default {
         }
       }
     },
+    getCurrentCart(){
+      const cart = JSON.parse(localStorage.getItem("cart"));
+
+      if(cart){
+        this.currentCart = cart.content
+      }
+    }
   },
   watch: {
     myMenu: function () {
@@ -191,12 +224,16 @@ export default {
       const slug = JSON.parse(localStorage.getItem("cart"));
 
       //se lo slug del ristorante corrente è diverso da quello salvato in local storage, allora pulisco sia il carrello che il totale
-      if (this.myMenu.slug !== slug.name) {
-        this.total = 0;
-        localStorage.clear();
+      if(slug){
+
+        if (this.myMenu.slug !== slug.name) {
+          this.total = 0;
+          localStorage.clear();
+        }
       }
-    },
-  },
+
+    }
+  }
 };
 </script>
 

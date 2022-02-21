@@ -2,11 +2,20 @@
 
 @section('content')
 
+    <div class="container">
 
-    <h1>Stiamo preparando il tuo ordine </h1>
+        <div class="saluti text-center">
+            <h1>Stiamo preparando il tuo ordine </h1>
 
-    <h2> Grazie per essere venuti da noi  </h2>
+            <h2> Grazie per essere venuti da noi  </h2>
 
+        </div>
+
+
+    </div>
+
+
+    
     
 
     

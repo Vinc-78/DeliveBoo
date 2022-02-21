@@ -67,6 +67,8 @@
 
         <div class="col-lg-4 col-md-12 my-4 text-center">
 
+          
+
           <div v-if="currentCart.length === 0 ">
             <h4>Il tuo carrello è vuoto</h4>
           </div>
@@ -211,6 +213,9 @@ export default {
       }
     },
     getCurrentCart(){
+
+       
+
       const cart = JSON.parse(localStorage.getItem("cart"));
 
       if(cart){

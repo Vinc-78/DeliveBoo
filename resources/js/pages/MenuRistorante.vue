@@ -8,7 +8,7 @@
         <h3 class="pt-3">Menù</h3>
 
         <div>
-          <router-link to="/cart" class="btn btn-primary rounded-0">Carrello {{ total }}</router-link>
+          <router-link :to="{ name:'cart' }" class="btn btn-primary rounded-0">Carrello {{ total }}</router-link>
         </div>
       </div>
 

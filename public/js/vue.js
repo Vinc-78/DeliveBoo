@@ -2908,7 +2908,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "/" } }, [
+    return _c("a", { attrs: { href: "/checkout" } }, [
       _c("button", { staticClass: "btn btn-success" }, [
         _vm._v(" Completa l'ordine "),
       ]),

@@ -30,7 +30,7 @@
                <h4 class=" font-weight-bolder"> {{totalPrice}} € </h4>
 
 
-               <a href="/"><button class="btn btn-success"> Completa l'ordine </button></a>
+               <a href="/checkout"><button class="btn btn-success"> Completa l'ordine </button></a>
 
                 
                 

@@ -36,6 +36,9 @@ Route::middleware('auth')
     
 });
 
+
+Route::get('/checkout', 'CheckoutController@index' )->name('checkout');
+
 Route::post('/search', 'SearchController@search')->name('search');
 
 Route::get("{any?}",function() {    // serve a creare una rotta generica che ho se clicco un url generico 

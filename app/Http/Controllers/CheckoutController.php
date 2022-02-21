@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
@@ -34,7 +35,9 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       /*  $data = $request->all(); 
+        $newOrder = new Order();
+     */
     }
 
     /**

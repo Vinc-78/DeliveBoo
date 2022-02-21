@@ -37,7 +37,7 @@ Route::middleware('auth')
 });
 
 
-Route::get('/checkout', 'CheckoutController@index' )->name('checkout');
+Route::resource ('checkout', 'CheckoutController' );
 
 Route::post('/search', 'SearchController@search')->name('search');
 

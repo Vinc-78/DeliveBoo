@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <h1>Qui va il form </h1>
+    <h1>Inserisci i tuoi dati e completa l'ordine </h1>
 
     <form action="">   {{-- Funzione store da fare in controller ChecoutController --}}
 

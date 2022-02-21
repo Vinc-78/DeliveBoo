@@ -8,7 +8,7 @@
         <h3 class="pt-3">Menù</h3>
 
         <div>
-          <router-link to="/cart" class="btn btn-primary rounded-0">Carrello {{ total }}</router-link>
+          <router-link :to="{ name:'cart' }" class="btn btn-primary rounded-0">Carrello {{ total }}</router-link>
         </div>
       </div>
 
@@ -66,6 +66,8 @@
         </div>
 
         <div class="col-lg-4 col-md-12 my-4 text-center">
+
+          
 
           <div v-if="currentCart.length === 0 ">
             <h4>Il tuo carrello è vuoto</h4>
@@ -211,6 +213,9 @@ export default {
       }
     },
     getCurrentCart(){
+
+       
+
       const cart = JSON.parse(localStorage.getItem("cart"));
 
       if(cart){

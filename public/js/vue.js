@@ -579,9 +579,14 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         localStorage.setItem("cart", JSON.stringify(cart));
-        this.setTotal("-");
+
+        if (dishExists && dishExists.qta > 0) {
+          this.setTotal("-");
+        }
       }
     },
+    //questa funzione serve di base per aggiornare il contatore in caso di ricaricamento della pagina
+    //si potrebbe utilizzare 
     getTotal: function getTotal() {
       var _this2 = this;
 

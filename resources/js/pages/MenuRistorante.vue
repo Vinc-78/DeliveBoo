@@ -144,9 +144,13 @@ export default {
 
         localStorage.setItem("cart", JSON.stringify(cart));
 
-        this.setTotal("-");
+        if(dishExists && dishExists.qta > 0){
+          this.setTotal("-");
+        }
       }
     },
+    //questa funzione serve di base per aggiornare il contatore in caso di ricaricamento della pagina
+    //si potrebbe utilizzare 
     getTotal() {
       const cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -155,8 +159,8 @@ export default {
         cart.content.forEach((element) => {
           this.total += element.qta;
         });
-      }
-    },
+      } 
+    } ,
     /**
      * @param {string} sign è il segno che indica se la funzione deve sommare o sottrarre
      */

@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* Route::get('/', function () {
+Route::get('/', function () {
     return view('guests.home');
-}); */
+});
 
 Auth::routes();
 
@@ -41,6 +41,6 @@ Route::resource ('checkout', 'CheckoutController' );
 
 Route::post('/search', 'SearchController@search')->name('search');
 
-Route::get("{any?}",function() {    // serve a creare una rotta generica che ho se clicco un url generico 
+/* Route::get("{any?}",function() {    // serve a creare una rotta generica che ho se clicco un url generico 
     return view("guests.home");
-})->where("any", ".*");
+})->where("any", ".*"); */

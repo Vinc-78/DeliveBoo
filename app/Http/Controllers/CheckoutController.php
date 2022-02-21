@@ -44,7 +44,7 @@ class CheckoutController extends Controller
 
         $newOrder->save();
 
-        return view('home');
+        return view('checkout.saluti');
     
     }
 

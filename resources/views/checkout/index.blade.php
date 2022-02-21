@@ -117,7 +117,7 @@
                 </div>
             </div>
 
-             {{-- payment --}} {{-- da vedere --}}
+             {{-- payment --}} {{-- da vedere da vedere come passare--}}
              <div class="row text-left mb-5">
                 
                 <div class="col-12 p-0">
@@ -138,7 +138,7 @@
                 </div>
             </div>
 
-             {{-- total price --}} {{-- da vedere --}}
+             {{-- total price --}} {{-- da vedere come passare --}}
              <div class="row text-left mb-5">
                 
                 <div class="col-12 p-0">
@@ -166,7 +166,7 @@
             <div class="form-group row mb-0">
                 <div class="col-12 text-center">
                     <button type="submit" class="btn btn-primary rounded-0">
-                        Invia 
+                        Procedi con il pagamento
                     </button>
                 </div>
             </div>

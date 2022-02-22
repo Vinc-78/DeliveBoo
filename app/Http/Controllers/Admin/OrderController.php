@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class OrderController extends Controller
 {
@@ -127,5 +128,26 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /* Funzione per fare il grafico per anno */
+
+    public function getChart()
+    {
+
+
+        $user=Auth::user()->id;
+
+       /* Recupero gli ordini per id dell'utente registrato */
+        $userOrders = DB::table('users')->join('dishes', 'dishes.user_id', '=', 'users.id')
+        ->join('dish_order', 'dishes.id', '=', 'dish_order.dish_id')
+        ->join('orders', 'dish_order.order_id', '=', 'orders.id')
+        ->where('users.id', '=', $user)
+        ->get()
+        ->toArray();
+
+            /* dd($userOrders); */
+        
+        return view('admin.orders.chart'); 
     }
 }

@@ -46,20 +46,22 @@ class SearchController extends Controller
                 return json_encode($usersList->get());
             }
 
-            //DB::enableQueryLog();
-            /* $usersList = User::whereHas('categories', function(Builder $query) use($filter){
-                $query
-                ->whereIn('categories.name', $filter)
-                ->groupBy('users.id')
-                ->having('count(users.id)', '=', count($filter));
-                
-              
-        
-                
-            }); */
-            //$queries = DB::getQueryLog();
-            //dd($queries);
+           
+            /* 
 
+            //Old Query 
+            
+            
+            $filter = $request->params;
+
+
+            $usersList = User::whereHas('categories', function(Builder $query) use($filter){
+                $query->where('categories.name', $filter);
+                
+            });
+
+    
+            return json_encode($usersList->get(['name', 'address', 'cover_img','slug'])); */
           
           
   

@@ -126,6 +126,7 @@ export default {
           JSON.stringify({
             name: this.myMenu.slug,
             content: [],
+            totalPrice: 0
           })
         );
       }

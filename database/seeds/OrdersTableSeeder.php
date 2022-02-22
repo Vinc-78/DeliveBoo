@@ -23,7 +23,7 @@ class OrdersTableSeeder extends Seeder
 
         shuffle($slugs);
 
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=0; $i < 20; $i++) { 
             $newOrder = new Order();
             $newOrder-> name_client = $faker->firstName();
             $newOrder-> surname_client = $faker->lastName();

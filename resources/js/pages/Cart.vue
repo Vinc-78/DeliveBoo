@@ -90,7 +90,15 @@ export default {
 
             this.totalPrice = this.parziale; 
 
+
+            let cart = JSON.parse(localStorage.getItem("cart"));
+
+            cart.totalPrice = this.totalPrice
+
+            localStorage.setItem("cart", JSON.stringify(cart));
         }
+
+
          
      }
 

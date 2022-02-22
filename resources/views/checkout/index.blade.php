@@ -10,7 +10,6 @@
          class="text-center">
             @csrf
 
-
             {{-- Inizia inserimento dati  --}}
 
             {{-- NOME --}}
@@ -141,21 +140,17 @@
              {{-- total price --}} {{-- da vedere come passare --}}
              <div class="row text-left mb-5">
                 
-                <div class="col-12 p-0">
+                <div class="col-12 p-0" id="container_total_price">
 
-                    <label for="total_price" class="p-0 col-12"><h5>total_price <span class="small">*</span></h5></label>
+                {{-- <label for="total_price" class="p-0 col-12"><h5>total_price <span class="small">*</span></h5></label>
                     
-                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
-                        
-                        <input type="total_price" id="total_price" name="total_price" placeholder="total_price" class="form-control rounded-0 border  @error('total_price') is-invalid @enderror"
-                        value="{{ old("total_price") }}" required autocomplete="total_price">
-                        
-                        @error('total_price')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-" style="position: relative">
+                    <div style="width: 100%; height: 100%; position: absolute">
+
                     </div>
+                    <input type="total_price" id="total_price" name="total_price" class="form-control rounded-0 border">
+                    
+                </div> --}}
                 </div>
             </div>
 
@@ -174,7 +169,28 @@
     </div>
 
     
+    <script>
+        const cart = JSON.parse(localStorage.getItem("cart"));
+        const totalPrice = cart.totalPrice;
 
+        const prova = document.getElementById("container_total_price")
+        
+        prova.innerHTML = `
+            <h4>totale prezzo da pagare: € ${totalPrice}</h4>
+            <div class="d-none">
+                <label for="total_price" class="p-0 col-12"><h5>total_price <span class="small">*</span></h5></label>
+                
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-" style="position: relative">
+                    <div style="width: 100%; height: 100%; position: absolute">
+
+                    </div>
+                    <input type="total_price" id="total_price" name="total_price" class="form-control rounded-0 border" value="${totalPrice}">
+                    
+                </div>
+            </div>    
+        `
+
+    </script>
 
 
 

@@ -67,8 +67,6 @@
 
         <div class="col-lg-4 col-md-12 my-4 text-center">
 
-          
-
           <div v-if="currentCart.length === 0 ">
             <h4>Il tuo carrello è vuoto</h4>
           </div>
@@ -91,6 +89,7 @@
     <div v-else>
       <h1>non ci sono menu al momento</h1>
     </div>
+
   </div>
 </template>
 
@@ -127,6 +126,7 @@ export default {
           JSON.stringify({
             name: this.myMenu.slug,
             content: [],
+            totalPrice: 0
           })
         );
       }
@@ -214,8 +214,6 @@ export default {
     },
     getCurrentCart(){
 
-       
-
       const cart = JSON.parse(localStorage.getItem("cart"));
 
       if(cart){
@@ -234,6 +232,7 @@ export default {
         if (this.myMenu.slug !== slug.name) {
           this.total = 0;
           localStorage.clear();
+          this.currentCart = []
         }
       }
 

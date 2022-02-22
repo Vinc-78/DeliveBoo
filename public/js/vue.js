@@ -423,6 +423,9 @@ __webpack_require__.r(__webpack_exports__);
         _this.parziale = _this.parziale + costoPiatto;
       });
       this.totalPrice = this.parziale;
+      var cart = JSON.parse(localStorage.getItem("cart"));
+      cart.totalPrice = this.totalPrice;
+      localStorage.setItem("cart", JSON.stringify(cart));
     }
   }
 });
@@ -624,7 +627,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MenuRistorante",
   data: function data() {
@@ -655,7 +657,8 @@ __webpack_require__.r(__webpack_exports__);
         //allora vado a creare la chiave cart e gli associo lo slug del ristorante corrente e il contenuto che avrà il carrello
         localStorage.setItem("cart", JSON.stringify({
           name: this.myMenu.slug,
-          content: []
+          content: [],
+          totalPrice: 0
         }));
       } //recupero la chiave cart dentro la funzione e gli associo l'array che si trova nel cart di local storage
 
@@ -756,6 +759,7 @@ __webpack_require__.r(__webpack_exports__);
         if (this.myMenu.slug !== slug.name) {
           this.total = 0;
           localStorage.clear();
+          this.currentCart = [];
         }
       }
     }
@@ -19393,7 +19397,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\giuli\OneDrive\Desktop\Boolean\progetto finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

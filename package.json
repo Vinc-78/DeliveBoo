@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "braintree": "^3.10.0",
         "router": "^1.3.6",
         "vue-router": "^3.5.3"
     }

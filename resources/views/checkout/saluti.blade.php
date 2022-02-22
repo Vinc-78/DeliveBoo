@@ -18,22 +18,19 @@
  <div class="container">
     <div class="row">
         <div id="email-box" class="col-6 offset-3">
-            <h1>Congratulazioni (nome cliente) </h1>
+
+          
+            <h1>Congratulazioni ({{$data['name_client']}}) </h1>
             <h3>Grazie per aver usato il nostro servizio di DeliverBoo!</h3>
             <h4>Il tuo ordine è stato effettuato con successo.</h4>
-            <h4>Ecco un riepilogo del tuo ordine:</h4>
-            <ul>
-                <li>Id Ordine: (id ordine)</li>
-                <li>Totale: (totale) euro.</li>
-                
-            </ul>
             
-            <h3>Scontrino</h3>
-           {{--  <ul>
-            @foreach ($ as $)
-                <li>{{ }} - {{ }}euro</li>
-            @endforeach
-            </ul> --}}
+           
+                
+            <h3 class="font-weight-bolder mt-3">Totale pagato: ({{$data['total_price']}} €) </h3>
+                
+           
+            
+          
 
         </div>
     </div>

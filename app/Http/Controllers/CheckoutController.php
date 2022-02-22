@@ -35,7 +35,8 @@ class CheckoutController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
+        
         $data = $request->all(); 
         $newOrder = new Order();
 
@@ -44,7 +45,9 @@ class CheckoutController extends Controller
 
         $newOrder->save();
 
-        return view('checkout.saluti');
+        
+
+        return view('checkout.saluti', ['data' => $data]);
     
     }
 

@@ -144,7 +144,7 @@ class OrderController extends Controller
         ->get()
         ->toArray();
 
-            dd($userOrders);
+            /* dd($userOrders); */
         
         return view('admin.orders.chart'); 
     }

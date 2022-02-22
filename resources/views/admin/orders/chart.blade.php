@@ -21,142 +21,123 @@
                 </div>
             </div>
 
-            {{-- Aggiungere lo stile dei grafici (script)--}}
+          
 
-            
+                {{-- Codice di prova per lo stile  --}}
 
-            <script type="application/javascript">
-                var ctx = document.getElementById('myChart');
-              
-                myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: 
-                        datasets: [{
-                            label: 'Incasso anno' + ' ' 
-                            data: [1,2,3,4,5,6,7,8,9,10,11,12]/* roundedOrders, */
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.5)',
-                                'rgba(54, 162, 235, 0.5)',
-                                'rgba(255, 206, 86, 0.5)',
-                                'rgba(75, 192, 192, 0.5)',
-                                'rgba(153, 102, 255, 0.5)',
-                                'rgba(255, 159, 64, 0.5)',
-                                'rgba(255, 99, 132, 0.5)',
-                                'rgba(54, 162, 235, 0.5)',
-                                'rgba(255, 206, 86, 0.5)',
-                                'rgba(75, 192, 192, 0.5)',
-                                'rgba(153, 102, 255, 0.5)',
-                                'rgba(255, 159, 64, 0.5)',
-                                'rgba(255, 100, 64, 0.5)',
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)',
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)',
-                                'rgba(255, 159, 64, 1)',
-                            ],
-                            borderWidth: 1
-                        }]
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+        <script>
+            const labelsdue = [
+              'Gennaio',
+              'Febbraio',
+              'Marzo',
+              'Aprile',
+              'Maggio',
+              'Giugno',
+              'Luglio',
+              'Agosto',
+              'Settembre',
+              'Ottobre',
+              'Novembre',
+              'Dicembre',
+            ];
+          
+            const datadue = {
+              labels: labelsdue,
+              datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45, 24, 35, 58, 45, 42],
+              }]
+            };
+          
+            const configdue = {
+                type: 'bar',
+                data: datadue,
+                options: {
+                    responsive: true,
+                    plugins: {
+                    legend: {
+                        position: 'top',
                     },
-                    options: {
-                        legend: {
-                            onClick: null,
-                            labels: {
-                                fontSize: 18,
-                                boxSize: 0,
-                                boxWidth: 0,
-                            },
-                        },
-                        parsing: {
-                            xAxisKey: 'year',
-                            yAxisKey: 'month'
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
+                    title: {
+                        display: true,
+                        text: 'Secondo ordine'
                     }
-                });
-            </script>
+                    }
+                }
+                };
+
+              const labels = [
+              'Gennaio',
+              'Febbraio',
+              'Marzo',
+              'Aprile',
+              'Maggio',
+              'Giugno',
+              'Luglio',
+              'Agosto',
+              'Settembre',
+              'Ottobre',
+              'Novembre',
+              'Dicembre',
+            ];
+
+                const data = {
+              labels: labels,
+              datasets: [{
+                label: 'Dati Ordini Primo',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [15, 25, 32, 47, 1, 0, 0, 25, 15, 25, 85, 56],
+              }]
+            };
+
+                const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Primo diagramma'
+                    }
+                    }
+                }
+                }; 
+
+                
+          </script>
+
 
             <script>
-                var ctx = document.getElementById('myChart2');
-                var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: 
-                        datasets: [{
-                            label: 'Ordini anno ' + year,
-                            data: [1,2,3,4,5,6,7,8,9,10,11,12]/* order */, 
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.5)',
-                                'rgba(54, 162, 235, 0.5)',
-                                'rgba(255, 206, 86, 0.5)',
-                                'rgba(75, 192, 192, 0.5)',
-                                'rgba(153, 102, 255, 0.5)',
-                                'rgba(255, 159, 64, 0.5)',
-                                'rgba(255, 99, 132, 0.5)',
-                                'rgba(54, 162, 235, 0.5)',
-                                'rgba(255, 206, 86, 0.5)',
-                                'rgba(75, 192, 192, 0.5)',
-                                'rgba(153, 102, 255, 0.5)',
-                                'rgba(255, 159, 64, 0.5)',
-                                'rgba(255, 100, 64, 0.5)',
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 0.5)',
-                                'rgba(54, 162, 235, 0.5)',
-                                'rgba(255, 206, 86, 0.5)',
-                                'rgba(75, 192, 192, 0.5)',
-                                'rgba(153, 102, 255, 0.5)',
-                                'rgba(255, 159, 64, 0.5)',
-                                'rgba(255, 99, 132, 0.5)',
-                                'rgba(54, 162, 235, 0.5)',
-                                'rgba(255, 206, 86, 0.5)',
-                                'rgba(75, 192, 192, 0.5)',
-                                'rgba(153, 102, 255, 0.5)',
-                                'rgba(255, 159, 64, 0.5)',
-                                'rgba(255, 100, 64, 0.5)',
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        legend: {
-                            onClick: null,
-                            labels: {
-                                fontSize: 18,
-                                boxSize: 0,
-                                boxWidth: 0,
-                            }
-                        },
-                        parsing: {
-                            xAxisKey: 'year',
-                            yAxisKey: 'month'
-                        },
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
-                    }
-                });
+                const myChartdue = new Chart(
+                document.getElementById('myChart2'),
+                configdue
+                );
+            
+                const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+                );
             </script>
+           
+           
+
+
+           
+
+
+
+
+           
        
     </div>        
 

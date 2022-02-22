@@ -135,33 +135,51 @@ class OrderController extends Controller
     public function getChart()
     {
 
-
         $user = Auth::user()->slug;
 
-        $userOrders = Order::where("order_slug", "=", $user)->get();
+        $userOrders = Order::where("order_slug", "=", $user);
+        
+        
+        
+       /*  ->groupBy([function ($d) {
+
+            return Carbon::parse($d->date)->format('M');
+
+        }])->get();
+
+        dd($userOrders);
+
+        $month = array_keys($userOrders);
+
+
+        dd($month); */
+
+        return view('admin.orders.chart', [
+            "data_order" => $userOrders,
+    
+        ]); 
 
 
         // trasformo l'array in array normale
-        $risto = [];
+      /*   $risto = [];
         foreach ($userOrders as $order) {
             $risto[] = $order->order_slug;
         }
 
- 
-
         // creo un array per mese
 
-        $month = Order::orderByDesc('created_at')
-            ->find($risto)
+        $month = Order::find($risto)
+
             ->groupBy([function ($d) {
+
                 return Carbon::parse($d->date)->format('M');
             }])
             ->toArray();
         $month = array_keys($month);
 
-        dd($month);
+        dd($month); */
 
-        return view('admin.orders.chart', compact('userOrders', 'month'));
+       /*  return view('admin.orders.chart', ["month"=>$month]); */
     } 
 }
 

@@ -29,7 +29,50 @@
 
 
         <script>
-            const labelsdue = [
+            
+              const labels = [
+              'Gennaio',
+              'Febbraio',
+              'Marzo',
+              'Aprile',
+              'Maggio',
+              'Giugno',
+              'Luglio',
+              'Agosto',
+              'Settembre',
+              'Ottobre',
+              'Novembre',
+              'Dicembre',
+            ];
+            
+                const data = {
+              labels: labels,
+              datasets: [{
+                label: 'Numero di Ordini per mese',
+                backgroundColor: 'rgb(79, 44, 206)',
+                borderColor: 'rgb(240, 234, 235)',
+                data: [15, 25, 32, 47, 18, 30, 15, 25, 15, 25, 85, 56],
+              }]
+            };
+
+                const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        
+                    }
+                    }
+                }
+                }; 
+
+                const labelsdue = [
               'Gennaio',
               'Febbraio',
               'Marzo',
@@ -47,10 +90,10 @@
             const datadue = {
               labels: labelsdue,
               datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45, 24, 35, 58, 45, 42],
+                label: 'Entrate per mese in €',
+                backgroundColor: 'rgb(92, 221, 53)',
+                borderColor: 'rgb(210, 221, 53)',
+                data: [50, 110, 85, 128, 400, 280, 350, 185, 350, 580, 450, 420],
               }]
             };
           
@@ -65,68 +108,29 @@
                     },
                     title: {
                         display: true,
-                        text: 'Secondo ordine'
+                        
                     }
                     }
                 }
                 };
-
-              const labels = [
-              'Gennaio',
-              'Febbraio',
-              'Marzo',
-              'Aprile',
-              'Maggio',
-              'Giugno',
-              'Luglio',
-              'Agosto',
-              'Settembre',
-              'Ottobre',
-              'Novembre',
-              'Dicembre',
-            ];
-
-                const data = {
-              labels: labels,
-              datasets: [{
-                label: 'Dati Ordini Primo',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [15, 25, 32, 47, 1, 0, 0, 25, 15, 25, 85, 56],
-              }]
-            };
-
-                const config = {
-                type: 'bar',
-                data: data,
-                options: {
-                    responsive: true,
-                    plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Primo diagramma'
-                    }
-                    }
-                }
-                }; 
 
                 
           </script>
 
 
             <script>
+
+                const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+                );
+
                 const myChartdue = new Chart(
                 document.getElementById('myChart2'),
                 configdue
                 );
             
-                const myChart = new Chart(
-                document.getElementById('myChart'),
-                config
-                );
+               
             </script>
            
            

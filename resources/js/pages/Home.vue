@@ -80,6 +80,8 @@ export default {
 </script>
 
 <style lang="scss">
+
+
 img {
   height: 300px;
 }

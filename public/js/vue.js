@@ -656,7 +656,7 @@ __webpack_require__.r(__webpack_exports__);
       if (!localStorage.getItem("cart")) {
         //allora vado a creare la chiave cart e gli associo lo slug del ristorante corrente e il contenuto che avrà il carrello
         localStorage.setItem("cart", JSON.stringify({
-          name: this.myMenu.slug,
+          slug: this.myMenu.slug,
           content: [],
           totalPrice: 0
         }));
@@ -753,10 +753,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     myMenu: function myMenu() {
-      var slug = JSON.parse(localStorage.getItem("cart")); //se lo slug del ristorante corrente è diverso da quello salvato in local storage, allora pulisco sia il carrello che il totale
+      var restaurant = JSON.parse(localStorage.getItem("cart")); //se lo restaurant del ristorante corrente è diverso da quello salvato in local storage, allora pulisco sia il carrello che il totale
 
-      if (slug) {
-        if (this.myMenu.slug !== slug.name) {
+      if (restaurant) {
+        if (this.myMenu.slug !== restaurant.slug) {
           this.total = 0;
           localStorage.clear();
           this.currentCart = [];
@@ -19397,7 +19397,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\giuli\OneDrive\Desktop\Boolean\progetto finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

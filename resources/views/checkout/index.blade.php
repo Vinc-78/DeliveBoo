@@ -2,11 +2,26 @@
 
 @section('content')
 
+    @if (session('success_message'))
+        <div class="alert alert-success">
+            {{ session('success_message') }}
+        </div>
+    @endif
+
+    @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <h1>Inserisci i tuoi dati e completa l'ordine </h1>
 
     <div class="mx-4 text-center">
-        <form method="POST" action="{{ route('checkout.store') }}"
+        <form id="payment-form" method="POST" action="{{ route('checkout.store') }}"
          class="text-center">
             @csrf
 
@@ -90,9 +105,6 @@
                 </div>
             </div>
 
-
-           
-
             <hr>
 
             {{-- INDIRIZZO --}}
@@ -115,51 +127,53 @@
                     </div>
                 </div>
             </div>
+            
 
-             {{-- payment --}} {{-- da vedere da vedere come passare--}}
-             <div class="row text-left mb-5">
-                
-                <div class="col-12 p-0">
+            {{-- sezione braintree --}}
 
-                    <label for="payment" class="p-0 col-12"><h5>Inserisci carta di credito <span class="small">*</span></h5></label>
-                    
-                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
-                        
-                        <input type="payment" id="payment" name="payment" placeholder="Numero della carta" class="form-control rounded-0 border  @error('payment') is-invalid @enderror"
-                        value="{{ old("payment") }}" required autocomplete="payment">
-                        
-                        @error('payment')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="cc_number">Credit Card Number</label>
+                        {{-- <input type="text" class="form-control" id="cc_number" name="cc_number"> --}}
+                        <div class="form-group" id="card-number">
+
+                        </div>
                     </div>
+
+                    <div class="col-md-3">
+                        <label for="expiry">Expiry</label>
+                        {{-- <input type="text" class="form-control" id="expiry" name="expiry"> --}}
+                        <div class="form-group" id="expiration-date">
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="cvv">CVV</label>
+                        {{-- <input type="text" class="form-control" id="cvc" name="cvc"> --}}
+                        <div class="form-group" id="cvv">
+
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+
+            
+    
+            
 
              {{-- total price --}} {{-- da vedere come passare --}}
              <div class="row text-left mb-5">
                 
-                <div class="col-12 p-0" id="container_total_price">
+                <div class="col-12 p-0" id="total_price">
 
-                {{-- <label for="total_price" class="p-0 col-12"><h5>total_price <span class="small">*</span></h5></label>
-                    
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-" style="position: relative">
-                    <div style="width: 100%; height: 100%; position: absolute">
-
-                    </div>
-                    <input type="total_price" id="total_price" name="total_price" class="form-control rounded-0 border">
-                    
-                </div> --}}
+              
                 </div>
             </div>
-
-            
-           
-
-            {{-- Submit --}}                      
-            <div class="form-group row mb-0">
+             {{-- Submit --}}                      
+             <div class="form-group row mb-0">
                 <div class="col-12 text-center">
+                    <input id="nonce" name="payment_method_nonce" type="hidden">
                     <button type="submit" class="btn btn-primary rounded-0">
                         Procedi con il pagamento
                     </button>
@@ -168,44 +182,78 @@
         </form>
     </div>
 
-    <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <div id="dropin-container"></div>
-            <button id="submit-button">Request payment method</button>
-          </div>
-        </div>
-     </div>
-     <script>
-       var button = document.querySelector('#submit-button');
-   
-       braintree.dropin.create({
-         authorization: "{{ Braintree_ClientToken::generate() }}",
-         container: '#dropin-container'
-       }, function (createErr, instance) {
-         button.addEventListener('click', function () {
-           instance.requestPaymentMethod(function (err, payload) {
-             $.get('{{ route('payment.process') }}', {payload}, function (response) {
-               if (response.success) {
-                 alert('Payment successfull!');
-               } else {
-                 alert('Payment failed');
-               }
-             }, 'json');
-           });
-         });
-       });
-     </script>
+
+    <script>
+            var form = document.querySelector('#payment-form');
+            var submit = document.querySelector('input[type="submit"]');
+            
+            braintree.client.create({
+            authorization: '{{ $token }}' }, function (clientErr, clientInstance) {
+            if (clientErr) {
+            console.error(clientErr);
+            return;
+            }
+          
+
+            braintree.hostedFields.create({
+            client: clientInstance,
+            styles: {
+                'input': {
+                'font-size': '14px'
+                },
+                'input.invalid': {
+                'color': 'red'
+                },
+                'input.valid': {
+                'color': 'green'
+                }
+            },
+            fields: {
+                number: {
+                selector: '#card-number',
+                placeholder: '4111 1111 1111 1111'
+                },
+                cvv: {
+                selector: '#cvv',
+                placeholder: '123'
+                },
+                expirationDate: {
+                selector: '#expiration-date',
+                placeholder: '10/2019'
+                }
+            }
+            }, function (hostedFieldsErr, hostedFieldsInstance) {
+            if (hostedFieldsErr) {
+                console.error(hostedFieldsErr);
+                return;
+            }
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                hostedFieldsInstance.tokenize(function (tokenizeErr, payload) {
+                if (tokenizeErr) {
+                    console.error(tokenizeErr);
+                    return;
+                }
+               
+                document.querySelector('#nonce').value = payload.nonce;
+                form.submit();
+                });
+            }, false);
+            });
+        });
+        
+    </script>
+
     <script>
         const cart = JSON.parse(localStorage.getItem("cart"));
         const totalPrice = cart.totalPrice;
 
-        const prova = document.getElementById("container_total_price")
+        const prova = document.getElementById("total_price")
         
         prova.innerHTML = `
             <h4>totale prezzo da pagare: € ${totalPrice}</h4>
             <div class="d-none">
-                <label for="total_price" class="p-0 col-12"><h5>total_price <span class="small">*</span></h5></label>
+                <label for="amount" class="p-0 col-12"><h5>total_price <span class="small">*</span></h5></label>
                 
                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-" style="position: relative">
                     <div style="width: 100%; height: 100%; position: absolute">
@@ -218,6 +266,16 @@
         `
 
     </script>
+
+    <style>
+        #card-number, #cvv, #expiration-date {
+                background: white;
+                height: 38px;
+                border: 1px solid #CED4DA;
+                padding: .375rem .75rem;
+                border-radius: .25rem;
+            }
+    </style>
 
     
 

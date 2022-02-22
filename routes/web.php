@@ -39,9 +39,11 @@ Route::middleware('auth')
 
 Route::resource ('checkout', 'CheckoutController' );
 
+
+
 Route::post('/search', 'SearchController@search')->name('search');
 
-Route::get('/payment/process', 'CheckoutController@process')->name('payment.process');
+
 
 
 

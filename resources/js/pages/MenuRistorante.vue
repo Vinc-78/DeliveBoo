@@ -124,7 +124,7 @@ export default {
         localStorage.setItem(
           "cart",
           JSON.stringify({
-            name: this.myMenu.slug,
+            slug: this.myMenu.slug,
             content: [],
             totalPrice: 0
           })
@@ -224,12 +224,12 @@ export default {
   watch: {
     myMenu: function () {
 
-      const slug = JSON.parse(localStorage.getItem("cart"));
+      const restaurant = JSON.parse(localStorage.getItem("cart"));
 
-      //se lo slug del ristorante corrente è diverso da quello salvato in local storage, allora pulisco sia il carrello che il totale
-      if(slug){
+      //se lo restaurant del ristorante corrente è diverso da quello salvato in local storage, allora pulisco sia il carrello che il totale
+      if(restaurant){
 
-        if (this.myMenu.slug !== slug.name) {
+        if (this.myMenu.slug !== restaurant.slug) {
           this.total = 0;
           localStorage.clear();
           this.currentCart = []

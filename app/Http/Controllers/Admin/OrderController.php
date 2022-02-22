@@ -19,37 +19,39 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $user=Auth::user()->id;
+        $user = Auth::user()->slug;
 
-      
+        $listOrders = Order::where("order_slug", "=", $user)->get();
+        // $listOrders = Order::all();
 
-        $users = DB::table('users')->join('dishes', 'dishes.user_id', '=', 'users.id')
-        ->join('dish_order', 'dishes.id', '=', 'dish_order.dish_id')
-        ->join('orders', 'dish_order.order_id', '=', 'orders.id')
-        ->where('users.id', '=', $user)
-        ->get();
+        /* $users = DB::table('users')->join('dishes', 'dishes.user_id', '=', 'users.id')
+            ->join('dish_order', 'dishes.id', '=', 'dish_order.dish_id')
+            ->join('orders', 'dish_order.order_id', '=', 'orders.id')
+            ->where('users.id', '=', $user)
+            ->get();
 
-        $listOrders = array();
-       
-        foreach ($users as $order) {
+            $listOrders = array();
+        
+            foreach ($users as $order) {
 
-            if(isset($listOrders[$order->order_id], $listOrders)){
-                array_push($listOrders[$order->order_id]['dishes'], $order->name );
-            } else {
-            $listOrders[$order->order_id]['dishes'] = [$order->name];
+                if(isset($listOrders[$order->order_id], $listOrders)){
+                    array_push($listOrders[$order->order_id]['dishes'], $order->name );
+                } else {
+                $listOrders[$order->order_id]['dishes'] = [$order->name];
+                }
+
+                $listOrders[$order->order_id]['name_client'] = $order->name_client;
+                $listOrders[$order->order_id]['surname_client'] = $order->surname_client;
+                $listOrders[$order->order_id]['phone_client'] = $order->phone_client;
+                $listOrders[$order->order_id]['email_client'] = $order->email_client;
+                $listOrders[$order->order_id]['address_client'] = $order->address_client;
+                $listOrders[$order->order_id]['total_price'] = $order->total_price;
+
+
             }
+        */   
 
-            $listOrders[$order->order_id]['name_client'] = $order->name_client;
-            $listOrders[$order->order_id]['surname_client'] = $order->surname_client;
-            $listOrders[$order->order_id]['phone_client'] = $order->phone_client;
-            $listOrders[$order->order_id]['email_client'] = $order->email_client;
-            $listOrders[$order->order_id]['address_client'] = $order->address_client;
-            $listOrders[$order->order_id]['total_price'] = $order->total_price;
-
-
-        }
-
-        //dd($listOrders);
+        // dd($listOrders);
  
                 
         return view('admin.orders.index', [

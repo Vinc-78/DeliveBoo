@@ -5,9 +5,31 @@ namespace App\Http\Controllers;
 use App\Order;
 use Faker\Provider\ar_EG\Payment;
 use Illuminate\Http\Request;
+use Braintree\Transaction;
+use \Braintree_ClientToken;
 
 class CheckoutController extends Controller
 {
+    
+    public function process(Request $request)
+    {
+    $payload = $request->input('payload', false);
+    $nonce = $payload['nonce'];
+
+    $status = Braintree_Transaction ::sale([
+	'amount' => '10.00',
+	'paymentMethodNonce' => $nonce,
+	'options' => [
+	    'submitForSettlement' => True
+	]
+    ]);
+
+    return response()->json($status);
+}
+
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -96,3 +118,7 @@ class CheckoutController extends Controller
         //
     }
 }
+
+
+
+

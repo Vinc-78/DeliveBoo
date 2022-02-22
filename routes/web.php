@@ -41,6 +41,11 @@ Route::resource ('checkout', 'CheckoutController' );
 
 Route::post('/search', 'SearchController@search')->name('search');
 
+Route::get('/payment/process', 'CheckoutController@process')->name('payment.process');
+
+
+
+
  Route::get("{any?}",function() {    // serve a creare una rotta generica che ho se clicco un url generico 
     return view("guests.home");
 })->where("any", ".*"); 

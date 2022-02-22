@@ -138,7 +138,7 @@
             </div>
 
              {{-- total price --}} {{-- da vedere come passare --}}
-             <div class="row text-left mb-5">
+            <div class="row text-left mb-5">
                 
                 <div class="col-12 p-0" id="container_total_price">
 
@@ -151,6 +151,13 @@
                     <input type="total_price" id="total_price" name="total_price" class="form-control rounded-0 border">
                     
                 </div> --}}
+                </div>
+            </div>
+
+            <div class="row text-left mb-5">
+                
+                <div class="col-12 p-0" id="order_slug">
+                    {{-- <input type="text" name="order_slug"> --}}
                 </div>
             </div>
 
@@ -173,9 +180,9 @@
         const cart = JSON.parse(localStorage.getItem("cart"));
         const totalPrice = cart.totalPrice;
 
-        const prova = document.getElementById("container_total_price")
+        const totalPriceInput = document.getElementById("container_total_price")
         
-        prova.innerHTML = `
+        totalPriceInput.innerHTML = `
             <h4>totale prezzo da pagare: € ${totalPrice}</h4>
             <div class="d-none">
                 <label for="total_price" class="p-0 col-12"><h5>total_price <span class="small">*</span></h5></label>
@@ -188,6 +195,13 @@
                     
                 </div>
             </div>    
+        `
+
+        const cartOrderSlug = cart.slug    
+        const orderSlugInput = document.getElementById("order_slug");
+
+        orderSlugInput.innerHTML = `
+            <input type="text" name="order_slug" value="${cartOrderSlug}" class="d-none">
         `
 
     </script>

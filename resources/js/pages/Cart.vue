@@ -96,7 +96,6 @@ export default {
             cart.totalPrice = this.totalPrice
 
             localStorage.setItem("cart", JSON.stringify(cart));
-
         }
 
 

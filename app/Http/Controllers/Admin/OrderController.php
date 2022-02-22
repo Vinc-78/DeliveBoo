@@ -136,18 +136,17 @@ class OrderController extends Controller
     {
 
 
-        $user=Auth::user()->id;
+        $user = Auth::user()->slug;
 
-       /* Recupero gli ordini per id dell'utente registrato */
-        $userOrders = DB::table('users')->join('dishes', 'dishes.user_id', '=', 'users.id')
-        ->join('dish_order', 'dishes.id', '=', 'dish_order.dish_id')
-        ->join('orders', 'dish_order.order_id', '=', 'orders.id')
-        ->where('users.id', '=', $user)
-        ->get()
-        ->toArray();
+        $userOrders = Order::where("order_slug", "=", $user)->get();
 
-            /* dd($userOrders); */
+      
+
+            dd($userOrders);
         
-        return view('admin.orders.chart'); 
+        return view('admin.orders.chart', [
+            "data_order" => $userOrders,
+    
+        ]); 
     }
 }

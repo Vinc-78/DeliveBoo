@@ -142,7 +142,7 @@ class OrderController extends Controller
 
       
 
-            dd($userOrders);
+           
         
         return view('admin.orders.chart', [
             "data_order" => $userOrders,

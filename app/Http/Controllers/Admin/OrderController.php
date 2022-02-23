@@ -137,25 +137,29 @@ class OrderController extends Controller
 
         $user = Auth::user()->slug;
 
-        $userOrders = Order::where("order_slug", "=", $user)->get();
+        /* $userOrders = Order::where("order_slug", "=", $user)->get(); */
         
-        dd($userOrders);
+
+        $userOrders = DB::table('orders')
+                      ->select(DB::raw('created_at, SUM(total_price)'))
+                      ->where('order_slug' , 'like' , $user)
+                      ->groupBy('created_at')
+                      ->get();
+                
+           /* dd($userOrders);  */
         
-       /*  ->groupBy([function ($d) {
-
-            return Carbon::parse($d->date)->format('M');
-
-        }])->get();
-
-        dd($userOrders);
-
-        $month = array_keys($userOrders);
-
-
-        dd($month); */
+                foreach($userOrders as $data)
+                {
+                 /*  $month[] = $data['created_at'];
+                  $amount[] = $data['total_price']; */
+                  /* dd($data); */
+                }
+              
+    
 
         return view('admin.orders.chart', [
-            "data_order" => $userOrders,
+            "month" => $month,
+            "amount" => $amount,
     
         ]); 
 

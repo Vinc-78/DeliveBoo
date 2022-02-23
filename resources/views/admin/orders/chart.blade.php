@@ -26,7 +26,10 @@
                 {{-- Codice di prova per lo stile  --}}
 
                 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+                
+                {{-- PROVA DEL TIO --}}
+                
+               
 
         <script>
             
@@ -51,7 +54,7 @@
                 label: 'Numero di Ordini per mese',
                 backgroundColor: 'rgb(79, 44, 206)',
                 borderColor: 'rgb(240, 234, 235)',
-                data: [15, 25, 32, 47, 18, 30, 15, 25, 15, 25, 85, 56],
+                data: month,
               }]
             };
 
@@ -93,7 +96,7 @@
                 label: 'Entrate per mese in €',
                 backgroundColor: 'rgb(92, 221, 53)',
                 borderColor: 'rgb(210, 221, 53)',
-                data: [50, 110, 85, 128, 400, 280, 350, 185, 350, 580, 450, 420],
+                data: amount,
               }]
             };
           

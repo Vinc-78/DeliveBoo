@@ -148,52 +148,86 @@ class OrderController extends Controller
                       ->groupBy('created_at')
                       ->get();
                 
-           /* dd($userOrders);  */
-        
-                foreach($userOrders as $data)
-                {
-                 /*  $month[] = $data['created_at'];
-                  $amount[] = $data['total_price']; */
-                  /* dd($data); */
+          /*  dd($userOrders);  */
+
+
+             
+
+    
+           
+
+            //query per ordini per mese
+            $orders = Order::orderBy('created_at', 'ASC')->find($user)->groupBy([ function ($d) {
+                return Carbon::parse($d->created_at)->format('M');
+            }])->toArray();
+
+            dd($orders);
+
+
+            $chartTotal = [
+                'Jan' => 0,
+                'Feb' => 0,
+                'Mar' => 0,
+                'Apr' => 0,
+                'May' => 0,
+                'Jun' => 0,
+                'Jul' => 0,
+                'Aug' => 0,
+                'Sep' => 0,
+                'Oct' => 0,
+                'Nov' => 0,
+                'Dec' => 0,
+                'Total' => 0
+            ];
+
+            $months = array_keys($chartTotal);
+
+            // dd($months);
+
+            $chartOrders = [
+                'Jan' => 0,
+                'Feb' => 0,
+                'Mar' => 0,
+                'Apr' => 0,
+                'May' => 0,
+                'Jun' => 0,
+                'Jul' => 0,
+                'Aug' => 0,
+                'Sep' => 0,
+                'Oct' => 0,
+                'Nov' => 0,
+                'Dec' => 0,
+                'Total' => 0
+            ];
+
+
+            foreach ($orders as $key => $month) {
+                foreach ($month as $order) {
+                    // dd($month, $key);
+                    $chartOrders[$key] += 1;
+                    $chartOrders['Total'] += 1;
+                    $chartTotal['Total'] += $order['total'] / 100;
+                    $chartTotal[$key] += $order['total'] / 100;
                 }
-              
+            }
+
+
+            $chartTotal = array_values($chartTotal);
+            $chartOrders = array_values($chartOrders);
+
+            dd($chartTotal);
+
+          
     
 
-        return view('admin.orders.chart', [
-            "month" => $month,
-            "amount" => $amount,
-    
-        ]); 
+        return view('admin.orders.chart'); 
 
 
-        // trasformo l'array in array normale
-      /*   $risto = [];
-        foreach ($userOrders as $order) {
-            $risto[] = $order->order_slug;
-        }
-
-        // creo un array per mese
-
-        $month = Order::find($risto)
-
-            ->groupBy([function ($d) {
-
-                return Carbon::parse($d->date)->format('M');
-            }])
-            ->toArray();
-        $month = array_keys($month);
-
-        dd($month); */
-
-       /*  return view('admin.orders.chart', ["month"=>$month]); */
+       
     } 
 }
 
       
         
-       /*  return view('admin.orders.chart', [
-            "data_order" => $userOrders,
-    
-        ]);  */
     
 

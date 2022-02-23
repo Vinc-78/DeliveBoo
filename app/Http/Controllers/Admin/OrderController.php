@@ -137,8 +137,10 @@ class OrderController extends Controller
 
         $user = Auth::user()->slug;
 
+
         /* $userOrders = Order::where("order_slug", "=", $user)->get(); */
         
+
 
         $userOrders = DB::table('orders')
                       ->select(DB::raw('created_at, SUM(total_price)'))

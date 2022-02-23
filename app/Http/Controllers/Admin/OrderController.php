@@ -137,9 +137,9 @@ class OrderController extends Controller
 
         $user = Auth::user()->slug;
 
-        $userOrders = Order::where("order_slug", "=", $user);
+        $userOrders = Order::where("order_slug", "=", $user)->get();
         
-        
+        dd($userOrders);
         
        /*  ->groupBy([function ($d) {
 

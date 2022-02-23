@@ -255,7 +255,7 @@
         const cart = JSON.parse(localStorage.getItem("cart"));
         const totalPrice = cart.totalPrice;
 
-        const totalPriceInput = document.getElementById("container_total_price")
+        const totalPriceInput = document.getElementById("total_price")
         
         totalPriceInput.innerHTML = `
             <h4>totale prezzo da pagare: € ${totalPrice}</h4>

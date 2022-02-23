@@ -143,27 +143,20 @@ class OrderController extends Controller
 
 
         $userOrders = DB::table('orders')
-                      ->select(DB::raw('created_at, SUM(total_price)'))
+                      ->select(DB::raw('created_at, SUM(total_price)')/* , DB::raw("GROUP BY MONTH(created_at)") */)
                       ->where('order_slug' , 'like' , $user)
-                      ->groupBy('created_at')
-                      ->get();
+                      ->groupBy('created_at'/* 'year', 'month' */)
+                      ->get()->toArray();
                 
-          /*  dd($userOrders);  */
+        //  dd($userOrders); 
+        
+        //query per ordini per mese
+        $orders = Order::orderBy('created_at', 'ASC')->where("order_slug", $user)
+                ->groupBy()
+                ->get()->toArray();
 
-
-             
-
-    
-           
-
-            //query per ordini per mese
-            $orders = Order::orderBy('created_at', 'ASC')->find($user)->groupBy([ function ($d) {
-                return Carbon::parse($d->created_at)->format('M');
-            }])->toArray();
-
-            dd($orders);
-
-
+            // dd($orders); 
+        
             $chartTotal = [
                 'Jan' => 0,
                 'Feb' => 0,
@@ -200,30 +193,40 @@ class OrderController extends Controller
                 'Total' => 0
             ];
 
+            //PER CALCOLARE IL TOTALE GUADAGNI
+           /*  foreach ($userOrders as $userOrder) {
+                // dd($userOrder);
+                $orderMonth = Carbon::parse($userOrder['created_at'])->format('M');
 
-            foreach ($orders as $key => $month) {
-                foreach ($month as $order) {
-                    // dd($month, $key);
-                    $chartOrders[$key] += 1;
-                    $chartOrders['Total'] += 1;
-                    $chartTotal['Total'] += $order['total'] / 100;
-                    $chartTotal[$key] += $order['total'] / 100;
+                foreach ($chartTotal as $key => $order) {
+                    if($key === $orderMonth)
+                    $chartTotal[$key] += $userOrder->total_price; 
+                }
+            } */
+
+            //PER CALCOLARE IL NUMERO DI ORDINI PER OGNI MESE
+            foreach ($orders as $order) {
+                $orderDate = Carbon::parse($order['created_at'])->format('M');
+                
+                foreach ($chartOrders as $key => $order) {
+                    if($key === $orderDate){
+                        $chartOrders[$key] += 1; 
+                    }
                 }
             }
-
 
             $chartTotal = array_values($chartTotal);
             $chartOrders = array_values($chartOrders);
 
-            dd($chartTotal);
+            // dd($chartTotal);
 
           
     
 
-        return view('admin.orders.chart'); 
-
-
-       
+        return view('admin.orders.chart', [
+            "chart_orders" => $chartOrders,
+            "chart_total" => $chartTotal,
+        ]); 
     } 
 }
 

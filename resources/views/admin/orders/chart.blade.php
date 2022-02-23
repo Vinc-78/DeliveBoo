@@ -54,7 +54,7 @@
                 label: 'Numero di Ordini per mese',
                 backgroundColor: 'rgb(79, 44, 206)',
                 borderColor: 'rgb(240, 234, 235)',
-                data: month,
+                data: <?php echo json_encode($chart_orders) ?>,
               }]
             };
 
@@ -96,7 +96,7 @@
                 label: 'Entrate per mese in €',
                 backgroundColor: 'rgb(92, 221, 53)',
                 borderColor: 'rgb(210, 221, 53)',
-                data: amount,
+                data: [],
               }]
             };
           

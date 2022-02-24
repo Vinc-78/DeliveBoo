@@ -10982,3 +10982,18 @@ a.text-dark:focus {
   padding: 50px;
 }
 
+.aside {
+  background-color: #01019b;
+}
+
+.aside .title {
+  color: white;
+  padding: 25px 0;
+  border-bottom: 1px solid white;
+  margin-bottom: 30px;
+}
+
+.aside a {
+  color: #accae3;
+}
+

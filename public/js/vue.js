@@ -927,7 +927,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h1 {\n  font-weight: bold;\n  font-style: italic;\n}\nimg {\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: right bottom;\n     object-position: right bottom;\n}\n.slider-text a {\n  color: white;\n}\n.slider-text a:hover {\n  transform: translateY(0) scale(1.4);\n  text-decoration: none !important;\n  color: white !important;\n}", ""]);
+exports.push([module.i, "h1 {\n  font-weight: bold;\n  font-style: italic;\n}\nimg {\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: right bottom;\n     object-position: right bottom;\n}\n.slider-text a {\n  color: white;\n}\n.slider-text a:hover {\n  text-decoration: none !important;\n  color: white !important;\n}\n.slider-text a h3:hover {\n  transform: translate(0) scale(1.4);\n  font-weight: bold;\n  text-shadow: 1px 1px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}", ""]);
 
 // exports
 
@@ -965,7 +965,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbo {\n  height: 500px;\n  width: 110vw;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n  position: relative;\n  margin-left: -19%;\n}\n.jumbo .title-jumbo {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: white;\n}\n.jumbo .title-jumbo h1 {\n  font-size: 70px;\n  font-weight: bold;\n  text-shadow: -0.0075em 0.0075em 0 #1a1616, 0.005em 0.005em 0 #1c1718, 0.01em 0.01em 0 #7e6e1e, 0.015em 0.015em #1b1818, 0.02em 0.02em 0 #100c0d, 0.025em 0.025em 0 #070606, 0.03em 0.03em 0 #0c090a, 0.035em 0.035em 0 #060506;\n}\n.jumbo .title-jumbo p {\n  font-weight: bold;\n  font-size: 15px;\n  text-shadow: 1px 1px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}\n.jumbo .title-jumbo .get-start {\n  text-align: center;\n  color: white;\n  font-weight: bold;\n  font-size: 25px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n}\n.jumbo .title-jumbo .get-start a {\n  color: #f2bf25;\n  text-decoration: none;\n}\nimg {\n  height: 300px;\n}\nh1 {\n  text-align: center;\n}\np {\n  text-align: center;\n}\n.imgBanner {\n  -o-object-fit: cover;\n     object-fit: cover;\n  filter: brightness(50%);\n}\n.banner-container {\n  position: relative;\n}\n.banner-container .text-banner {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: white;\n  font-size: 50px;\n}", ""]);
+exports.push([module.i, ".jumbo {\n  height: 500px;\n  width: 110vw;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n  position: relative;\n  margin-left: -19%;\n}\n.jumbo .title-jumbo {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: white;\n}\n.jumbo .title-jumbo h1 {\n  font-size: 70px;\n  font-weight: bold;\n  text-shadow: -0.0075em 0.0075em 0 #1a1616, 0.005em 0.005em 0 #1c1718, 0.01em 0.01em 0 #7e6e1e, 0.015em 0.015em #1b1818, 0.02em 0.02em 0 #100c0d, 0.025em 0.025em 0 #070606, 0.03em 0.03em 0 #0c090a, 0.035em 0.035em 0 #060506;\n}\n.jumbo .title-jumbo p {\n  font-weight: bold;\n  font-size: 20px;\n  text-shadow: 3px 2px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}\n.jumbo .title-jumbo .get-start {\n  text-align: center;\n  color: white;\n  font-weight: bold;\n  font-size: 25px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n}\n.jumbo .title-jumbo .get-start a {\n  color: #f2bf25;\n  text-decoration: none;\n}\nimg {\n  height: 300px;\n}\nh1 {\n  text-align: center;\n}\np {\n  text-align: center;\n}\n.imgBanner {\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  filter: brightness(50%);\n}\n.banner-container {\n  width: 110vw;\n  position: relative;\n  margin-left: -19%;\n}\n.banner-container .text-banner {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: white;\n  font-size: 50px;\n}", ""]);
 
 // exports
 
@@ -3072,7 +3072,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-5 mb-5 banner-container" }, [
+    return _c("div", { staticClass: "mt-5  banner-container" }, [
       _c("a", { attrs: { href: "/register" } }, [
         _c("img", {
           staticClass: "imgBanner w-100",

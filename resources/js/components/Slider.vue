@@ -160,14 +160,22 @@ img{
 .slider-text a{
     color: white;
 
+    &:hover {
+
+       
+       text-decoration: none!important;
+       color: white!important;
+    }
+
+    h3:hover {
+        transform: translate(0) scale(1.4);
+        font-weight: bold;
+        text-shadow: 1px 1px 2px black, 0 0 25px rgb(36, 36, 39), 0 0 5px rgb(41, 41, 48);
+
+    }
+   
+
       
 }
 
-.slider-text a:hover {
-    
-       transform: translateY(0) scale(1.4);
-       text-decoration: none!important;
-       color: white!important;
-
-}
 </style>

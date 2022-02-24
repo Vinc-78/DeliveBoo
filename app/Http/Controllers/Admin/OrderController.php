@@ -136,96 +136,65 @@ class OrderController extends Controller
     {
 
         $user = Auth::user()->slug;
-
-
-        /* $userOrders = Order::where("order_slug", "=", $user)->get(); */
-        
-
-
-        $userOrders = DB::table('orders')
-                      ->select(DB::raw('created_at, SUM(total_price)')/* , DB::raw("GROUP BY MONTH(created_at)") */)
-                      ->where('order_slug' , 'like' , $user)
-                      ->groupBy('created_at'/* 'year', 'month' */)
-                      ->get()->toArray();
-                
-        //  dd($userOrders); 
         
         //query per ordini per mese
         $orders = Order::orderBy('created_at', 'ASC')->where("order_slug", $user)
                 ->groupBy()
                 ->get()->toArray();
 
-            // dd($orders); 
         
-            $chartTotal = [
-                'Jan' => 0,
-                'Feb' => 0,
-                'Mar' => 0,
-                'Apr' => 0,
-                'May' => 0,
-                'Jun' => 0,
-                'Jul' => 0,
-                'Aug' => 0,
-                'Sep' => 0,
-                'Oct' => 0,
-                'Nov' => 0,
-                'Dec' => 0,
-                'Total' => 0
-            ];
+        $chartTotal = [
+            'Jan' => 0,
+            'Feb' => 0,
+            'Mar' => 0,
+            'Apr' => 0,
+            'May' => 0,
+            'Jun' => 0,
+            'Jul' => 0,
+            'Aug' => 0,
+            'Sep' => 0,
+            'Oct' => 0,
+            'Nov' => 0,
+            'Dec' => 0,
+        ];
 
-            $months = array_keys($chartTotal);
+        $chartOrders = [
+            'Jan' => 0,
+            'Feb' => 0,
+            'Mar' => 0,
+            'Apr' => 0,
+            'May' => 0,
+            'Jun' => 0,
+            'Jul' => 0,
+            'Aug' => 0,
+            'Sep' => 0,
+            'Oct' => 0,
+            'Nov' => 0,
+            'Dec' => 0,
+            'Total' => 0
+        ];
 
-            // dd($months);
-
-            $chartOrders = [
-                'Jan' => 0,
-                'Feb' => 0,
-                'Mar' => 0,
-                'Apr' => 0,
-                'May' => 0,
-                'Jun' => 0,
-                'Jul' => 0,
-                'Aug' => 0,
-                'Sep' => 0,
-                'Oct' => 0,
-                'Nov' => 0,
-                'Dec' => 0,
-                'Total' => 0
-            ];
-
-            //PER CALCOLARE IL TOTALE GUADAGNI
-           /*  foreach ($userOrders as $userOrder) {
-                // dd($userOrder);
-                $orderMonth = Carbon::parse($userOrder['created_at'])->format('M');
-
-                foreach ($chartTotal as $key => $order) {
-                    if($key === $orderMonth)
-                    $chartTotal[$key] += $userOrder->total_price; 
-                }
-            } */
-
-            //PER CALCOLARE IL NUMERO DI ORDINI PER OGNI MESE
-            foreach ($orders as $order) {
-                $orderDate = Carbon::parse($order['created_at'])->format('M');
-                
-                foreach ($chartOrders as $key => $order) {
-                    if($key === $orderDate){
-                        $chartOrders[$key] += 1; 
-                    }
+        //PER CALCOLARE IL NUMERO DI ORDINI E IL GUADAGNO TOTALE PER OGNI MESE
+        foreach ($orders as $order) {
+            $orderDate = Carbon::parse($order['created_at'])->format('M');
+            
+            foreach ($chartOrders as $key => $totalOrder) {
+                if($key === $orderDate){
+                    $chartOrders[$key] += 1; 
+                    $chartTotal[$key] += intval($order['total_price']);
                 }
             }
+        }
 
-            $chartTotal = array_values($chartTotal);
-            $chartOrders = array_values($chartOrders);
+        $months = array_keys($chartTotal);
+        $chartTotal = array_values($chartTotal);
+        $chartOrders = array_values($chartOrders);
 
-            // dd($chartTotal);
-
-          
-    
 
         return view('admin.orders.chart', [
             "chart_orders" => $chartOrders,
             "chart_total" => $chartTotal,
+            "label_months" => $months
         ]); 
     } 
 }

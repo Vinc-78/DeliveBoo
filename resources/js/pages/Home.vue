@@ -78,10 +78,12 @@ export default {
 <style lang="scss">
 .jumbo{
   height: 500px;
+  width: 110vw;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
+  margin-left: -19%;
    
     .title-jumbo{
        position: absolute;
@@ -114,6 +116,9 @@ export default {
          font-weight: bold;
          font-size: 25px;
          text-shadow: 1px 1px 2px rgb(2, 2, 2), 0 0 25px rgb(33, 33, 36), 0 0 5px rgb(32, 32, 32);
+
+         a{color: #f2bf25;
+          text-decoration: none;}
        }
     }
 }

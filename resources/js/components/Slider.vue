@@ -13,8 +13,8 @@
                              <div class="row text-white">
                                   <div class="col" style="width:33%">
                                         <img src="/storage/img/category/carne.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link  class="slider-text"
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -24,8 +24,8 @@
                                  </div>
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/dessert.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link  class="slider-text"
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -35,8 +35,8 @@
                                  </div>
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/hamburger.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link  class="slider-text"
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -55,8 +55,8 @@
                              <div class="row text-white">
                                   <div class="col" style="width:33%">
                                         <img src="/storage/img/category/indiano.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link  class="slider-text"
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -66,8 +66,8 @@
                                  </div>
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/italiano.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link  class="slider-text"
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -77,8 +77,8 @@
                                  </div>
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/orientale.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link  class="slider-text"
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -96,8 +96,8 @@
                              <div class="row text-white">
                                   <div class="col" style="width:33%">
                                         <img src="/storage/img/category/pesce.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link  class="slider-text"
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -107,8 +107,8 @@
                                  </div>
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/pizza.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link  class="slider-text"
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -118,8 +118,8 @@
                                  </div>
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/vegano.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link  class="slider-text"
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -157,12 +157,17 @@ img{
     object-fit: cover;
       object-position: right bottom;
 }
-.slider-text{
+.slider-text a{
     color: white;
-       :hover{
+
+      
+}
+
+.slider-text a:hover {
+    
        transform: translateY(0) scale(1.4);
        text-decoration: none!important;
        color: white!important;
-}
+
 }
 </style>

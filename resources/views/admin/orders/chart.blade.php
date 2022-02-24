@@ -32,90 +32,61 @@
                
 
         <script>
+           
             
-              const labels = [
-              'Gennaio',
-              'Febbraio',
-              'Marzo',
-              'Aprile',
-              'Maggio',
-              'Giugno',
-              'Luglio',
-              'Agosto',
-              'Settembre',
-              'Ottobre',
-              'Novembre',
-              'Dicembre',
-            ];
-            
-                const data = {
-              labels: labels,
-              datasets: [{
-                label: 'Numero di Ordini per mese',
-                backgroundColor: 'rgb(79, 44, 206)',
-                borderColor: 'rgb(240, 234, 235)',
-                data: <?php echo json_encode($chart_orders) ?>,
-              }]
+            const data = {
+                labels: <?php echo json_encode($label_months) ?>,
+                datasets: [{
+                    label: 'Numero di Ordini per mese',
+                    backgroundColor: 'rgb(79, 44, 206)',
+                    borderColor: 'rgb(240, 234, 235)',
+                    data: <?php echo json_encode($chart_orders) ?>,
+                }]
             };
 
-                const config = {
-                type: 'bar',
-                data: data,
+            const config = {
+            type: 'bar',
+            data: data,
                 options: {
                     responsive: true,
                     plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: true,
-                        
-                    }
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            
+                        }
                     }
                 }
-                }; 
-
-                const labelsdue = [
-              'Gennaio',
-              'Febbraio',
-              'Marzo',
-              'Aprile',
-              'Maggio',
-              'Giugno',
-              'Luglio',
-              'Agosto',
-              'Settembre',
-              'Ottobre',
-              'Novembre',
-              'Dicembre',
-            ];
+            }; 
           
             const datadue = {
-              labels: labelsdue,
-              datasets: [{
-                label: 'Entrate per mese in €',
-                backgroundColor: 'rgb(92, 221, 53)',
-                borderColor: 'rgb(210, 221, 53)',
-                data: [],
-              }]
+              labels: <?php echo json_encode($label_months) ?>,
+                datasets: [{
+                    label: 'Entrate per mese in €',
+                    backgroundColor: 'rgb(92, 221, 53)',
+                    borderColor: 'rgb(210, 221, 53)',
+                    data: <?php echo json_encode($chart_total) ?>,
+                }]
             };
           
             const configdue = {
-                type: 'bar',
+                type: 'line',
                 data: datadue,
                 options: {
                     responsive: true,
                     plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: true,
-                        
-                    }
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            
+                        }
                     }
                 }
-                };
+            };
 
                 
           </script>

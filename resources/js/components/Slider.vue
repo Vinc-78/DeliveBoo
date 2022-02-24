@@ -2,7 +2,7 @@
     <div class="container">
         <div>
         <div class="mt-5 mb-5">
-        <h1 class="text-align-center">SUGGERIMENTI CATEGORIE</h1>
+        <h1 class="text-align-center">TROVA IL RISTORANTE ADATTO A TE</h1>
         </div>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -14,7 +14,7 @@
                                   <div class="col" style="width:33%">
                                         <img src="/storage/img/category/carne.jpg" alt=""  style="width:100%"/>
                                         <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                            <router-link  class="slider-text"
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -25,7 +25,7 @@
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/dessert.jpg" alt=""  style="width:100%"/>
                                         <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                            <router-link  class="slider-text"
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -36,7 +36,7 @@
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/hamburger.jpg" alt=""  style="width:100%"/>
                                         <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                            <router-link  class="slider-text"
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -56,7 +56,7 @@
                                   <div class="col" style="width:33%">
                                         <img src="/storage/img/category/indiano.jpg" alt=""  style="width:100%"/>
                                         <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                            <router-link  class="slider-text"
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -67,7 +67,7 @@
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/italiano.jpg" alt=""  style="width:100%"/>
                                         <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                            <router-link  class="slider-text"
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -78,7 +78,7 @@
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/orientale.jpg" alt=""  style="width:100%"/>
                                         <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                            <router-link  class="slider-text"
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -97,7 +97,7 @@
                                   <div class="col" style="width:33%">
                                         <img src="/storage/img/category/pesce.jpg" alt=""  style="width:100%"/>
                                         <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                            <router-link  class="slider-text"
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -108,7 +108,7 @@
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/pizza.jpg" alt=""  style="width:100%"/>
                                         <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                            <router-link  class="slider-text"
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -119,7 +119,7 @@
                                    <div class="col" style="width:33%">
                                         <img src="/storage/img/category/vegano.jpg" alt=""  style="width:100%"/>
                                         <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                            <router-link  class="slider-text"
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -148,5 +148,21 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss">
+h1{
+    font-weight: bold;
+    font-style: italic;
+}
+img{
+    object-fit: cover;
+      object-position: right bottom;
+}
+.slider-text{
+    color: white;
+       :hover{
+       transform: translateY(0) scale(1.4);
+       text-decoration: none!important;
+       color: white!important;
+}
+}
 </style>

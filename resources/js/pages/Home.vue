@@ -122,8 +122,6 @@ export default {
        }
     }
 }
-
-
 img {
   height: 300px;
 }
@@ -134,7 +132,7 @@ p {
   text-align: center;
 }
 .imgBanner{
-  
+  height: 400px;
   object-fit: cover;
   object-position: center;
   filter: brightness(50%);
@@ -152,6 +150,12 @@ p {
          transform: translate(-50% , -50%);
          color: white;
          font-size: 50px;
+         text-shadow: 1px 1px 2px rgb(2, 2, 2), 0 0 25px rgb(33, 33, 36), 0 0 5px rgb(32, 32, 32);
+         text-align: center;
+           h3:hover {
+        transform: translate(0) scale(1.4);
+
+    }
          
      }
 }

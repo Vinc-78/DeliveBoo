@@ -7,7 +7,8 @@
 
               <div class="container">
 
-                  <h1 class="my-5">Scegli cosa vuoi mangiare</h1>
+                  <h1 class="mt-5 mb-2 title-search">Seleziona la categoria e scegli il ristorante</h1>
+                  <p>*Puoi selezionare solo due categorie alla volta</p>
 
                   <div class="row row-cols-lg-5  row-cols-sm-2  row-cols-md-3  mt-mb-4">
 
@@ -20,7 +21,7 @@
                         <div class="position-relative">
                         <img  class="img-category" :src="'/storage/img/category/' + category.img_category" alt="category.name" >
                         
-                        <span class="nome-search">{{ category.name }}</span>
+                        <span class="name-search">{{ category.name }}</span>
                         </div>
                       </label>
                     </div>
@@ -30,26 +31,25 @@
                    
                  
                 </div>
+                 
+                <h2 class="text-center font-weight-bold display-4 my-4 alert-search" v-if='usersList.length === 0'>Siamo spiacenti la
+                           la sua ricerca non ha dato nessuno risultato</h2>
+                <h1 class="my-5  text-center title-search">Clicca sul ristorante per vedere il menù</h1>
 
-                <h1 class="my-5">I ristoranti che hai selezionato</h1>
-
-                <h3 class="my-3 text-center">Clicca per vedere il menu </h3>
-
-                <h2 class="text-center font-weight-bold display-4 my-4" v-if='usersList.length === 0'>Non ci sono Ristoranti che rispettano la tua ricerca</h2>
-
-                <div class="row row-cols-lg-2  row-cols-sm-1   mt-mb-4">
+          
+              <div class="row row-cols-lg-2  row-cols-sm-1   mt-mb-4">
 
                     <!-- stampo i ristoranti  -->
               
-                  <div v-for="user in usersList" :key="user.id" class="col">
+                  <div v-for="user in usersList" :key="user.id" class="col mb-4">
 
                     <router-link :to="{ name: 'menu', params: { slug: user.slug }}"> 
                       <img  class="img-restaurant" :src="'storage/' + user.cover_img" alt="" >
                         
-                      <div class="p-3 ">
-                        <h4> <strong>  {{ user.name }}   </strong> </h4>
+                      <div class="p-3 name-restaurant">
+                        <h4 class=""> <strong>  {{ user.name }}   </strong> </h4>
                         
-                        <span> Indirizzo  {{user.address}} </span>  
+                        <p> Indirizzo  {{user.address}} </p>  
                         <br>
                             
                       </div>
@@ -144,6 +144,23 @@ export default {
 
 <style>
 
+.alert-search {
+  width: auto;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px 30px 70px;
+}
+
+.title-search{
+  
+  font-weight: bold;
+  
+}
+
+/* Style card category */
 .img-category{
   width:150px; 
   height:150px;
@@ -153,7 +170,7 @@ export default {
   
 }
 
-.nome-search{
+.name-search{
   font-weight: bold;
   font-size: 25px;
   position: absolute;
@@ -161,13 +178,8 @@ export default {
   left: 50%;
   color: white;
   transform: translate(-50%, -50%);
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(36, 36, 39), 0 0 5px rgb(41, 41, 48);
   
-}
-
-.img-restaurant{
-  width:400px; 
-  height:300px;
-  object-fit: cover;
 }
 
 input[type="checkbox"]{
@@ -197,10 +209,10 @@ input[type="checkbox"]{
   transform-origin: 50% 50%;
 }
 
-/* .checkbox-label .nome-search{
+.checkbox-label .nome-search{
   transition-duration: 0.2s;
   transform-origin: 50% 50%;
-} */
+} 
 
 .checkbox-label .nome-search{
   transition-duration: 0.2s;
@@ -220,6 +232,23 @@ input[type="checkbox"]{
   z-index: -1;
 }
 
+/* Style card Restaurant */
+
+.img-restaurant{
+  width:400px; 
+  height:300px;
+  object-fit: cover;
+  position: relative;
+}
+
+.name-restaurant{
+  
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+}
 
 
 </style>

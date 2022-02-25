@@ -128,9 +128,10 @@ export default {
   height: 400px;
   object-fit: cover;
   object-position: center;
-  filter: brightness(50%);
+  filter: brightness(70%);
 }
 .banner-container{
+    box-shadow: -4px -2px 3px #313131;
     width: 110vw;
     position: relative;
     margin-left: -19%;

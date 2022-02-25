@@ -2,7 +2,7 @@
     <div class="container">
         <div>
         <div class="mt-5 mb-5">
-        <h1 class="text-center">TROVA IL RISTORANTE ADATTO A TE</h1>
+        <h1 class="text-center slider-text">TROVA IL RISTORANTE ADATTO A TE</h1>
         </div>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -149,6 +149,11 @@ export default {};
 </script>
 
 <style lang="scss">
+.slider-text{
+    color: white;
+    font-weight: bold;
+    text-shadow: 3px 2px 2px black, 0 0 25px rgb(36, 36, 39), 0 0 5px rgb(41, 41, 48);
+}
 
 h1{
     font-weight: bold;
@@ -156,11 +161,13 @@ h1{
 }
 .slider-box{
     width: 33%;
+    
     img{
     object-fit: cover;
     object-position: right bottom;
     height: 300px;
-    width:100%
+    width:100%;
+    box-shadow: 1px 5px 10px #313131;
 }
 }
 .slider-text a{

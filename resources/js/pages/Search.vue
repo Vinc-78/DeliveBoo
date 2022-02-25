@@ -32,8 +32,8 @@
                  
                 </div>
                  
-                <h2 class="text-center font-weight-bold display-4 my-4 alert-search" v-if='usersList.length === 0'>Siamo spiacenti la
-                           la sua ricerca non ha dato nessuno risultato</h2>
+                <h2 class="text-center font-weight-bold display-4 my-4 alert-search title-search" v-if='usersList.length === 0'>Siamo spiacenti la
+                          sua ricerca non ha dato nessuno risultato</h2>
                 <h1 class="my-5  text-center title-search">Clicca sul ristorante per vedere il menù</h1>
 
           
@@ -146,15 +146,17 @@ export default {
 .alert-search {
   width: auto;
   align-items: center;
-  background-color: #fff;
+  background-color: rgba(248, 242, 242, 0.918);
   color: #000;
   text-align: center;
   border-radius: 20px;
   padding: 30px 30px 70px;
+  box-shadow: 4px 7px 10px #313131;
 }
 
 .title-search{
-  
+  color: white;
+  text-shadow: 3px 2px 2px black, 0 0 25px rgb(36, 36, 39), 0 0 5px rgb(41, 41, 48);
   font-weight: bold;
   text-align: center;
   
@@ -239,6 +241,7 @@ input[type="checkbox"]{
   height:300px;
   object-fit: cover;
   position: relative;
+  box-shadow: 4px 7px 10px #313131;
 }
 
 .name-restaurant{

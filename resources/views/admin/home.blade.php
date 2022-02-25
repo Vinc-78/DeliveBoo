@@ -30,7 +30,7 @@
             <h4><a href="{{route('admin.chart')}}"> Le tue statistiche</a></h4>
         </div>
 
-        <div class="col-6">
+        <div class="col-6 page-admin">
             <div class="banner-restaurant">
             <img src="{{asset('storage/'. Auth::user()->cover_img)}}" alt="ristorante">  
             </div>

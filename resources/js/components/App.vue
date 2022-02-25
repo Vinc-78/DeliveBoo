@@ -27,7 +27,10 @@ export default {
 </script>
 
 <style lang="scss">
-  body{
-      background-color: #d2e7d6;
-  }
+     body{
+         background-image: url('/storage/img/sfondopagine.webp');
+         background-size: 100%;
+        
+         background-repeat: repeat;
+     }
 </style>

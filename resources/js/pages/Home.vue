@@ -1,7 +1,7 @@
 <template>
 
-<section class="container p-0">
-    <div class="jumbo" style="background-image: url('../storage/img/sfondo1.jpg')">
+<section class="container p-0 ">
+    <div class="jumbo" style="background-image: url('../storage/img/provasfondo2.jpg')">
        <div class="title-jumbo text-center">
           <h1>Welcome to Deliveboo.</h1>
           <p> Ordina con Deliverboo e ricevi ciò che vuoi da ristoranti nella tua città.<br>
@@ -76,14 +76,16 @@ export default {
 </script>
 
 <style lang="scss">
+
 .jumbo{
   height: 500px;
   width: 110vw;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   position: relative;
   margin-left: -19%;
+  box-shadow: 2px 4px 3px #313131;
    
     .title-jumbo{
        position: absolute;
@@ -154,6 +156,8 @@ export default {
      }
 }
 .get-start{
+
+  font-weight: bold;
    h2:hover{
       transform: scale(1.2) translate(0);
    }

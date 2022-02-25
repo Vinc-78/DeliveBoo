@@ -35,7 +35,7 @@
                     {{ dish.name }}
                   </p>
 
-                  <p style="height: 80px" class="mb-3">{{ dish.description }}</p>
+                  <p style="height: 40px" class="mb-3">{{ dish.description }}</p>
                 </div>
 
                 <div>

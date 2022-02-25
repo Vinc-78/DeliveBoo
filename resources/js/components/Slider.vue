@@ -149,6 +149,7 @@ export default {};
 </script>
 
 <style lang="scss">
+
 h1{
     font-weight: bold;
     font-style: italic;

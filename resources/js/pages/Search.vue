@@ -143,7 +143,6 @@ export default {
 </script>
 
 <style>
-
 .alert-search {
   width: auto;
   align-items: center;

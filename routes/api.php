@@ -26,3 +26,5 @@ Route::get("/categories", "Api\CategoryController@index");
 
 
 Route::post('/search', 'SearchController@search'); 
+
+

@@ -2,7 +2,7 @@
     <div class="container">
         <div>
         <div class="mt-5 mb-5">
-        <h1 class="text-align-center">SUGGERIMENTI CATEGORIE</h1>
+        <h1 class="text-center">TROVA IL RISTORANTE ADATTO A TE</h1>
         </div>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -11,10 +11,10 @@
                     
                          <div class="container">
                              <div class="row text-white">
-                                  <div class="col" style="width:33%">
-                                        <img src="/storage/img/category/carne.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                  <div class="col slider-box" >
+                                        <img src="/storage/img/category/carne.jpg" alt=""  class=""/>
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -22,10 +22,10 @@
                                             </router-link>
                                         </div>
                                  </div>
-                                   <div class="col" style="width:33%">
-                                        <img src="/storage/img/category/dessert.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                   <div class="col slider-box" >
+                                        <img src="/storage/img/category/dessert.jpg" alt="" />
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -33,10 +33,10 @@
                                             </router-link>
                                         </div>
                                  </div>
-                                   <div class="col" style="width:33%">
-                                        <img src="/storage/img/category/hamburger.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                   <div class="col slider-box" >
+                                        <img src="/storage/img/category/hamburger.jpg" alt="" />
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -53,10 +53,10 @@
 
                         <div class="container">
                              <div class="row text-white">
-                                  <div class="col" style="width:33%">
-                                        <img src="/storage/img/category/indiano.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                  <div class="col slider-box" >
+                                        <img src="/storage/img/category/indiano.jpg" alt="" />
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -64,10 +64,10 @@
                                              </router-link>
                                         </div>
                                  </div>
-                                   <div class="col" style="width:33%">
-                                        <img src="/storage/img/category/italiano.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                   <div class="col slider-box" >
+                                        <img src="/storage/img/category/italiano.jpg" alt="" />
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -75,10 +75,10 @@
                                              </router-link>
                                         </div>
                                  </div>
-                                   <div class="col" style="width:33%">
-                                        <img src="/storage/img/category/orientale.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                   <div class="col slider-box" >
+                                        <img src="/storage/img/category/orientale.jpg" alt="" />
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -94,10 +94,10 @@
 
                        <div class="container">
                              <div class="row text-white">
-                                  <div class="col" style="width:33%">
-                                        <img src="/storage/img/category/pesce.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                  <div class="col slider-box" >
+                                        <img src="/storage/img/category/pesce.jpg" alt="" />
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -105,10 +105,10 @@
                                              </router-link>
                                         </div>
                                  </div>
-                                   <div class="col" style="width:33%">
-                                        <img src="/storage/img/category/pizza.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                   <div class="col slider-box" >
+                                        <img src="/storage/img/category/pizza.jpg" alt="" />
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -116,10 +116,10 @@
                                              </router-link>
                                         </div>
                                  </div>
-                                   <div class="col" style="width:33%">
-                                        <img src="/storage/img/category/vegano.jpg" alt=""  style="width:100%"/>
-                                        <div class="carousel-caption d-none d-md-block">
-                                            <router-link 
+                                   <div class="col slider-box">
+                                        <img src="/storage/img/category/vegano.jpg" alt="" />
+                                        <div class="carousel-caption d-none d-md-block slider-text">
+                                            <router-link  
                                              :to="{
                                                     name: 'search',
                                                     }">
@@ -148,5 +148,40 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss">
+
+h1{
+    font-weight: bold;
+    font-style: italic;
+}
+.slider-box{
+    width: 33%;
+    img{
+    object-fit: cover;
+    object-position: right bottom;
+    height: 300px;
+    width:100%
+}
+}
+.slider-text a{
+    color: white;
+
+    &:hover {
+
+       
+       text-decoration: none!important;
+       color: white!important;
+    }
+
+    h3:hover {
+        transform: translate(0) scale(1.4);
+        font-weight: bold;
+        text-shadow: 1px 1px 2px black, 0 0 25px rgb(36, 36, 39), 0 0 5px rgb(41, 41, 48);
+
+    }
+   
+
+      
+}
+
 </style>

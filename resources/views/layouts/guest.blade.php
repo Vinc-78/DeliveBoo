@@ -17,8 +17,11 @@
     <script src="https://js.braintreegateway.com/web/3.38.1/js/hosted-fields.min.js"></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -27,12 +30,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">
                     My-DeliveBoo
                 </a>
 
                 @auth  {{-- Se loggato  --}}
-                <a class="navbar-brand mx-4" href="{{ route('admin.home') }}"> Torna alla Dashboard          
+                <a class="navbar-brand font-weight-bold mx-4" href="{{ route('admin.home') }}"> Torna alla Dashboard          
                 </a>  {{-- Aggiunto per tornare alla Dashboard --}}
                 @endauth
 
@@ -51,16 +54,16 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/') }}">
+                                <a class="nav-link font-weight-bold" href="{{ url('/') }}">
                                     Home
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link font-weight-bold" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Join With Us</a>
+                                    <a class="nav-link font-weight-bold" href="{{ route('register') }}">Join With Us</a>
                                 </li>
                             @endif
                         @else
@@ -87,7 +90,7 @@
             </div>
         </nav>
 
-        <main class="py-4" >
+        <main class="pt-0" >
             
             @yield('content')
         </main>

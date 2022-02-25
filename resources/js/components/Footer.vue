@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid pb-0 mt-3 justify-content-center text-light ">
-     <footer>
+  <div class="footer-container pb-0 mt-0 justify-content-center text-light ">
+     
          <div class="row my-5 justify-content-center py-5">
              <div class="col-11">
                  <div class="row ">
@@ -35,7 +35,7 @@
                  </div>
              </div>
          </div>
-     </footer>
+     
  </div>
 </template>
 
@@ -47,14 +47,7 @@ export default {
 
 <style lang="scss">
 
-  body {
-    /*  background: linear-gradient(0deg, #fff, 50%, #DEEEFE);
-     font-family: 'Rubik', sans-serif;
-     background: #455A64; */
-     height: 100 !important
- }
-
- .container-fluid {
+ .footer-container {
      overflow: hidden;
      margin-top: 250px;
      background: #262626;

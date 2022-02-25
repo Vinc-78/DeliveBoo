@@ -3,13 +3,11 @@
     <div v-if="myMenu.dishes.length !== 0">
       <div class="text-center title-menu mb-5">
         <!-- NOME DEL RISTORANTE -->
-        <h1 class="border-bottom border-dark pb-4">{{ myMenu.name }}</h1>
+        <h1 class="border-bottom border-dark pb-4 pt-3">{{ myMenu.name }}</h1>
 
         <h3 class="pt-3">Menù</h3>
 
-        <div>
-          <router-link :to="{ name:'cart' }" class="btn btn-primary rounded-0">Carrello {{ total }}</router-link>
-        </div>
+        
       </div>
 
       <div class="row flex-lg-row flex-md-column-reverse flex-sm-column-reverse">
@@ -37,7 +35,7 @@
                     {{ dish.name }}
                   </p>
 
-                  <p style="height: 80px" class="mb-3">{{ dish.description }}</p>
+                  <p style="height: 40px" class="mb-3">{{ dish.description }}</p>
                 </div>
 
                 <div>
@@ -66,7 +64,9 @@
         </div>
 
         <div class="col-lg-4 col-md-12 my-4 text-center">
-
+          <div>
+          <router-link :to="{ name:'cart' }" class="btn btn-primary rounded-0">Carrello {{ total }}</router-link>
+        </div>
           <div v-if="currentCart.length === 0 ">
             <h4>Il tuo carrello è vuoto</h4>
           </div>

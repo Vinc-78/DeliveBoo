@@ -44,7 +44,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link text-nav" href="{{ url('/') }}">
+                                <a class="nav-link font-weight-bold text-nav" href="{{ url('/') }}">
                                     Home
                                 </a>
                             </li>
@@ -53,17 +53,17 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item text-nav">
-                                    <a class="nav-link text-nav" href="{{ route('register') }}">Join with us</a>
+                                    <a class="nav-link text-nav font-weight-bold" href="{{ route('register') }}">Join with us</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class=" font-weight-bold nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item font-weight-bold" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}

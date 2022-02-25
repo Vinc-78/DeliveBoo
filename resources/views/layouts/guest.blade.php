@@ -30,12 +30,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">
                     My-DeliveBoo
                 </a>
 
                 @auth  {{-- Se loggato  --}}
-                <a class="navbar-brand mx-4" href="{{ route('admin.home') }}"> Torna alla Dashboard          
+                <a class="navbar-brand font-weight-bold mx-4" href="{{ route('admin.home') }}"> Torna alla Dashboard          
                 </a>  {{-- Aggiunto per tornare alla Dashboard --}}
                 @endauth
 
@@ -54,16 +54,16 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/') }}">
+                                <a class="nav-link font-weight-bold" href="{{ url('/') }}">
                                     Home
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link font-weight-bold" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Join With Us</a>
+                                    <a class="nav-link font-weight-bold" href="{{ route('register') }}">Join With Us</a>
                                 </li>
                             @endif
                         @else

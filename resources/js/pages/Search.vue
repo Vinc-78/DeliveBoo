@@ -7,8 +7,8 @@
 
               <div class="container">
 
-                  <h1 class="mt-5 mb-2 title-search">Seleziona la categoria e scegli il ristorante</h1>
-                  <p>*Puoi selezionare solo due categorie alla volta</p>
+                  <h1 class="mt-5 mb-5 title-search">Seleziona la categoria e scegli il ristorante</h1>
+                
 
                   <div class="row row-cols-lg-5  row-cols-sm-2  row-cols-md-3  mt-mb-4">
 
@@ -157,6 +157,7 @@ export default {
 .title-search{
   
   font-weight: bold;
+  text-align: center;
   
 }
 
@@ -242,11 +243,14 @@ input[type="checkbox"]{
 }
 
 .name-restaurant{
-  
+  width: 60%;
+  text-align: center;
   color: white;
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50% , -20%);
+  text-shadow: 1px 1px 2px rgb(2, 2, 2), 0 0 25px rgb(33, 33, 36), 0 0 5px rgb(32, 32, 32);
   
 }
 

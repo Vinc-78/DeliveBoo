@@ -2,14 +2,14 @@
 
 <section class="container p-0">
     <div class="jumbo" style="background-image: url('../storage/img/sfondo1.jpg')">
-       <div class="title-jumbo">
+       <div class="title-jumbo text-center">
           <h1>Welcome to Deliveboo.</h1>
           <p> Ordina con Deliverboo e ricevi ciò che vuoi da ristoranti nella tua città.<br>
               Tutti i tuoi piatti preferiti in un unico portale.
           </p>
           <!-- Qui ci andrà il bottone route-link -->
           <div class="get-start">
-          <router-link :to="{ name:'search' }" class="">Esplora i Ristoranti</router-link>
+          <router-link :to="{ name:'search' }" class=""><h2>Esplora i Ristoranti</h2></router-link>
           </div>
       </div>
     </div>
@@ -122,15 +122,6 @@ export default {
        }
     }
 }
-img {
-  height: 300px;
-}
-h1 {
-  text-align: center;
-}
-p {
-  text-align: center;
-}
 .imgBanner{
   height: 400px;
   object-fit: cover;
@@ -141,22 +132,30 @@ p {
     width: 110vw;
     position: relative;
     margin-left: -19%;
-  
-     
+        
      .text-banner{
          position: absolute;
          top: 50%;
-         left: 50%;
+         left: 45%;
          transform: translate(-50% , -50%);
          color: white;
          font-size: 50px;
          text-shadow: 1px 1px 2px rgb(2, 2, 2), 0 0 25px rgb(33, 33, 36), 0 0 5px rgb(32, 32, 32);
          text-align: center;
-           h3:hover {
-        transform: translate(0) scale(1.4);
-
-    }
          
      }
+
+     .text-banner:hover{
+    transform: scale(1.2) translate(0);
+    top: 40%;
+    left: 19%;
+    width: 51%;
+
+     }
+}
+.get-start{
+   h2:hover{
+      transform: scale(1.2) translate(0);
+   }
 }
 </style>

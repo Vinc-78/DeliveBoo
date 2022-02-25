@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendOrderMail;
 use App\Order;
 use Faker\Provider\ar_EG\Payment;
 use Illuminate\Http\Request;
 use Braintree\Gateway;
-
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -82,11 +83,16 @@ class CheckoutController extends Controller
 
             $data = $request->all(); 
             $newOrder = new Order();
-    
-    
             $newOrder->fill($data);
-    
             $newOrder->save();
+            
+            $mailRestaurant = $data['order_slug'] . '@mail.it';
+            $emailsDestinations = [$data['email_client'], $mailRestaurant];
+
+            foreach ($emailsDestinations as $confirmEmail) {
+                Mail::to($confirmEmail)->send(new SendOrderMail($data) );
+            }
+            
     
             return view('checkout.saluti', ['data' => $data]);
         } else {

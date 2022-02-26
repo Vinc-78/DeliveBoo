@@ -316,6 +316,7 @@ export default {
 
 a:hover{
     text-decoration: none!important;
+    color: #41403e!important;
   }
 
 .button-55:hover {

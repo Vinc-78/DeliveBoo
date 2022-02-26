@@ -9,7 +9,7 @@
           </p>
           <!-- Qui ci andrà il bottone route-link -->
           <div class="get-start">
-          <router-link :to="{ name:'search' }" class=""><h2>Esplora i Ristoranti</h2></router-link>
+            <router-link :to="{ name:'search' }" class=""><h2>Esplora i Ristoranti</h2></router-link>
           </div>
       </div>
     </div>

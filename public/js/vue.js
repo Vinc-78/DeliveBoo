@@ -3249,7 +3249,9 @@ var render = function () {
                         _c("h4", [_vm._v("Nessun ordine nel carello")]),
                       ])
                     : _c("div", { staticClass: "mb-2" }, [
-                        _c("h4", [_vm._v("Il tuo carrello")]),
+                        _c("h4", { staticClass: "font-weight-bold my-3" }, [
+                          _vm._v("Il tuo carrello"),
+                        ]),
                         _vm._v(" "),
                         _c(
                           "ul",

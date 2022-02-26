@@ -71,7 +71,7 @@
           </div>
           
           <div v-else class="mb-2">
-            <h4>Il tuo carrello</h4>
+            <h4 class="font-weight-bold my-3">Il tuo carrello</h4>
 
             <ul class="piatti-ordinati">
               <li v-for="currentDish in currentCart" :key="currentDish.id" class="">
@@ -317,7 +317,7 @@ export default {
 a:hover{
     text-decoration: none!important;
   }
-  
+
 .button-55:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);

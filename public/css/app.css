@@ -10982,6 +10982,18 @@ a.text-dark:focus {
   padding: 50px;
 }
 
+.navbar {
+  background-color: #5fcfe7 !important;
+  border-bottom: 1px solid #a6d4df !important;
+}
+
+.navbar-light .navbar-brand {
+  font-size: 25px;
+  font-weight: bolder;
+  text-shadow: 2px 2px 3px #053742;
+  color: #f8f9fa;
+}
+
 .aside {
   background-color: #01019b;
 }

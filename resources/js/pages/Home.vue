@@ -153,7 +153,7 @@ export default {
      .text-banner:hover{
     transform: scale(1.2) translate(0);
     top: 40%;
-    left: 19%;
+    left: 21%;
     width: 51%;
 
      }

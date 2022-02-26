@@ -21,7 +21,7 @@
               v-for="dish in myMenu.dishes"
               :key="dish.id"
             >
-              <div class="piatto" v-if="dish.visibility">
+              <div  v-if="dish.visibility">
                 <!-- Lo stile dell'immagine funziona in line -->
                 <img 
                   :src="'/storage/' + dish.image_url"
@@ -73,7 +73,7 @@
           <div v-else class="mb-2">
             <h4>Il tuo carrello</h4>
 
-            <ul class="">
+            <ul class="piatti-ordinati">
               <li v-for="currentDish in currentCart" :key="currentDish.id" class="">
                 <p class="m-0">{{ currentDish.qta }} X {{ currentDish.product.name }}</p>
               </li>
@@ -240,7 +240,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" >
+
+.piatto {
+  height: 150px;
+}
 .line-division{
   border-bottom: 2px solid black;
 }
@@ -277,6 +281,7 @@ export default {
   font-weight: bold;
 }
 .button-55 {
+  height: 50px;
   align-self: center;
   background-color: #fff;
   background-image: none;
@@ -305,11 +310,19 @@ export default {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+
+  
 }
 
+a:hover{
+    text-decoration: none!important;
+  }
+  
 .button-55:hover {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);
+
+  
 }
 
 .button-55:focus {
@@ -319,6 +332,11 @@ ul {
   list-style: none;
   text-align: center;
   font-weight: bold;
+}
+
+.piatti-ordinati{
+  text-align: start!important;
+  margin-top: 25;
 }
 
 </style>

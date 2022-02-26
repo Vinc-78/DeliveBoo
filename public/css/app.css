@@ -10983,15 +10983,19 @@ a.text-dark:focus {
 }
 
 .navbar {
-  background-color: #5fcfe7 !important;
-  border-bottom: 1px solid #a6d4df !important;
+  background-color: #efedee !important;
 }
 
 .navbar-light .navbar-brand {
-  font-size: 25px;
-  font-weight: bolder;
-  text-shadow: 2px 2px 3px #053742;
-  color: #f8f9fa;
+  font-size: 35px;
+  font-weight: 900 !important;
+  text-shadow: 2px 2px 2px #e9ae2f;
+  color: #4271f3;
+}
+
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+  color: rgba(240, 161, 44, 0.9) !important;
 }
 
 .aside {

@@ -5,9 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 ">
 
-            <a href="{{route('admin.home')}}" class="btn btn-info text-white rounded-0"> Torna alla Dashaboard</a>
+            <a href="{{route('admin.home')}}" class="btn btn-secondary text-white rounded-0"> Torna alla Dashaboard</a>
             
-            <a href="{{route('admin.dishes.index')}}"  class="btn btn-info text-white rounded-0 ml-2"> Tutti i piatti</a>
+            <a href="{{route('admin.dishes.index')}}"  class="btn btn-secondary text-white rounded-0 ml-2"> Tutti i piatti</a>
         </div>
     </div>
 

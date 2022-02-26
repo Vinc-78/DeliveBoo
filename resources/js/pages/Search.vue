@@ -47,9 +47,9 @@
                       <img  class="img-restaurant" :src="'storage/' + user.cover_img" alt="" >
                         
                       <div class="p-3 name-restaurant">
-                        <h4 class=""> <strong>  {{ user.name }}   </strong> </h4>
+                        <h4 class="titolo-search"> <strong>  {{ user.name }}   </strong> </h4>
                         
-                        <p> Indirizzo  {{user.address}} </p>  
+                        <p class="titolo-search"> Indirizzo  {{user.address}} </p>  
                         <br>
                             
                       </div>
@@ -254,6 +254,13 @@ input[type="checkbox"]{
   transform: translate(-50% , -20%);
   text-shadow: 1px 1px 2px rgb(2, 2, 2), 0 0 25px rgb(33, 33, 36), 0 0 5px rgb(32, 32, 32);
   
+}
+
+.titolo-search:hover{
+   color: #fff; 
+   color: #fff; text-shadow: 0px 0 15px #76EE00;
+   transform: scale(1.4);
+
 }
 
 

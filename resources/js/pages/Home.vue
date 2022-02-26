@@ -21,7 +21,7 @@
     
     <!-- Banner Lavora con Noi -->
 
-    <div class="mt-5  banner-container">
+    <div class="mt-5 mb-2 banner-container">
         <a href="/register">
         <img src="/storage/img/work-with-us.jpg" alt="" class="imgBanner w-100">
         <h3 class="text-banner">Lavora con Deliveboo per portare i tuoi piatti nelle case della città</h3>
@@ -131,15 +131,17 @@ export default {
   filter: brightness(70%);
 }
 .banner-container{
-    box-shadow: -4px -2px 3px #313131;
+    box-shadow: 2px 3px 2px #313131;
     width: 110vw;
     position: relative;
     margin-left: -19%;
+    border-top: 1px solid black;
+
         
      .text-banner{
          position: absolute;
          top: 50%;
-         left: 45%;
+         left: 46%;
          transform: translate(-50% , -50%);
          color: white;
          font-size: 50px;

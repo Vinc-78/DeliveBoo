@@ -1,0 +1,15 @@
+.navbar {
+    background-color: #efedee!important;
+    
+}
+
+.navbar-light .navbar-brand {
+    font-size: 35px;
+    font-weight:900 !important;
+    text-shadow: 2px 2px 2px #e9ae2f;
+    color: #4271f3;
+}
+
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+    color: rgba(240, 161, 44, 0.9)!important;
+}

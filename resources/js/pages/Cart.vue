@@ -2,20 +2,20 @@
 
     <div class="container">
 
-        <h1 class="text-center my-4">Il tuo ordine</h1>
+        <h1 class="text-center my-4 ">Riepilogo ordine</h1>
 
-        <div class="row"> 
+        <div class="row box-dish"> 
 
             <div class="col-6">
 
-                <h3 class="titolo" >Piatti inseriti </h3>
+                <h3 class="titolo" >I tuoi ordini</h3>
 
-                <ul class="d-flex flex-column">
-                    <li v-for="currentDish in currentCart" :key="currentDish.id" class="piatto-singolo">
+                <ul class="order-list">
+                    <li v-for="currentDish in currentCart" :key="currentDish.id" class="">
 
-                        <h4 class=" font-weight-bolder">{{ currentDish.product.name }}</h4>
+                        <h4 class="" style="display:inline;">{{ currentDish.product.name }}</h4>
 
-                        <p style="text-align: left;" class=""><span class="font-weight-bolder">Qta {{ currentDish.qta }}  </span> X <span class="font-weight-bolder">{{ currentDish.product.price }} €  </span></p>
+                        <p style="display:inline-block;" class="qta-order">{{ currentDish.qta }} X <span class="">{{ currentDish.product.price }} €  </span></p>
 
                                       
                     </li>
@@ -25,20 +25,16 @@
 
             <div class="col-6 text-center">
 
-                <h3>Totale ordine </h3>
+                <h3 class="titolo">Totale ordine </h3>
 
-               <h4 class=" font-weight-bolder"> {{totalPrice}} € </h4>
+               <h4 class="qta-order"> {{totalPrice}} € </h4>
 
-
-               <a href="/checkout"><button class="btn btn-success"> Completa l'ordine </button></a>
-
-                
-                
             </div>
 
+         <div class="col-12 d-flex justify-content-center mb-5">
+         <a href="/checkout"><button class="button-55 button-pay">Procedi al pagamento</button></a>
+         </div>
         </div>
-
-       
 
     </div>
   
@@ -112,15 +108,33 @@ export default {
 
 <style lang="scss" >
 
-.piatto-singolo {
-display: flex;
-flex-direction: column;
-
-
-
+.titolo{
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
 
 }
 
+.qta-order{
+    padding-left: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
 
+.order-list {
+  margin-top: 10px;
+  list-style: none;
+  display: inline-block;
+
+     li {
+  border-bottom: 2px #404B51 dotted;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+  
+}
+
+ 
 
 </style>

@@ -72,7 +72,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #d2e7d6;
+  background-color: #5fcfe7;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -510,7 +510,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #d2e7d6;
+  background-color: #5fcfe7;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -4275,15 +4275,15 @@ input[type=button].btn-block {
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #d2e7d6, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #5fcfe7, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #d2e7d6, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #5fcfe7, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #d2e7d6, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #5fcfe7, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range::-moz-focus-outer {
@@ -4486,8 +4486,8 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #d2e7d6;
-  border-color: #dee2e6 #dee2e6 #d2e7d6;
+  background-color: #5fcfe7;
+  border-color: #dee2e6 #dee2e6 #5fcfe7;
 }
 
 .nav-tabs .dropdown-menu {
@@ -10982,7 +10982,38 @@ a.text-dark:focus {
   padding: 50px;
 }
 
-.text-nav a {
-  font-size: 50px !important;
+.navbar {
+  background-color: #efedee !important;
+}
+
+.navbar-light .navbar-brand {
+  font-size: 35px;
+  font-weight: 900 !important;
+  text-shadow: 2px 2px 2px #e9ae2f;
+  color: #4271f3;
+}
+
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+  color: rgba(240, 161, 44, 0.9) !important;
+}
+
+.aside {
+  background-color: #01019b;
+}
+
+.aside .title {
+  color: white;
+  padding: 25px 0;
+  border-bottom: 1px solid white;
+  margin-bottom: 30px;
+}
+
+.aside a {
+  color: #accae3;
+}
+
+.page-admin {
+  background-color: white;
 }
 

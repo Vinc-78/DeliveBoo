@@ -20,9 +20,9 @@
             </div>
         @endif
 
-        <h1>Inserisci i tuoi dati e completa l'ordine </h1>
+        <h1 class="title-search mt-4 mb-3">Inserisci i tuoi dati e completa l'ordine </h1>
 
-        <div class="mx-4 text-center container">
+        <div class="mx-4 text-center container box-dish">
             <form id="payment-form" method="POST" action="{{ route('checkout.store') }}"
             class="text-center">
                 @csrf
@@ -31,7 +31,7 @@
 
                 {{-- NOME --}}
                 <div class="row text-left mb-5">
-                    <label for="name_client" class="p-0 col-12"><h5>Inserisci il nome  <span class="small">*</span></h5></label>
+                    <label for="name_client" class="p-0 col-12"><h5>Inserisci il nome <span class="small">*</span></h5></label>
 
                     <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
 
@@ -182,8 +182,8 @@
                 <div class="form-group row mb-0">
                     <div class="col-12 text-center">
                         <input id="nonce" name="payment_method_nonce" type="hidden">
-                        <button type="submit" class="btn btn-primary rounded-0">
-                            Procedi con il pagamento
+                        <button type="submit" class="button-55">
+                            Ordina e Paga
                         </button>
                     </div>
                 </div>

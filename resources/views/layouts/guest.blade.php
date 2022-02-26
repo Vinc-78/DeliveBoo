@@ -34,10 +34,7 @@
                     My-DeliveBoo
                 </a>
 
-                @auth  {{-- Se loggato  --}}
-                <a class="navbar-brand font-weight-bold mx-4" href="{{ route('admin.home') }}"> Torna alla Dashboard          
-                </a>  {{-- Aggiunto per tornare alla Dashboard --}}
-                @endauth
+               
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -51,6 +48,10 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        @auth  {{-- Se loggato  --}}
+                            <a class="nav-link font-weight-bold " href="{{ route('admin.home') }}"> Torna alla Dashboard          
+                            </a>  {{-- Aggiunto per tornare alla Dashboard --}}
+                        @endauth
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

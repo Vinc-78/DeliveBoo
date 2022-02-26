@@ -9,7 +9,7 @@
           </p>
           <!-- Qui ci andrà il bottone route-link -->
           <div class="get-start">
-          <router-link :to="{ name:'search' }" class=""><h2>Esplora i Ristoranti</h2></router-link>
+            <router-link :to="{ name:'search' }" class=""><h2>Esplora i Ristoranti</h2></router-link>
           </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
     
     <!-- Banner Lavora con Noi -->
 
-    <div class="mt-5  banner-container">
+    <div class="mt-5 mb-2 banner-container">
         <a href="/register">
         <img src="/storage/img/work-with-us.jpg" alt="" class="imgBanner w-100">
         <h3 class="text-banner">Lavora con Deliveboo per portare i tuoi piatti nelle case della città</h3>
@@ -128,17 +128,20 @@ export default {
   height: 400px;
   object-fit: cover;
   object-position: center;
-  filter: brightness(50%);
+  filter: brightness(70%);
 }
 .banner-container{
+    box-shadow: 2px 3px 2px #313131;
     width: 110vw;
     position: relative;
     margin-left: -19%;
+    border-top: 1px solid black;
+
         
      .text-banner{
          position: absolute;
          top: 50%;
-         left: 45%;
+         left: 46%;
          transform: translate(-50% , -50%);
          color: white;
          font-size: 50px;
@@ -150,7 +153,7 @@ export default {
      .text-banner:hover{
     transform: scale(1.2) translate(0);
     top: 40%;
-    left: 19%;
+    left: 21%;
     width: 51%;
 
      }

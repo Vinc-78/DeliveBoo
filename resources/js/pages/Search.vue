@@ -32,8 +32,8 @@
                  
                 </div>
                  
-                <h2 class="text-center font-weight-bold display-4 my-4 alert-search" v-if='usersList.length === 0'>Siamo spiacenti la
-                           la sua ricerca non ha dato nessuno risultato</h2>
+                <h2 class="text-center font-weight-bold display-4 my-4 alert-search title-search" v-if='usersList.length === 0'>Siamo spiacenti la
+                          sua ricerca non ha dato nessuno risultato</h2>
                 <h1 class="my-5  text-center title-search">Clicca sul ristorante per vedere il menù</h1>
 
           
@@ -47,9 +47,9 @@
                       <img  class="img-restaurant" :src="'storage/' + user.cover_img" alt="" >
                         
                       <div class="p-3 name-restaurant">
-                        <h4 class=""> <strong>  {{ user.name }}   </strong> </h4>
+                        <h4 class="titolo-search"> <strong>  {{ user.name }}   </strong> </h4>
                         
-                        <p> Indirizzo  {{user.address}} </p>  
+                        <p class="titolo-search"> Indirizzo  {{user.address}} </p>  
                         <br>
                             
                       </div>
@@ -146,15 +146,17 @@ export default {
 .alert-search {
   width: auto;
   align-items: center;
-  background-color: #fff;
+  background-color: rgba(248, 242, 242, 0.918);
   color: #000;
   text-align: center;
   border-radius: 20px;
   padding: 30px 30px 70px;
+  box-shadow: 4px 7px 10px #313131;
 }
 
 .title-search{
-  
+  color: white;
+  text-shadow: 3px 2px 2px black, 0 0 25px rgb(36, 36, 39), 0 0 5px rgb(41, 41, 48);
   font-weight: bold;
   text-align: center;
   
@@ -239,6 +241,7 @@ input[type="checkbox"]{
   height:300px;
   object-fit: cover;
   position: relative;
+  box-shadow: 4px 7px 10px #313131;
 }
 
 .name-restaurant{
@@ -251,6 +254,13 @@ input[type="checkbox"]{
   transform: translate(-50% , -20%);
   text-shadow: 1px 1px 2px rgb(2, 2, 2), 0 0 25px rgb(33, 33, 36), 0 0 5px rgb(32, 32, 32);
   
+}
+
+.titolo-search:hover{
+   color: #fff; 
+   color: #fff; text-shadow: 0px 0 15px #76EE00;
+   transform: scale(1.4);
+
 }
 
 

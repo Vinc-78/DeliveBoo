@@ -5,15 +5,17 @@
         <div class="row">
             <div class="col-3">
 
-            <a href="{{route('admin.home')}}" class="btn btn-info text-white rounded-0"> Torna alla Dashaboard</a>
-        
-                <div class="my-4">
-                    <a href="{{route('admin.dishes.create')}}" class="btn btn-info text-white rounded-0">Nuovo Piatto</a>
+                <div class="mb-3">
+                    <button class="btn btn-secondary"><a class="text-white" href={{ route('admin.home') }}>Torna alla dashboard</a></button>
                 </div>
-        </div>
+        
+                <div class="mb-3">
+                    <a href="{{route('admin.dishes.create')}}" class="btn btn-secondary text-white ">Nuovo Piatto</a>
+                </div>
+             </div>
 
         <div class="col-6">
-        <h1 class="text-center mb-3"> I tuoi  piatti</h1>
+        <h1 class="text-center mb-3 bg-light font-weight-bold my-3 py-3 rounded"> I tuoi  piatti</h1>
 
         @if (session('status'))
         <div class="alert alert-success" role="alert"  class="mt-4">
@@ -21,30 +23,30 @@
         </div>
         @endif
 
-        <div class="row row-cols-lg-3  row-cols-sm-2  row-cols-md-3  mt-mb-4">
+        <div class="row row-cols-lg-3  row-cols-sm-1  row-cols-md-1  row-cols-1 mt-mb-4">
 
             @foreach ($dishes as $dish)
 
                {{--  @if($dish->visibility) --}} {{-- Da usare solo per il lato cliente Se disponibile (true) lo vede --}}
-                    <div class="col text-center mb-3">
+                    <div class="col text-center mb-3 border g-3 " style="background-color: #fff; " >
 
-                        <img style="object-fit: cover; height: 150px;" class="img-dish w-75"
+                        <img style="object-fit: cover; height:150px" class="img-dish w-100 mt-3"
                         src="{{asset('storage/' . $dish->image_url)}}" alt="{{$dish->name}}">
                             
                         <div class="piatto">
                             <p class="mt-3 mb-4 border-bottom border-dark font-weight-bold">{{$dish->name}}</p>
                             
-                            <p style="" class="mb-4">Price: {{$dish->price}}€</p>
+                            <p style="" class="mb-4 font-weight-bold">Price: {{$dish->price}}€</p>
                              
                             @if ($dish->visibility)
-                            <h6 class="card-title"> Il piatto è disponibile </h6>    
+                            <h6 class="card-title font-weight-bold"> Il piatto è disponibile </h6>    
                              @else
-                            <h6 class="card-title"> Il piatto non è disponibile </h6>  
+                            <h6 class="card-title font-weight-bold"> Il piatto non è disponibile </h6>  
                              @endif
             
                         </div>
                         
-                        <a href="{{route('admin.dishes.show' , $dish->id)}}" class="btn btn-info text-white rounded-0">Vai al piatto</a>
+                        <a href="{{route('admin.dishes.show' , $dish->id)}}" class="btn btn-secondary text-white mb-3">Vai al piatto</a>
 
                     </div>
                 @endforeach          

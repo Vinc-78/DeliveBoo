@@ -387,10 +387,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
   data: function data() {
@@ -528,7 +524,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -908,7 +903,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "body {\n  background-color: #d2e7d6;\n}", ""]);
+exports.push([module.i, "body {\n  background-image: url(\"/storage/img/sfondopagine.webp\");\n  background-size: 100%;\n  background-repeat: repeat;\n}", ""]);
 
 // exports
 
@@ -927,7 +922,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".footer-container {\n  overflow: hidden;\n  margin-top: 250px;\n  background: #262626;\n  color: #627482 !important;\n  margin-bottom: 0;\n  padding-bottom: 0;\n}\nsmall {\n  font-size: calc(12px + 3 * (100vw - 360px) / 1240) !important;\n}\n.bold-text {\n  color: #989c9e !important;\n}\n.mt-55 {\n  margin-top: calc(50px + 10 * (100vw - 360px) / 1240) !important;\n}\nh3 {\n  font-size: calc(34px + 6 * (100vw - 360px) / 1240) !important;\n}\n.social {\n  font-size: 21px !important;\n}\n.rights {\n  font-size: calc(10px + 2 * (100vw - 360px) / 1240) !important;\n}", ""]);
+exports.push([module.i, ".footer-container {\n  overflow: hidden;\n  margin-top: 250px;\n  background: #262626;\n  color: #627482 !important;\n  margin-bottom: 0;\n  padding-bottom: 0;\n  width: 101vw;\n  margin-left: -12%;\n}\nsmall {\n  font-size: calc(12px + 3 * (100vw - 360px) / 1240) !important;\n}\n.bold-text {\n  color: #989c9e !important;\n}\n.mt-55 {\n  margin-top: calc(50px + 10 * (100vw - 360px) / 1240) !important;\n}\nh3 {\n  font-size: calc(34px + 6 * (100vw - 360px) / 1240) !important;\n}\n.social {\n  font-size: 21px !important;\n}\n.rights {\n  font-size: calc(10px + 2 * (100vw - 360px) / 1240) !important;\n}", ""]);
 
 // exports
 
@@ -946,7 +941,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "h1 {\n  font-weight: bold;\n  font-style: italic;\n}\nimg {\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: right bottom;\n     object-position: right bottom;\n}\n.slider-text a {\n  color: white;\n}\n.slider-text a:hover {\n  text-decoration: none !important;\n  color: white !important;\n}\n.slider-text a h3:hover {\n  transform: translate(0) scale(1.4);\n  font-weight: bold;\n  text-shadow: 1px 1px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}", ""]);
+exports.push([module.i, ".slider-text {\n  color: white;\n  font-weight: bold;\n  text-shadow: 3px 2px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}\nh1 {\n  font-weight: bold;\n  font-style: italic;\n}\n.slider-box {\n  width: 33%;\n}\n.slider-box img {\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: right bottom;\n     object-position: right bottom;\n  height: 300px;\n  width: 100%;\n  box-shadow: 1px 5px 10px #313131;\n}\n.slider-text a {\n  color: white;\n}\n.slider-text a:hover {\n  text-decoration: none !important;\n  color: white !important;\n}\n.slider-text a h3:hover {\n  transform: translate(0) scale(1.4);\n  font-weight: bold;\n  text-shadow: 1px 1px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}", ""]);
 
 // exports
 
@@ -965,7 +960,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".piatto-singolo {\n  display: flex;\n  flex-direction: column;\n}", ""]);
+exports.push([module.i, ".titolo {\n  text-align: center;\n  padding-bottom: 10px;\n  border-bottom: 1px solid black;\n}\n.qta-order {\n  padding-left: 10px;\n  font-size: 25px;\n  font-weight: bold;\n}\n.order-list {\n  margin-top: 10px;\n  list-style: none;\n  display: inline-block;\n}\n.order-list li {\n  border-bottom: 2px #404B51 dotted;\n  line-height: 1;\n  margin-bottom: 10px;\n}", ""]);
 
 // exports
 
@@ -984,17 +979,17 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbo {\n  height: 500px;\n  width: 110vw;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n  position: relative;\n  margin-left: -19%;\n}\n.jumbo .title-jumbo {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: white;\n}\n.jumbo .title-jumbo h1 {\n  font-size: 70px;\n  font-weight: bold;\n  text-shadow: -0.0075em 0.0075em 0 #1a1616, 0.005em 0.005em 0 #1c1718, 0.01em 0.01em 0 #7e6e1e, 0.015em 0.015em #1b1818, 0.02em 0.02em 0 #100c0d, 0.025em 0.025em 0 #070606, 0.03em 0.03em 0 #0c090a, 0.035em 0.035em 0 #060506;\n}\n.jumbo .title-jumbo p {\n  font-weight: bold;\n  font-size: 20px;\n  text-shadow: 3px 2px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}\n.jumbo .title-jumbo .get-start {\n  text-align: center;\n  color: white;\n  font-weight: bold;\n  font-size: 25px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n}\n.jumbo .title-jumbo .get-start a {\n  color: #f2bf25;\n  text-decoration: none;\n}\nimg {\n  height: 300px;\n}\nh1 {\n  text-align: center;\n}\np {\n  text-align: center;\n}\n.imgBanner {\n  height: 400px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  filter: brightness(50%);\n}\n.banner-container {\n  width: 110vw;\n  position: relative;\n  margin-left: -19%;\n}\n.banner-container .text-banner {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: white;\n  font-size: 50px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n  text-align: center;\n}\n.banner-container .text-banner h3:hover {\n  transform: translate(0) scale(1.4);\n}", ""]);
+exports.push([module.i, ".jumbo {\n  height: 500px;\n  width: 110vw;\n  background-repeat: no-repeat;\n  background-position: bottom;\n  background-size: cover;\n  position: relative;\n  margin-left: -19%;\n  box-shadow: 2px 4px 3px #313131;\n}\n.jumbo .title-jumbo {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: white;\n}\n.jumbo .title-jumbo h1 {\n  font-size: 70px;\n  font-weight: bold;\n  text-shadow: -0.0075em 0.0075em 0 #1a1616, 0.005em 0.005em 0 #1c1718, 0.01em 0.01em 0 #7e6e1e, 0.015em 0.015em #1b1818, 0.02em 0.02em 0 #100c0d, 0.025em 0.025em 0 #070606, 0.03em 0.03em 0 #0c090a, 0.035em 0.035em 0 #060506;\n}\n.jumbo .title-jumbo p {\n  font-weight: bold;\n  font-size: 20px;\n  text-shadow: 3px 2px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}\n.jumbo .title-jumbo .get-start {\n  text-align: center;\n  color: white;\n  font-weight: bold;\n  font-size: 25px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n}\n.jumbo .title-jumbo .get-start a {\n  color: #f2bf25;\n  text-decoration: none;\n}\n.imgBanner {\n  height: 400px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  filter: brightness(70%);\n}\n.banner-container {\n  box-shadow: 2px 3px 2px #313131;\n  width: 110vw;\n  position: relative;\n  margin-left: -19%;\n  border-top: 1px solid black;\n}\n.banner-container .text-banner {\n  position: absolute;\n  top: 50%;\n  left: 46%;\n  transform: translate(-50%, -50%);\n  color: white;\n  font-size: 50px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n  text-align: center;\n}\n.banner-container .text-banner:hover {\n  transform: scale(1.2) translate(0);\n  top: 40%;\n  left: 21%;\n  width: 51%;\n}\n.get-start {\n  font-weight: bold;\n}\n.get-start h2:hover {\n  transform: scale(1.2) translate(0);\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true&":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1003,7 +998,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".titleMenu {\n  font-family: cursive;\n}\n.titleMenu h1 {\n  font-weight: bold;\n  padding-bottom: 50px !important;\n}\n.titleMenu h4 {\n  color: #acaaaa;\n}", ""]);
+exports.push([module.i, ".piatto {\n  height: 150px;\n}\n.line-division {\n  border-bottom: 2px solid black;\n}\n.menu-text {\n  color: white;\n  text-shadow: 3px 2px 2px black, 0 0 40px #242427, 0 0 5px #292930;\n  text-align: center;\n}\n.box-dish {\n  background-color: rgba(248, 242, 242, 0.658);\n  padding-top: 30px;\n  padding-bottom: 30px;\n}\n.titleMenu {\n  font-family: cursive;\n}\n.titleMenu h1 {\n  font-weight: bold;\n  padding-bottom: 50px !important;\n}\n.titleMenu h4 {\n  color: #1b1b1b;\n}\n.dish-img {\n  -o-object-fit: cover;\n     object-fit: cover;\n  height: 150px;\n  box-shadow: 4px 7px 10px #313131;\n}\n.dish-card {\n  font-weight: bold;\n}\n.button-55 {\n  height: 50px;\n  align-self: center;\n  background-color: #fff;\n  background-image: none;\n  background-position: 0 90%;\n  background-repeat: repeat no-repeat;\n  background-size: 4px 3px;\n  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;\n  border-style: solid;\n  border-width: 2px;\n  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;\n  box-sizing: border-box;\n  color: #41403e;\n  cursor: pointer;\n  display: inline-block;\n  font-family: Neucha, sans-serif;\n  font-size: 1rem;\n  line-height: 23px;\n  outline: none;\n  padding: 0.75rem;\n  text-decoration: none;\n  transition: all 235ms ease-in-out;\n  border-bottom-left-radius: 15px 255px;\n  border-bottom-right-radius: 225px 15px;\n  border-top-left-radius: 255px 15px;\n  border-top-right-radius: 15px 225px;\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n  -webkit-user-select: none;\n  touch-action: manipulation;\n}\na:hover {\n  text-decoration: none !important;\n  color: #41403e !important;\n}\n.button-55:hover {\n  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;\n  transform: translate3d(0, 2px, 0);\n}\n.button-55:focus {\n  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;\n}\nul {\n  list-style: none;\n  text-align: center;\n  font-weight: bold;\n}\n.piatti-ordinati {\n  text-align: start !important;\n  margin-top: 25;\n}", ""]);
 
 // exports
 
@@ -1022,7 +1017,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.alert-search {\r\n  width: auto;\r\n  align-items: center;\r\n  background-color: #fff;\r\n  color: #000;\r\n  text-align: center;\r\n  border-radius: 20px;\r\n  padding: 30px 30px 70px;\n}\n.title-search{\r\n  \r\n  font-weight: bold;\n}\r\n\r\n/* Style card category */\n.img-category{\r\n  width:150px; \r\n  height:150px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  filter: brightness(0.8);\r\n  border-radius: 10%;\n}\n.name-search{\r\n  font-weight: bold;\r\n  font-size: 25px;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  color: white;\r\n  transform: translate(-50%, -50%);\r\n  text-shadow: 1px 1px 2px black, 0 0 25px rgb(36, 36, 39), 0 0 5px rgb(41, 41, 48);\n}\ninput[type=\"checkbox\"]{\r\n  display: none;\n}\n.checkbox-label:before {\r\n  background-color: white;\r\n  color: white;\r\n  content: \"\";\r\n  display: block;\r\n  border-radius: 50%;\r\n  position: absolute;\r\n  top: -5px;\r\n  left: -5px;\r\n  width: 25px;\r\n  height: 25px;\r\n  text-align: center;\r\n  line-height: 28px;\r\n  transition: 0.4s;\r\n  transform: scale(0)\n}\n.checkbox-label .img-category {\r\n  transition-duration: 0.2s;\r\n  transform-origin: 50% 50%;\n}\n.checkbox-label .nome-search{\r\n  transition-duration: 0.2s;\r\n  transform-origin: 50% 50%;\n}\n.checkbox-label .nome-search{\r\n  transition-duration: 0.2s;\r\n  font-size: 20px;\n}\n:checked + .checkbox-label:before {\r\n  content: \"\\2713\";\r\n  background-color: green;\r\n  transform: scale(1);\r\n  z-index: 99;\n}\n:checked + .checkbox-label .img-category {\r\n  transform: scale(0.9);\r\n  box-shadow: 0 0 5px #333;\r\n  z-index: -1;\n}\r\n\r\n/* Style card Restaurant */\n.img-restaurant{\r\n  width:400px; \r\n  height:300px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  position: relative;\n}\n.name-restaurant{\r\n  \r\n  color: white;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\n}\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.alert-search {\r\n  width: auto;\r\n  align-items: center;\r\n  background-color: rgba(248, 242, 242, 0.918);\r\n  color: #000;\r\n  text-align: center;\r\n  border-radius: 20px;\r\n  padding: 30px 30px 70px;\r\n  box-shadow: 4px 7px 10px #313131;\n}\n.title-search{\r\n  color: white;\r\n  text-shadow: 3px 2px 2px black, 0 0 25px rgb(36, 36, 39), 0 0 5px rgb(41, 41, 48);\r\n  font-weight: bold;\r\n  text-align: center;\n}\r\n\r\n/* Style card category */\n.img-category{\r\n  width:150px; \r\n  height:150px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  filter: brightness(0.8);\r\n  border-radius: 10%;\n}\n.name-search{\r\n  font-weight: bold;\r\n  font-size: 25px;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  color: white;\r\n  transform: translate(-50%, -50%);\r\n  text-shadow: 1px 1px 2px black, 0 0 25px rgb(36, 36, 39), 0 0 5px rgb(41, 41, 48);\n}\ninput[type=\"checkbox\"]{\r\n  display: none;\n}\n.checkbox-label:before {\r\n  background-color: white;\r\n  color: white;\r\n  content: \"\";\r\n  display: block;\r\n  border-radius: 50%;\r\n  position: absolute;\r\n  top: -5px;\r\n  left: -5px;\r\n  width: 25px;\r\n  height: 25px;\r\n  text-align: center;\r\n  line-height: 28px;\r\n  transition: 0.4s;\r\n  transform: scale(0)\n}\n.checkbox-label .img-category {\r\n  transition-duration: 0.2s;\r\n  transform-origin: 50% 50%;\n}\n.checkbox-label .nome-search{\r\n  transition-duration: 0.2s;\r\n  transform-origin: 50% 50%;\n}\n.checkbox-label .nome-search{\r\n  transition-duration: 0.2s;\r\n  font-size: 20px;\n}\n:checked + .checkbox-label:before {\r\n  content: \"\\2713\";\r\n  background-color: green;\r\n  transform: scale(1);\r\n  z-index: 99;\n}\n:checked + .checkbox-label .img-category {\r\n  transform: scale(0.9);\r\n  box-shadow: 0 0 5px #333;\r\n  z-index: -1;\n}\r\n\r\n/* Style card Restaurant */\n.img-restaurant{\r\n  width:400px; \r\n  height:300px;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\r\n  position: relative;\r\n  box-shadow: 4px 7px 10px #313131;\n}\n.name-restaurant{\r\n  width: 60%;\r\n  text-align: center;\r\n  color: white;\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50% , -20%);\r\n  text-shadow: 1px 1px 2px rgb(2, 2, 2), 0 0 25px rgb(33, 33, 36), 0 0 5px rgb(32, 32, 32);\n}\n.titolo-search:hover{\r\n   color: #fff; \r\n   color: #fff; text-shadow: 0px 0 15px #76EE00;\r\n   transform: scale(1.4);\n}\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -1659,15 +1654,15 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true&");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./MenuRistorante.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -2353,7 +2348,7 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "footer-container pb-0 mt-0 justify-content-center text-light ",
+          "footer-container pb-0 mt-0 justify-content-center text-white ",
       },
       [
         _c("div", { staticClass: "row my-5 justify-content-center py-5" }, [
@@ -2379,15 +2374,22 @@ var staticRenderFns = [
                   _c("b", [_vm._v("MENU")]),
                 ]),
                 _vm._v(" "),
-                _c("ul", { staticClass: "list-unstyled" }, [
-                  _c("li", [_vm._v("Home")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("About")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Blog")]),
-                  _vm._v(" "),
-                  _c("li", [_vm._v("Portfolio")]),
-                ]),
+                _c(
+                  "ul",
+                  {
+                    staticClass: "list-unstyled",
+                    staticStyle: { "text-align": "left" },
+                  },
+                  [
+                    _c("li", [_vm._v("Home")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("About")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Blog")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Portfolio")]),
+                  ]
+                ),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-xl-2 col-md-4 col-sm-4 col-12" }, [
@@ -2400,11 +2402,9 @@ var staticRenderFns = [
                   [_c("b", [_vm._v("ADDRESS")])]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "mb-1" }, [
-                  _vm._v("605, RATAN ICON BUILDING"),
-                ]),
+                _c("p", { staticClass: "mb-1" }, [_vm._v("7, Via del Corso")]),
                 _vm._v(" "),
-                _c("p", [_vm._v("SEAWOODS SECTOR")]),
+                _c("p", [_vm._v("Team 7 City")]),
               ]),
             ]),
             _vm._v(" "),
@@ -2451,7 +2451,7 @@ var staticRenderFns = [
                   ),
                   _c("small", { staticClass: "rights" }, [
                     _c("span", [_vm._v("®")]),
-                    _vm._v(" Pepper All Rights Reserved."),
+                    _vm._v(" Team 7 Class 43 Boolean @"),
                   ]),
                 ]
               ),
@@ -2464,7 +2464,7 @@ var staticRenderFns = [
                 },
                 [
                   _c("h6", { staticClass: "mt-55 mt-2 text-muted bold-text" }, [
-                    _c("b", [_vm._v("ANIRUDH SINGLA")]),
+                    _c("b", [_vm._v("Group Seven")]),
                   ]),
                   _c("small", [
                     _c("span", [
@@ -2473,7 +2473,7 @@ var staticRenderFns = [
                         attrs: { "aria-hidden": "true" },
                       }),
                     ]),
-                    _vm._v(" anirudh@gmail.com"),
+                    _vm._v(" sevenUp@gmail.com"),
                   ]),
                 ]
               ),
@@ -2486,7 +2486,7 @@ var staticRenderFns = [
                 },
                 [
                   _c("h6", { staticClass: "text-muted bold-text" }, [
-                    _c("b", [_vm._v("RISHABH SHEKHAR")]),
+                    _c("b", [_vm._v("Free Seven")]),
                   ]),
                   _c("small", [
                     _c("span", [
@@ -2495,7 +2495,7 @@ var staticRenderFns = [
                         attrs: { "aria-hidden": "true" },
                       }),
                     ]),
-                    _vm._v(" rishab@gmail.com"),
+                    _vm._v(" class43@gmail.com"),
                   ]),
                 ]
               ),
@@ -2542,113 +2542,98 @@ var render = function () {
             _c("div", { staticClass: "carousel-item active" }, [
               _c("div", { staticClass: "container" }, [
                 _c("div", { staticClass: "row text-white" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col", staticStyle: { width: "33%" } },
-                    [
-                      _c("img", {
-                        staticStyle: { width: "100%" },
-                        attrs: {
-                          src: "/storage/img/category/carne.jpg",
-                          alt: "",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "carousel-caption d-none d-md-block slider-text",
-                        },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "search",
-                                },
+                  _c("div", { staticClass: "col slider-box" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/storage/img/category/carne.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption d-none d-md-block slider-text",
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "search",
                               },
                             },
-                            [_c("h3", [_vm._v("Carne")])]
-                          ),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
+                          },
+                          [_c("h3", [_vm._v("Carne")])]
+                        ),
+                      ],
+                      1
+                    ),
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col", staticStyle: { width: "33%" } },
-                    [
-                      _c("img", {
-                        staticStyle: { width: "100%" },
-                        attrs: {
-                          src: "/storage/img/category/dessert.jpg",
-                          alt: "",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "carousel-caption d-none d-md-block slider-text",
-                        },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "search",
-                                },
+                  _c("div", { staticClass: "col slider-box" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/storage/img/category/dessert.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption d-none d-md-block slider-text",
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "search",
                               },
                             },
-                            [_c("h3", [_vm._v("Dessert")])]
-                          ),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
+                          },
+                          [_c("h3", [_vm._v("Dessert")])]
+                        ),
+                      ],
+                      1
+                    ),
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col", staticStyle: { width: "33%" } },
-                    [
-                      _c("img", {
-                        staticStyle: { width: "100%" },
-                        attrs: {
-                          src: "/storage/img/category/hamburger.jpg",
-                          alt: "",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "carousel-caption d-none d-md-block slider-text",
-                        },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "search",
-                                },
+                  _c("div", { staticClass: "col slider-box" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/storage/img/category/hamburger.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption d-none d-md-block slider-text",
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "search",
                               },
                             },
-                            [_c("h3", [_vm._v("Hamburger")])]
-                          ),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
+                          },
+                          [_c("h3", [_vm._v("Hamburger")])]
+                        ),
+                      ],
+                      1
+                    ),
+                  ]),
                 ]),
               ]),
             ]),
@@ -2656,113 +2641,98 @@ var render = function () {
             _c("div", { staticClass: "carousel-item" }, [
               _c("div", { staticClass: "container" }, [
                 _c("div", { staticClass: "row text-white" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col", staticStyle: { width: "33%" } },
-                    [
-                      _c("img", {
-                        staticStyle: { width: "100%" },
-                        attrs: {
-                          src: "/storage/img/category/indiano.jpg",
-                          alt: "",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "carousel-caption d-none d-md-block slider-text",
-                        },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "search",
-                                },
+                  _c("div", { staticClass: "col slider-box" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/storage/img/category/indiano.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption d-none d-md-block slider-text",
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "search",
                               },
                             },
-                            [_c("h3", [_vm._v("Indiano")])]
-                          ),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
+                          },
+                          [_c("h3", [_vm._v("Indiano")])]
+                        ),
+                      ],
+                      1
+                    ),
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col", staticStyle: { width: "33%" } },
-                    [
-                      _c("img", {
-                        staticStyle: { width: "100%" },
-                        attrs: {
-                          src: "/storage/img/category/italiano.jpg",
-                          alt: "",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "carousel-caption d-none d-md-block slider-text",
-                        },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "search",
-                                },
+                  _c("div", { staticClass: "col slider-box" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/storage/img/category/italiano.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption d-none d-md-block slider-text",
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "search",
                               },
                             },
-                            [_c("h3", [_vm._v("Italiano")])]
-                          ),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
+                          },
+                          [_c("h3", [_vm._v("Italiano")])]
+                        ),
+                      ],
+                      1
+                    ),
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col", staticStyle: { width: "33%" } },
-                    [
-                      _c("img", {
-                        staticStyle: { width: "100%" },
-                        attrs: {
-                          src: "/storage/img/category/orientale.jpg",
-                          alt: "",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "carousel-caption d-none d-md-block slider-text",
-                        },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "search",
-                                },
+                  _c("div", { staticClass: "col slider-box" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/storage/img/category/orientale.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption d-none d-md-block slider-text",
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "search",
                               },
                             },
-                            [_c("h3", [_vm._v("Orientale")])]
-                          ),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
+                          },
+                          [_c("h3", [_vm._v("Orientale")])]
+                        ),
+                      ],
+                      1
+                    ),
+                  ]),
                 ]),
               ]),
             ]),
@@ -2770,113 +2740,98 @@ var render = function () {
             _c("div", { staticClass: "carousel-item" }, [
               _c("div", { staticClass: "container" }, [
                 _c("div", { staticClass: "row text-white" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col", staticStyle: { width: "33%" } },
-                    [
-                      _c("img", {
-                        staticStyle: { width: "100%" },
-                        attrs: {
-                          src: "/storage/img/category/pesce.jpg",
-                          alt: "",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "carousel-caption d-none d-md-block slider-text",
-                        },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "search",
-                                },
+                  _c("div", { staticClass: "col slider-box" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/storage/img/category/pesce.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption d-none d-md-block slider-text",
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "search",
                               },
                             },
-                            [_c("h3", [_vm._v("Pesce")])]
-                          ),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
+                          },
+                          [_c("h3", [_vm._v("Pesce")])]
+                        ),
+                      ],
+                      1
+                    ),
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col", staticStyle: { width: "33%" } },
-                    [
-                      _c("img", {
-                        staticStyle: { width: "100%" },
-                        attrs: {
-                          src: "/storage/img/category/pizza.jpg",
-                          alt: "",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "carousel-caption d-none d-md-block slider-text",
-                        },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "search",
-                                },
+                  _c("div", { staticClass: "col slider-box" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/storage/img/category/pizza.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption d-none d-md-block slider-text",
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "search",
                               },
                             },
-                            [_c("h3", [_vm._v("Pizza")])]
-                          ),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
+                          },
+                          [_c("h3", [_vm._v("Pizza")])]
+                        ),
+                      ],
+                      1
+                    ),
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col", staticStyle: { width: "33%" } },
-                    [
-                      _c("img", {
-                        staticStyle: { width: "100%" },
-                        attrs: {
-                          src: "/storage/img/category/vegano.jpg",
-                          alt: "",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "carousel-caption d-none d-md-block slider-text",
-                        },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              attrs: {
-                                to: {
-                                  name: "search",
-                                },
+                  _c("div", { staticClass: "col slider-box" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/storage/img/category/vegano.jpg",
+                        alt: "",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "carousel-caption d-none d-md-block slider-text",
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            attrs: {
+                              to: {
+                                name: "search",
                               },
                             },
-                            [_c("h3", [_vm._v("Vegano")])]
-                          ),
-                        ],
-                        1
-                      ),
-                    ]
-                  ),
+                          },
+                          [_c("h3", [_vm._v("Vegano")])]
+                        ),
+                      ],
+                      1
+                    ),
+                  ]),
                 ]),
               ]),
             ]),
@@ -2896,7 +2851,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mt-5 mb-5" }, [
-      _c("h1", { staticClass: "text-align-center" }, [
+      _c("h1", { staticClass: "text-center slider-text" }, [
         _vm._v("TROVA IL RISTORANTE ADATTO A TE"),
       ]),
     ])
@@ -2972,49 +2927,51 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", { staticClass: "text-center my-4" }, [_vm._v("Il tuo ordine")]),
+    _c("h1", { staticClass: "text-center my-4 " }, [
+      _vm._v("Riepilogo ordine"),
+    ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row box-dish" }, [
       _c("div", { staticClass: "col-6" }, [
-        _c("h3", { staticClass: "titolo" }, [_vm._v("Piatti inseriti ")]),
+        _c("h3", { staticClass: "titolo" }, [_vm._v("I tuoi ordini")]),
         _vm._v(" "),
         _c(
           "ul",
-          { staticClass: "d-flex flex-column" },
+          { staticClass: "order-list" },
           _vm._l(_vm.currentCart, function (currentDish) {
-            return _c(
-              "li",
-              { key: currentDish.id, staticClass: "piatto-singolo" },
-              [
-                _c("h4", { staticClass: " font-weight-bolder" }, [
-                  _vm._v(_vm._s(currentDish.product.name)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticStyle: { "text-align": "left" } }, [
-                  _c("span", { staticClass: "font-weight-bolder" }, [
-                    _vm._v("Qta " + _vm._s(currentDish.qta) + "  "),
-                  ]),
-                  _vm._v(" X "),
-                  _c("span", { staticClass: "font-weight-bolder" }, [
+            return _c("li", { key: currentDish.id }, [
+              _c("h4", { staticStyle: { display: "inline" } }, [
+                _vm._v(_vm._s(currentDish.product.name)),
+              ]),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass: "qta-order",
+                  staticStyle: { display: "inline-block" },
+                },
+                [
+                  _vm._v(_vm._s(currentDish.qta) + " X "),
+                  _c("span", {}, [
                     _vm._v(_vm._s(currentDish.product.price) + " €  "),
                   ]),
-                ]),
-              ]
-            )
+                ]
+              ),
+            ])
           }),
           0
         ),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-6 text-center" }, [
-        _c("h3", [_vm._v("Totale ordine ")]),
+        _c("h3", { staticClass: "titolo" }, [_vm._v("Totale ordine ")]),
         _vm._v(" "),
-        _c("h4", { staticClass: " font-weight-bolder" }, [
+        _c("h4", { staticClass: "qta-order" }, [
           _vm._v(" " + _vm._s(_vm.totalPrice) + " € "),
         ]),
-        _vm._v(" "),
-        _vm._m(0),
       ]),
+      _vm._v(" "),
+      _vm._m(0),
     ]),
   ])
 }
@@ -3023,11 +2980,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "/checkout" } }, [
-      _c("button", { staticClass: "btn btn-success" }, [
-        _vm._v(" Completa l'ordine "),
-      ]),
-    ])
+    return _c(
+      "div",
+      { staticClass: "col-12 d-flex justify-content-center mb-5" },
+      [
+        _c("a", { attrs: { href: "/checkout" } }, [
+          _c("button", { staticClass: "button-55 button-pay" }, [
+            _vm._v("Procedi al pagamento"),
+          ]),
+        ]),
+      ]
+    )
   },
 ]
 render._withStripped = true
@@ -3053,18 +3016,18 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "section",
-    { staticClass: "container p-0" },
+    { staticClass: "container p-0 " },
     [
       _c(
         "div",
         {
           staticClass: "jumbo",
           staticStyle: {
-            "background-image": "url('../storage/img/sfondo1.jpg')",
+            "background-image": "url('../storage/img/provasfondo2.jpg')",
           },
         },
         [
-          _c("div", { staticClass: "title-jumbo" }, [
+          _c("div", { staticClass: "title-jumbo text-center" }, [
             _c("h1", [_vm._v("Welcome to Deliveboo.")]),
             _vm._v(" "),
             _vm._m(0),
@@ -3074,7 +3037,7 @@ var render = function () {
               { staticClass: "get-start" },
               [
                 _c("router-link", { attrs: { to: { name: "search" } } }, [
-                  _vm._v("Esplora i Ristoranti"),
+                  _c("h2", [_vm._v("Esplora i Ristoranti")]),
                 ]),
               ],
               1
@@ -3109,7 +3072,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-5  banner-container" }, [
+    return _c("div", { staticClass: "mt-5 mb-2 banner-container" }, [
       _c("a", { attrs: { href: "/register" } }, [
         _c("img", {
           staticClass: "imgBanner w-100",
@@ -3150,36 +3113,21 @@ var render = function () {
     _vm.myMenu.dishes.length !== 0
       ? _c("div", [
           _c("div", { staticClass: "text-center title-menu mb-5" }, [
-            _c("h1", { staticClass: "border-bottom border-dark pb-4" }, [
+            _c("h1", { staticClass: "pb-4 pt-3 title-search line-division" }, [
               _vm._v(_vm._s(_vm.myMenu.name)),
             ]),
             _vm._v(" "),
-            _c("h3", { staticClass: "pt-3" }, [_vm._v("Menù")]),
-            _vm._v(" "),
-            _c(
-              "div",
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn btn-primary rounded-0",
-                    attrs: { to: { name: "cart" } },
-                  },
-                  [_vm._v("Carrello " + _vm._s(_vm.total))]
-                ),
-              ],
-              1
-            ),
+            _c("h3", { staticClass: "pt-3 menu-text" }, [_vm._v("Menù")]),
           ]),
           _vm._v(" "),
           _c(
             "div",
             {
               staticClass:
-                "row flex-lg-row flex-md-column-reverse flex-sm-column-reverse",
+                "row flex-lg-row flex-md-column-reverse flex-sm-column-reverse box-dish",
             },
             [
-              _c("div", { staticClass: "col-lg-8 col-md-12" }, [
+              _c("div", { staticClass: "col-lg-8 col-md-12 dish-card" }, [
                 _c(
                   "div",
                   {
@@ -3192,13 +3140,9 @@ var render = function () {
                       { key: dish.id, staticClass: "col text-center mb-3" },
                       [
                         dish.visibility
-                          ? _c("div", { staticClass: "piatto" }, [
+                          ? _c("div", [
                               _c("img", {
-                                staticClass: "img-dish w-75",
-                                staticStyle: {
-                                  "object-fit": "cover",
-                                  height: "150px",
-                                },
+                                staticClass: " w-75 dish-img",
                                 attrs: {
                                   src: "/storage/" + dish.image_url,
                                   alt: dish.name,
@@ -3207,7 +3151,7 @@ var render = function () {
                               _vm._v(" "),
                               _c("div", { staticClass: "piatto" }, [
                                 _c(
-                                  "p",
+                                  "h5",
                                   {
                                     staticClass:
                                       "mt-3 mb-4 border-bottom border-dark font-weight-bold",
@@ -3224,8 +3168,8 @@ var render = function () {
                                 _c(
                                   "p",
                                   {
-                                    staticClass: "mb-3",
-                                    staticStyle: { height: "80px" },
+                                    staticClass: "mb-2",
+                                    staticStyle: { height: "40px" },
                                   },
                                   [_vm._v(_vm._s(dish.description))]
                                 ),
@@ -3241,7 +3185,7 @@ var render = function () {
                                 _c(
                                   "button",
                                   {
-                                    staticClass: "btn btn-success rounded-0",
+                                    staticClass: "button-55",
                                     on: {
                                       click: function ($event) {
                                         return _vm.addToCart(dish)
@@ -3258,7 +3202,7 @@ var render = function () {
                                 _c(
                                   "button",
                                   {
-                                    staticClass: "btn btn-warning rounded-0",
+                                    staticClass: "button-55",
                                     on: {
                                       click: function ($event) {
                                         return _vm.removeToCart(dish)
@@ -3285,31 +3229,43 @@ var render = function () {
                 "div",
                 { staticClass: "col-lg-4 col-md-12 my-4 text-center" },
                 [
+                  _c(
+                    "div",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "button-55 mb-2",
+                          attrs: { to: { name: "cart" } },
+                        },
+                        [_vm._v("Carrello " + _vm._s(_vm.total))]
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
                   _vm.currentCart.length === 0
-                    ? _c("div", [_c("h4", [_vm._v("Il tuo carrello è vuoto")])])
-                    : _c("div", [
-                        _c("h4", [_vm._v("Il tuo carrello")]),
+                    ? _c("div", [
+                        _c("h4", [_vm._v("Nessun ordine nel carello")]),
+                      ])
+                    : _c("div", { staticClass: "mb-2" }, [
+                        _c("h4", { staticClass: "font-weight-bold my-3" }, [
+                          _vm._v("Il tuo carrello"),
+                        ]),
                         _vm._v(" "),
                         _c(
                           "ul",
-                          { staticClass: "list-group" },
+                          { staticClass: "piatti-ordinati" },
                           _vm._l(_vm.currentCart, function (currentDish) {
-                            return _c(
-                              "li",
-                              {
-                                key: currentDish.id,
-                                staticClass: "list-group-item",
-                              },
-                              [
-                                _c("p", { staticClass: "m-0" }, [
-                                  _vm._v(
-                                    _vm._s(currentDish.qta) +
-                                      " X " +
-                                      _vm._s(currentDish.product.name)
-                                  ),
-                                ]),
-                              ]
-                            )
+                            return _c("li", { key: currentDish.id }, [
+                              _c("p", { staticClass: "m-0" }, [
+                                _vm._v(
+                                  _vm._s(currentDish.qta) +
+                                    " X " +
+                                    _vm._s(currentDish.product.name)
+                                ),
+                              ]),
+                            ])
                           }),
                           0
                         ),
@@ -3348,11 +3304,9 @@ var render = function () {
     _c("div", { staticClass: "row justify-content-center mx-sm-5" }, [
       _c("div", { staticClass: "col-sm-12 d-md-flex altezza" }, [
         _c("div", { staticClass: "container" }, [
-          _c("h1", { staticClass: "mt-5 mb-2 title-search" }, [
+          _c("h1", { staticClass: "mt-5 mb-5 title-search" }, [
             _vm._v("Seleziona la categoria e scegli il ristorante"),
           ]),
-          _vm._v(" "),
-          _c("p", [_vm._v("*Puoi selezionare solo due categorie alla volta")]),
           _vm._v(" "),
           _c(
             "div",
@@ -3433,11 +3387,11 @@ var render = function () {
                 "h2",
                 {
                   staticClass:
-                    "text-center font-weight-bold display-4 my-4 alert-search",
+                    "text-center font-weight-bold display-4 my-4 alert-search title-search",
                 },
                 [
                   _vm._v(
-                    "Siamo spiacenti la\n                       la sua ricerca non ha dato nessuno risultato"
+                    "Siamo spiacenti la\n                      sua ricerca non ha dato nessuno risultato"
                   ),
                 ]
               )
@@ -3469,13 +3423,13 @@ var render = function () {
                       }),
                       _vm._v(" "),
                       _c("div", { staticClass: "p-3 name-restaurant" }, [
-                        _c("h4", {}, [
+                        _c("h4", { staticClass: "titolo-search" }, [
                           _c("strong", [
                             _vm._v("  " + _vm._s(user.name) + "   "),
                           ]),
                         ]),
                         _vm._v(" "),
-                        _c("p", [
+                        _c("p", { staticClass: "titolo-search" }, [
                           _vm._v(" Indirizzo  " + _vm._s(user.address) + " "),
                         ]),
                         _vm._v(" "),
@@ -19290,7 +19244,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MenuRistorante_vue_vue_type_template_id_ae8785be___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MenuRistorante.vue?vue&type=template&id=ae8785be& */ "./resources/js/pages/MenuRistorante.vue?vue&type=template&id=ae8785be&");
 /* harmony import */ var _MenuRistorante_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MenuRistorante.vue?vue&type=script&lang=js& */ "./resources/js/pages/MenuRistorante.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _MenuRistorante_vue_vue_type_style_index_0_lang_scss_scope_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true& */ "./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true&");
+/* empty/unused harmony star reexport *//* harmony import */ var _MenuRistorante_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MenuRistorante.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -19332,18 +19286,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true&":
-/*!********************************************************************************************!*\
-  !*** ./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true& ***!
-  \********************************************************************************************/
+/***/ "./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss& ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRistorante_vue_vue_type_style_index_0_lang_scss_scope_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&scope=true&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRistorante_vue_vue_type_style_index_0_lang_scss_scope_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRistorante_vue_vue_type_style_index_0_lang_scss_scope_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRistorante_vue_vue_type_style_index_0_lang_scss_scope_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRistorante_vue_vue_type_style_index_0_lang_scss_scope_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRistorante_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./MenuRistorante.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/MenuRistorante.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRistorante_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRistorante_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRistorante_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_MenuRistorante_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),

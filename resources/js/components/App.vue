@@ -30,7 +30,6 @@ export default {
      body{
          background-image: url('/storage/img/sfondopagine.webp');
          background-size: 100%;
-        
          background-repeat: repeat;
      }
 </style>

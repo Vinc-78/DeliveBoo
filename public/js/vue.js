@@ -1154,7 +1154,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".footer-container {\n  overflow: hidden;\n  margin-top: 250px;\n  background: #262626;\n  color: #627482 !important;\n  margin-bottom: 0;\n  padding-bottom: 0;\n  width: 100vw;\n}\nsmall {\n  font-size: calc(12px + 3 * (100vw - 360px) / 1240) !important;\n}\n.bold-text {\n  color: #989c9e !important;\n}\n.mt-55 {\n  margin-top: calc(50px + 10 * (100vw - 360px) / 1240) !important;\n}\nh3 {\n  font-size: calc(34px + 6 * (100vw - 360px) / 1240) !important;\n}\n.social {\n  font-size: 21px !important;\n}\n.rights {\n  font-size: calc(10px + 2 * (100vw - 360px) / 1240) !important;\n}", ""]);
+exports.push([module.i, ".footer-container {\n  overflow: hidden;\n  margin-top: 250px;\n  background: #262626;\n  color: #627482 !important;\n  margin-bottom: 0;\n  padding-bottom: 0;\n  width: 100%;\n}\nsmall {\n  font-size: calc(12px + 3 * (100vw - 360px) / 1240) !important;\n}\n.bold-text {\n  color: #989c9e !important;\n}\n.mt-55 {\n  margin-top: calc(50px + 10 * (100vw - 360px) / 1240) !important;\n}\nh3 {\n  font-size: calc(34px + 6 * (100vw - 360px) / 1240) !important;\n}\n.social {\n  font-size: 21px !important;\n}\n.rights {\n  font-size: calc(10px + 2 * (100vw - 360px) / 1240) !important;\n}", ""]);
 
 // exports
 
@@ -1249,7 +1249,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbo {\n  height: 500px;\n  width: 100vw;\n  background-repeat: no-repeat;\n  background-position: bottom;\n  background-size: cover;\n  position: relative;\n  box-shadow: 2px 4px 3px #313131;\n}\n.jumbo .title-jumbo {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: white;\n}\n.jumbo .title-jumbo h1 {\n  font-size: 70px;\n  font-weight: bold;\n  text-shadow: -0.0075em 0.0075em 0 #1a1616, 0.005em 0.005em 0 #1c1718, 0.01em 0.01em 0 #7e6e1e, 0.015em 0.015em #1b1818, 0.02em 0.02em 0 #100c0d, 0.025em 0.025em 0 #070606, 0.03em 0.03em 0 #0c090a, 0.035em 0.035em 0 #060506;\n}\n.jumbo .title-jumbo p {\n  font-weight: bold;\n  font-size: 20px;\n  text-shadow: 3px 2px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}\n.jumbo .title-jumbo .get-start {\n  text-align: center;\n  color: white;\n  font-weight: bold;\n  font-size: 25px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n}\n.jumbo .title-jumbo .get-start a {\n  color: #f2bf25;\n  text-decoration: none;\n}\n.imgBanner {\n  height: 400px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  filter: brightness(70%);\n}\n.banner-container {\n  box-shadow: 2px 3px 2px #313131;\n  width: 100vw;\n  position: relative;\n  border-top: 1px solid black;\n}\n.banner-container .text-banner {\n  position: absolute;\n  top: 50%;\n  left: 46%;\n  transform: translate(-50%, -50%);\n  color: white;\n  font-size: 50px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n  text-align: center;\n}\n.banner-container .text-banner:hover {\n  transform: scale(1.2) translate(0);\n  top: 40%;\n  left: 21%;\n  width: 51%;\n}\n.get-start {\n  font-weight: bold;\n}\n.get-start h2:hover {\n  transform: scale(1.2) translate(0);\n}", ""]);
+exports.push([module.i, ".jumbo {\n  height: 500px;\n  width: 100%;\n  background-repeat: no-repeat;\n  background-position: bottom;\n  background-size: cover;\n  position: relative;\n  box-shadow: 2px 4px 3px #313131;\n}\n.jumbo .title-jumbo {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: white;\n}\n.jumbo .title-jumbo h1 {\n  font-size: 70px;\n  font-weight: bold;\n  text-shadow: -0.0075em 0.0075em 0 #1a1616, 0.005em 0.005em 0 #1c1718, 0.01em 0.01em 0 #7e6e1e, 0.015em 0.015em #1b1818, 0.02em 0.02em 0 #100c0d, 0.025em 0.025em 0 #070606, 0.03em 0.03em 0 #0c090a, 0.035em 0.035em 0 #060506;\n}\n.jumbo .title-jumbo p {\n  font-weight: bold;\n  font-size: 20px;\n  text-shadow: 3px 2px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}\n.jumbo .title-jumbo .get-start {\n  text-align: center;\n  color: white;\n  font-weight: bold;\n  font-size: 25px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n}\n.jumbo .title-jumbo .get-start a {\n  color: #f2bf25;\n  text-decoration: none;\n}\n.imgBanner {\n  height: 400px;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  filter: brightness(70%);\n}\n.banner-container {\n  box-shadow: 2px 3px 2px #313131;\n  width: 100%;\n  position: relative;\n  border-top: 1px solid black;\n}\n.banner-container .text-banner {\n  position: absolute;\n  top: 50%;\n  left: 46%;\n  transform: translate(-50%, -50%);\n  color: white;\n  font-size: 50px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n  text-align: center;\n}\n.banner-container .text-banner:hover {\n  transform: scale(1.2) translate(0);\n  top: 40%;\n  left: 21%;\n  width: 51%;\n}\n.get-start {\n  font-weight: bold;\n}\n.get-start h2:hover {\n  transform: scale(1.2) translate(0);\n}", ""]);
 
 // exports
 
@@ -2643,7 +2643,12 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("router-view"), _vm._v(" "), _c("Footer")], 1)
+  return _c(
+    "div",
+    { staticClass: "prova" },
+    [_c("router-view"), _vm._v(" "), _c("Footer")],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -3918,7 +3923,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "mt-5 mb-2 banner-container" }, [
       _c("a", { attrs: { href: "/register" } }, [
         _c("img", {
-          staticClass: "imgBanner w-100",
+          staticClass: "imgBanner",
           attrs: { src: "/storage/img/work-with-us.jpg", alt: "" },
         }),
         _vm._v(" "),

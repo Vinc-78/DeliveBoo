@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="prova">
     <router-view></router-view>
 
     <Footer></Footer>
@@ -23,9 +23,9 @@ export default {
 </script>
 
 <style lang="scss">
-     body{
-         background-image: url('/storage/img/sfondopagine.webp');
-         background-size: 100%;
-         background-repeat: repeat;
-     }
+  body{
+    background-image: url('/storage/img/sfondopagine.webp');
+    background-size: 100%;
+    background-repeat: repeat;
+  }
 </style>

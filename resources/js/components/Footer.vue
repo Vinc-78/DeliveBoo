@@ -54,7 +54,7 @@ export default {
     color: #627482 !important;
     margin-bottom: 0;
     padding-bottom: 0;
-    width: 100vw;
+    width: 100%;
     // margin-left: -12%;
  }
 

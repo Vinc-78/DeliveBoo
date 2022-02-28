@@ -142,7 +142,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .alert-search {
   width: auto;
   align-items: center;
@@ -237,7 +237,7 @@ input[type="checkbox"]{
 /* Style card Restaurant */
 
 .img-restaurant{
-  width:400px; 
+  width:100%; 
   height:300px;
   object-fit: cover;
   position: relative;
@@ -260,8 +260,13 @@ input[type="checkbox"]{
    color: #fff; 
    color: #fff; text-shadow: 0px 0 15px #76EE00;
    transform: scale(1.4);
+   
 
 }
+
+
+
+
 
 
 </style>

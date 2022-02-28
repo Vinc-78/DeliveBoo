@@ -11,19 +11,19 @@
                     
                          <div class="container">
                              <div class="row text-white">
+                                
                                   <div class="col slider-box" >
-                                        <img src="/storage/img/category/carne.jpg" alt=""  class=""/>
-                                        <div class="carousel-caption d-none d-md-block slider-text">
-                                            <router-link  
-                                             :to="{
-                                                    name: 'search',
-                                                    }">
-                                            <h3>Carne</h3>
-                                            </router-link>
-                                        </div>
+                                       <router-link  :to="{ name: 'search',}">
+                                            <img src="/storage/img/category/carne.jpg" alt=""  class=""/>
+                                                <div class="carousel-caption d-none d-md-block slider-text">
+                                                    
+                                                    <h3>Carne</h3>
+                                                
+                                                </div>
+                                        </router-link>  
                                  </div>
                                    
-                                   
+                                  
                              </div>
                          </div>
                     
@@ -33,16 +33,17 @@
 
                         <div class="container">
                              <div class="row text-white">
+
                                   <div class="col slider-box" >
-                                        <img src="/storage/img/category/indiano.jpg" alt="" />
-                                        <div class="carousel-caption d-none d-md-block slider-text">
-                                            <router-link  
-                                             :to="{
-                                                    name: 'search',
-                                                    }">
-                                            <h3>Indiano</h3>
-                                             </router-link>
-                                        </div>
+                                       <router-link  :to="{name: 'search',}">
+
+                                            <img src="/storage/img/category/indiano.jpg" alt="" />
+                                                <div class="carousel-caption d-none d-md-block slider-text">
+                                                
+                                                    <h3>Indiano</h3>
+                                                    
+                                                </div>
+                                        </router-link>
                                  </div>
                                    
                                    
@@ -55,15 +56,15 @@
                        <div class="container">
                              <div class="row text-white">
                                   <div class="col slider-box" >
-                                        <img src="/storage/img/category/pesce.jpg" alt="" />
-                                        <div class="carousel-caption d-none d-md-block slider-text">
-                                            <router-link  
-                                             :to="{
-                                                    name: 'search',
-                                                    }">
-                                            <h3>Pesce</h3>
-                                             </router-link>
-                                        </div>
+                                      <router-link  :to="{ name: 'search',}">
+                                          
+                                            <img src="/storage/img/category/pesce.jpg" alt="" />
+                                                <div class="carousel-caption d-none d-md-block slider-text">
+                                                    
+                                                    <h3>Pesce</h3>
+                                                    
+                                                </div>
+                                         </router-link>
                                  </div>
                                    
                                    

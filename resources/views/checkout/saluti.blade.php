@@ -17,17 +17,17 @@
 
  <div class="container">
     <div class="row">
-        <div id="email-box" class="col-6 offset-3">
-
+        <div id="email-box" class="col-6 offset-3 mt-5">
+             
           
-            <h1>Congratulazioni ({{$data['name_client']}}) </h1>
+            <h1>Congratulazioni {{$data['name_client']}} </h1>
             <h3>Grazie per aver usato il nostro servizio di DeliverBoo!</h3>
             <h4>Il tuo ordine è stato effettuato con successo.</h4>
             
            
                 
-            <h3 class="font-weight-bolder mt-3">Totale pagato: ({{$data['total_price']}} €) </h3>
-                
+            <h3 class="font-weight-bolder mt-3">Totale pagato: {{$data['total_price']}} € </h3>
+            
            
             
           
@@ -39,13 +39,14 @@
 
 <style>
 #email-box {
+    background-color: rgba(248, 242, 242, 0.658);
     text-align: center;
-    width: 50vw;
-    margin: auto;
+    margin:auto;
     height: 50vh;
     border: 1px solid rgb(126, 123, 123);
     box-shadow: 3px 2px 2px rgba(0,0,0,0.7)
 }
+
 ul li {
     list-style-type: none;
 }

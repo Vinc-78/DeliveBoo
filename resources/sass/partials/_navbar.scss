@@ -1,5 +1,6 @@
 .navbar {
     background-color: #efedee!important;
+    box-shadow: 3px 5px 3px #020202;
     
 }
 
@@ -7,9 +8,9 @@
     font-size: 35px;
     font-weight:900 !important;
     text-shadow: 2px 2px 2px #e9ae2f;
-    color: #4271f3;
+    color:#00d0ff;
 }
 
 .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
-    color: rgba(240, 161, 44, 0.9)!important;
+    color: rgba(241, 185, 101, 0.9)!important;
 }

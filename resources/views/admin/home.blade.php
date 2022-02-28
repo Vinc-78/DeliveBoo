@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
+<div class="">
     {{-- <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -23,9 +23,9 @@
         <div class="col-3 aside" >
             <h2 class="title-aside"> Gestisci i tuoi dati</h2>
 
-            <h4><a href="{{route('admin.dishes.index')}}"> A tutti i piatti</a></h4>
+            <h4><a href="{{route('admin.dishes.index')}}">Tutti i piatti</a></h4>
 
-            <h4><a href="{{route('admin.orders.index')}}"> A tutti gli ordini</a></h4>
+            <h4><a href="{{route('admin.orders.index')}}">Tutti gli ordini</a></h4>
 
             <h4><a href="{{route('admin.chart')}}"> Le tue statistiche</a></h4>
         </div>

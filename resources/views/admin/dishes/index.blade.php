@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="">
         <div class="row justify-content-center ">
             <div class="col-3  aside">
                 <h2 class="title-aside"> Gestisci i tuoi dati</h2>

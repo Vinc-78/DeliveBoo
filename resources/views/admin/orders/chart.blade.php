@@ -1,9 +1,14 @@
 @extends('layouts.statistiche')
 
 @section('content')
-    <div class="container">
+    <div class="container page-admin">
+        <div class="d-flex">
         <div class="mb-3">
-            <button class="btn btn-secondary"><a class="text-white" href={{ route('admin.home') }}>Torna alla dashboard</a></button>
+            <button class="button2"><a class="text-white" href={{ route('admin.home') }}>Torna alla dashboard</a></button>
+        </div>
+        <div class="ml-5"><h1>Le tue statistiche</h1>
+        <p>Tieniti sempre aggiornato sulle tue entrate</p></div>
+        
         </div>
             {{-- Inserisci i grafici --}}
             <div class="row mt-5">

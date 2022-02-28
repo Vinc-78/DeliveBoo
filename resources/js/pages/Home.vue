@@ -15,19 +15,19 @@
   </div>
     
     
-    <!-- Sezione suggerimenti categorie -->
+  <!-- Sezione suggerimenti categorie -->
 
-    <Slider class="d-none d-lg-block d-xl-block m-auto"></Slider>  
+  <Slider class="d-none d-lg-block d-xl-block m-auto"></Slider>  
 
-    <SliderMidle class="d-none d-md-block d-lg-none m-auto"></SliderMidle>
+  <SliderMidle class="d-none d-md-block d-lg-none m-auto"></SliderMidle>
 
-    <SliderSmall class="d-sm-block d-md-none m-auto "></SliderSmall>
+  <SliderSmall class="d-sm-block d-md-none m-auto "></SliderSmall>
     
-    <!-- Banner Lavora con Noi -->
+  <!-- Banner Lavora con Noi -->
 
   <div class="mt-5 mb-2 banner-container">
     <a href="/register">
-    <img src="/storage/img/work-with-us.jpg" alt="" class="imgBanner w-100">
+    <img src="/storage/img/work-with-us.jpg" alt="" class="imgBanner">
     <h3 class="text-banner">Lavora con Deliveboo per portare i tuoi piatti nelle case della città</h3>
     </a>
   </div>
@@ -83,12 +83,11 @@ export default {
 
 .jumbo{
   height: 500px;
-  width: 100vw;
+  width: 100%;
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
   position: relative;
-  // margin-left: -19%;
   box-shadow: 2px 4px 3px #313131;
    
     .title-jumbo{
@@ -130,13 +129,14 @@ export default {
 }
 .imgBanner{
   height: 400px;
+  width: 100%;
   object-fit: cover;
   object-position: center;
   filter: brightness(70%);
 }
 .banner-container{
     box-shadow: 2px 3px 2px #313131;
-    width: 100vw;
+    width: 100%;
     position: relative;
     // margin-left: -19%;
     border-top: 1px solid black;

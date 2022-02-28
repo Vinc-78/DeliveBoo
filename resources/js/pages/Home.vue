@@ -17,7 +17,11 @@
     
     <!-- Sezione suggerimenti categorie -->
 
-    <Slider></Slider>
+    <Slider class="d-none d-lg-block d-xl-block m-auto"></Slider>  
+
+    <SliderMidle class="d-none d-md-block d-lg-none m-auto"></SliderMidle>
+
+    <SliderSmall class="d-sm-block d-md-none m-auto "></SliderSmall>
     
     <!-- Banner Lavora con Noi -->
 
@@ -38,10 +42,12 @@
 
 <script>
 import Slider from "../components/Slider.vue";
+import SliderSmall from "../components/SliderSmall.vue"
+import SliderMidle from "../components/SliderMidle.vue"
 
 export default {
   name: "App",
-  components: { Slider },
+  components: { Slider, SliderSmall, SliderMidle },
   data() {
     return {
       msg: " Funziona !!!",

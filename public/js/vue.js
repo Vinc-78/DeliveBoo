@@ -104,10 +104,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
@@ -438,8 +434,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Slider_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Slider.vue */ "./resources/js/components/Slider.vue");
-//
-//
 //
 //
 //
@@ -922,7 +916,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".footer-container {\n  overflow: hidden;\n  margin-top: 250px;\n  background: #262626;\n  color: #627482 !important;\n  margin-bottom: 0;\n  padding-bottom: 0;\n  width: 101vw;\n  margin-left: -12%;\n}\nsmall {\n  font-size: calc(12px + 3 * (100vw - 360px) / 1240) !important;\n}\n.bold-text {\n  color: #989c9e !important;\n}\n.mt-55 {\n  margin-top: calc(50px + 10 * (100vw - 360px) / 1240) !important;\n}\nh3 {\n  font-size: calc(34px + 6 * (100vw - 360px) / 1240) !important;\n}\n.social {\n  font-size: 21px !important;\n}\n.rights {\n  font-size: calc(10px + 2 * (100vw - 360px) / 1240) !important;\n}", ""]);
+exports.push([module.i, ".footer-container {\n  overflow: hidden;\n  margin-top: 250px;\n  background: #262626;\n  color: #627482 !important;\n  margin-bottom: 0;\n  padding-bottom: 0;\n  width: 100vw;\n}\nsmall {\n  font-size: calc(12px + 3 * (100vw - 360px) / 1240) !important;\n}\n.bold-text {\n  color: #989c9e !important;\n}\n.mt-55 {\n  margin-top: calc(50px + 10 * (100vw - 360px) / 1240) !important;\n}\nh3 {\n  font-size: calc(34px + 6 * (100vw - 360px) / 1240) !important;\n}\n.social {\n  font-size: 21px !important;\n}\n.rights {\n  font-size: calc(10px + 2 * (100vw - 360px) / 1240) !important;\n}", ""]);
 
 // exports
 
@@ -979,7 +973,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".jumbo {\n  height: 500px;\n  width: 110vw;\n  background-repeat: no-repeat;\n  background-position: bottom;\n  background-size: cover;\n  position: relative;\n  margin-left: -19%;\n  box-shadow: 2px 4px 3px #313131;\n}\n.jumbo .title-jumbo {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: white;\n}\n.jumbo .title-jumbo h1 {\n  font-size: 70px;\n  font-weight: bold;\n  text-shadow: -0.0075em 0.0075em 0 #1a1616, 0.005em 0.005em 0 #1c1718, 0.01em 0.01em 0 #7e6e1e, 0.015em 0.015em #1b1818, 0.02em 0.02em 0 #100c0d, 0.025em 0.025em 0 #070606, 0.03em 0.03em 0 #0c090a, 0.035em 0.035em 0 #060506;\n}\n.jumbo .title-jumbo p {\n  font-weight: bold;\n  font-size: 20px;\n  text-shadow: 3px 2px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}\n.jumbo .title-jumbo .get-start {\n  text-align: center;\n  color: white;\n  font-weight: bold;\n  font-size: 25px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n}\n.jumbo .title-jumbo .get-start a {\n  color: #f2bf25;\n  text-decoration: none;\n}\n.imgBanner {\n  height: 400px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  filter: brightness(70%);\n}\n.banner-container {\n  box-shadow: 2px 3px 2px #313131;\n  width: 110vw;\n  position: relative;\n  margin-left: -19%;\n  border-top: 1px solid black;\n}\n.banner-container .text-banner {\n  position: absolute;\n  top: 50%;\n  left: 46%;\n  transform: translate(-50%, -50%);\n  color: white;\n  font-size: 50px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n  text-align: center;\n}\n.banner-container .text-banner:hover {\n  transform: scale(1.2) translate(0);\n  top: 40%;\n  left: 21%;\n  width: 51%;\n}\n.get-start {\n  font-weight: bold;\n}\n.get-start h2:hover {\n  transform: scale(1.2) translate(0);\n}", ""]);
+exports.push([module.i, ".jumbo {\n  height: 500px;\n  width: 100vw;\n  background-repeat: no-repeat;\n  background-position: bottom;\n  background-size: cover;\n  position: relative;\n  box-shadow: 2px 4px 3px #313131;\n}\n.jumbo .title-jumbo {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: white;\n}\n.jumbo .title-jumbo h1 {\n  font-size: 70px;\n  font-weight: bold;\n  text-shadow: -0.0075em 0.0075em 0 #1a1616, 0.005em 0.005em 0 #1c1718, 0.01em 0.01em 0 #7e6e1e, 0.015em 0.015em #1b1818, 0.02em 0.02em 0 #100c0d, 0.025em 0.025em 0 #070606, 0.03em 0.03em 0 #0c090a, 0.035em 0.035em 0 #060506;\n}\n.jumbo .title-jumbo p {\n  font-weight: bold;\n  font-size: 20px;\n  text-shadow: 3px 2px 2px black, 0 0 25px #242427, 0 0 5px #292930;\n}\n.jumbo .title-jumbo .get-start {\n  text-align: center;\n  color: white;\n  font-weight: bold;\n  font-size: 25px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n}\n.jumbo .title-jumbo .get-start a {\n  color: #f2bf25;\n  text-decoration: none;\n}\n.imgBanner {\n  height: 400px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  filter: brightness(70%);\n}\n.banner-container {\n  box-shadow: 2px 3px 2px #313131;\n  width: 100vw;\n  position: relative;\n  border-top: 1px solid black;\n}\n.banner-container .text-banner {\n  position: absolute;\n  top: 50%;\n  left: 46%;\n  transform: translate(-50%, -50%);\n  color: white;\n  font-size: 50px;\n  text-shadow: 1px 1px 2px #020202, 0 0 25px #212124, 0 0 5px #202020;\n  text-align: center;\n}\n.banner-container .text-banner:hover {\n  transform: scale(1.2) translate(0);\n  top: 40%;\n  left: 21%;\n  width: 51%;\n}\n.get-start {\n  font-weight: bold;\n}\n.get-start h2:hover {\n  transform: scale(1.2) translate(0);\n}", ""]);
 
 // exports
 
@@ -2344,166 +2338,156 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "footer-container pb-0 mt-0 justify-content-center text-white ",
-      },
-      [
-        _c("div", { staticClass: "row my-5 justify-content-center py-5" }, [
-          _c("div", { staticClass: "col-11" }, [
-            _c("div", { staticClass: "row " }, [
+    return _c("div", { staticClass: "footer-container px-4 my-0 text-white" }, [
+      _c("div", { staticClass: "row my-5 mx-0 justify-content-center py-5" }, [
+        _c("div", { staticClass: "col-12" }, [
+          _c("div", { staticClass: "row " }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a",
+              },
+              [
+                _c("h3", { staticClass: "text-muted mb-md-0 mb-5 bold-text" }, [
+                  _vm._v("My-DeliveBoo"),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-xl-2 col-md-4 col-sm-4 col-12" }, [
+              _c("h6", { staticClass: "mb-3 mb-lg-4 bold-text " }, [
+                _c("b", [_vm._v("MENU")]),
+              ]),
+              _vm._v(" "),
               _c(
-                "div",
+                "ul",
                 {
-                  staticClass:
-                    "col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a",
+                  staticClass: "list-unstyled",
+                  staticStyle: { "text-align": "left" },
                 },
                 [
-                  _c(
-                    "h3",
-                    { staticClass: "text-muted mb-md-0 mb-5 bold-text" },
-                    [_vm._v("My-DeliveBoo")]
-                  ),
+                  _c("li", [_vm._v("Home")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("About")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("Blog")]),
+                  _vm._v(" "),
+                  _c("li", [_vm._v("Portfolio")]),
                 ]
               ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-xl-2 col-md-4 col-sm-4 col-12" }, [
-                _c("h6", { staticClass: "mb-3 mb-lg-4 bold-text " }, [
-                  _c("b", [_vm._v("MENU")]),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  {
-                    staticClass: "list-unstyled",
-                    staticStyle: { "text-align": "left" },
-                  },
-                  [
-                    _c("li", [_vm._v("Home")]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v("About")]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v("Blog")]),
-                    _vm._v(" "),
-                    _c("li", [_vm._v("Portfolio")]),
-                  ]
-                ),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-xl-2 col-md-4 col-sm-4 col-12" }, [
-                _c(
-                  "h6",
-                  {
-                    staticClass:
-                      "mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5",
-                  },
-                  [_c("b", [_vm._v("ADDRESS")])]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "mb-1" }, [_vm._v("7, Via del Corso")]),
-                _vm._v(" "),
-                _c("p", [_vm._v("Team 7 City")]),
-              ]),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "row " }, [
+            _c("div", { staticClass: "col-xl-2 col-md-4 col-sm-4 col-12" }, [
               _c(
-                "div",
+                "h6",
                 {
-                  staticClass:
-                    "col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end",
+                  staticClass: "mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5",
                 },
-                [
-                  _c(
-                    "p",
-                    { staticClass: "social text-muted mb-0 pb-0 bold-text" },
-                    [
-                      _c("span", { staticClass: "mx-2" }, [
-                        _c("i", {
-                          staticClass: "fa fa-facebook",
-                          attrs: { "aria-hidden": "true" },
-                        }),
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "mx-2" }, [
-                        _c("i", {
-                          staticClass: "fa fa-linkedin-square",
-                          attrs: { "aria-hidden": "true" },
-                        }),
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "mx-2" }, [
-                        _c("i", {
-                          staticClass: "fa fa-twitter",
-                          attrs: { "aria-hidden": "true" },
-                        }),
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "mx-2" }, [
-                        _c("i", {
-                          staticClass: "fa fa-instagram",
-                          attrs: { "aria-hidden": "true" },
-                        }),
-                      ]),
-                    ]
-                  ),
-                  _c("small", { staticClass: "rights" }, [
-                    _c("span", [_vm._v("®")]),
-                    _vm._v(" Team 7 Class 43 Boolean @"),
-                  ]),
-                ]
+                [_c("b", [_vm._v("ADDRESS")])]
               ),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ",
-                },
-                [
-                  _c("h6", { staticClass: "mt-55 mt-2 text-muted bold-text" }, [
-                    _c("b", [_vm._v("Group Seven")]),
-                  ]),
-                  _c("small", [
-                    _c("span", [
-                      _c("i", {
-                        staticClass: "fa fa-envelope",
-                        attrs: { "aria-hidden": "true" },
-                      }),
-                    ]),
-                    _vm._v(" sevenUp@gmail.com"),
-                  ]),
-                ]
-              ),
+              _c("p", { staticClass: "mb-1" }, [_vm._v("7, Via del Corso")]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ",
-                },
-                [
-                  _c("h6", { staticClass: "text-muted bold-text" }, [
-                    _c("b", [_vm._v("Free Seven")]),
-                  ]),
-                  _c("small", [
-                    _c("span", [
-                      _c("i", {
-                        staticClass: "fa fa-envelope",
-                        attrs: { "aria-hidden": "true" },
-                      }),
-                    ]),
-                    _vm._v(" class43@gmail.com"),
-                  ]),
-                ]
-              ),
+              _c("p", [_vm._v("Team 7 City")]),
             ]),
           ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row " }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end",
+              },
+              [
+                _c(
+                  "p",
+                  { staticClass: "social text-muted mb-0 pb-0 bold-text" },
+                  [
+                    _c("span", { staticClass: "mx-2" }, [
+                      _c("i", {
+                        staticClass: "fa fa-facebook",
+                        attrs: { "aria-hidden": "true" },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "mx-2" }, [
+                      _c("i", {
+                        staticClass: "fa fa-linkedin-square",
+                        attrs: { "aria-hidden": "true" },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "mx-2" }, [
+                      _c("i", {
+                        staticClass: "fa fa-twitter",
+                        attrs: { "aria-hidden": "true" },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "mx-2" }, [
+                      _c("i", {
+                        staticClass: "fa fa-instagram",
+                        attrs: { "aria-hidden": "true" },
+                      }),
+                    ]),
+                  ]
+                ),
+                _c("small", { staticClass: "rights" }, [
+                  _c("span", [_vm._v("®")]),
+                  _vm._v(" Team 7 Class 43 Boolean @"),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ",
+              },
+              [
+                _c("h6", { staticClass: "mt-55 mt-2 text-muted bold-text" }, [
+                  _c("b", [_vm._v("Group Seven")]),
+                ]),
+                _c("small", [
+                  _c("span", [
+                    _c("i", {
+                      staticClass: "fa fa-envelope",
+                      attrs: { "aria-hidden": "true" },
+                    }),
+                  ]),
+                  _vm._v(" sevenUp@gmail.com"),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ",
+              },
+              [
+                _c("h6", { staticClass: "text-muted bold-text" }, [
+                  _c("b", [_vm._v("Free Seven")]),
+                ]),
+                _c("small", [
+                  _c("span", [
+                    _c("i", {
+                      staticClass: "fa fa-envelope",
+                      attrs: { "aria-hidden": "true" },
+                    }),
+                  ]),
+                  _vm._v(" class43@gmail.com"),
+                ]),
+              ]
+            ),
+          ]),
         ]),
-      ]
-    )
+      ]),
+    ])
   },
 ]
 render._withStripped = true
@@ -3015,8 +2999,8 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "section",
-    { staticClass: "container p-0 " },
+    "div",
+    {},
     [
       _c(
         "div",
@@ -3064,7 +3048,7 @@ var staticRenderFns = [
       ),
       _c("br"),
       _vm._v(
-        "\r\n              Tutti i tuoi piatti preferiti in un unico portale.\r\n          "
+        "\r\n            Tutti i tuoi piatti preferiti in un unico portale.\r\n        "
       ),
     ])
   },
@@ -19487,7 +19471,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Laravel\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\giuli\OneDrive\Desktop\Boolean\progetto finale\DeliveBoo\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

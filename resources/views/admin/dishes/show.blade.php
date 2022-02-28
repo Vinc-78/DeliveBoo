@@ -1,27 +1,25 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
-    <div class="row">
-        <div class="col-3">
-            <div class="mb-3">
-                <button class="btn btn-secondary"><a class="text-white" href={{ route('admin.home') }}>Torna alla dashboard</a></button>
-            </div>
-
-            <div class="mb-3">
-                <button class="btn btn-secondary"><a class="text-white" href={{route('admin.dishes.index') }}>Tutti i piatti</a></button>
-            </div>
+    <div class="">
+    <div class="row justify-content-center">
+        <div class="col-3 aside">
+            <h2 class="title-aside"> Gestisci i tuoi dati</h2>
+               
+            <h4><a href="{{route('admin.home')}}">Torna alla dashboard</a></h4>
+            <h4><a href="{{route('admin.dishes.index')}}">Tutti i piatti</a></h4>
             
         </div>
         
-        <div class="col-9">
-            <h1 class="card-title mt-3 bg-light font-weight-bold my-3 py-3 rounded text-center">Aggiona il piatto:  </h1>
-            <h1 class="font-weight-bold"> {{$dish->name}} </h1>
-                        <div class="row mt-4">
-                            <div class="col-6">
-                                <img style="height:250px; " src="{{asset('storage/' . $dish->image_url)}}" alt="{{$dish->name}}">
-                                </div>
-                            <div class="col-6 py-4 rounded" style="background-color: #fff;">
+        <div class="col-6 page-admin">
+            <h1 class="text-center my-3">Aggiona il piatto: {{$dish->name}} </h1>
+            
+                        <div class="mt-4">
+                            <div class="container-img">
+                                <img src="{{asset('storage/' . $dish->image_url)}}" alt="{{$dish->name}}">
+                            </div>
+                        </div>
+                            <div class="py-4">
                                 <h5 class="font-weight-bold">Nome del piatto</h5>
                                 <p style="font-size: 18px">{{$dish->name}}</p>
 
@@ -37,10 +35,10 @@
                                     <h6 style="font-size:18px"> Il piatto non è disponibile </h6>  
                                 @endif
                             </div>
-                        </div>
+                        
                         
                         <div class="form-group d-flex mt-4">
-                            <a href="{{route('admin.dishes.edit', $dish->id)}}" class="btn btn-secondary btn-lg mx-2">Modifica il tuo piatto</a>
+                            <a href="{{route('admin.dishes.edit', $dish->id)}}" class="button2">Modifica il tuo piatto</a>
                         {{-- Elimina il piatto --}} 
 
                         @include('partials.delete_btn_dish')

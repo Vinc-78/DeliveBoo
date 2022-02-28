@@ -4,7 +4,7 @@
 <div class="container bg-light p-2">
     <div class="row justify-content-center">
         
-        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12">
+        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 mt-2">
             <div class="col-12 mb-5 text-center">
                 <h1>{{ __('Login') }}</h1>
             </div>

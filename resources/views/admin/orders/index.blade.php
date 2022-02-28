@@ -1,14 +1,19 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <div class="mb-3">
-        <button class="btn btn-secondary"><a class="text-white" href={{ route('admin.home') }}>Torna alla dashboard</a></button>
+<div class="">
+<div class="row justify-content-center">
+    <div class="col-3 aside">
+        <h2 class="title-aside"> Gestisci i tuoi dati</h2>
+
+        <h4><a href="{{route('admin.home')}}">Torna alla dashboard</a></h4>
+
     </div>
-    <div class="row">
+    
+    <div class="row page-admin">
         <div class="col">
 
-            <h1>Lista Ordini </h1>
+            <h1 class="text-center my-3">Lista Ordini </h1>
             <ul class="list-group">
                 @foreach ($order_dishes as $order)
                     <li class="list-group-item border border-dark">
@@ -44,5 +49,6 @@
     </div>
     
 
+</div>
 </div>
 @endsection

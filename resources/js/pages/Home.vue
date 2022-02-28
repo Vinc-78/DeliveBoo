@@ -1,18 +1,18 @@
 <template>
 
-<section class="container p-0 ">
-    <div class="jumbo" style="background-image: url('../storage/img/provasfondo2.jpg')">
-       <div class="title-jumbo text-center">
-          <h1>Welcome to Deliveboo.</h1>
-          <p> Ordina con Deliverboo e ricevi ciò che vuoi da ristoranti nella tua città.<br>
-              Tutti i tuoi piatti preferiti in un unico portale.
-          </p>
-          <!-- Qui ci andrà il bottone route-link -->
-          <div class="get-start">
-            <router-link :to="{ name:'search' }" class=""><h2>Esplora i Ristoranti</h2></router-link>
-          </div>
-      </div>
+<div class="">
+  <div class="jumbo" style="background-image: url('../storage/img/provasfondo2.jpg')">
+      <div class="title-jumbo text-center">
+        <h1>Welcome to Deliveboo.</h1>
+        <p> Ordina con Deliverboo e ricevi ciò che vuoi da ristoranti nella tua città.<br>
+            Tutti i tuoi piatti preferiti in un unico portale.
+        </p>
+        <!-- Qui ci andrà il bottone route-link -->
+        <div class="get-start">
+          <router-link :to="{ name:'search' }" class=""><h2>Esplora i Ristoranti</h2></router-link>
+        </div>
     </div>
+  </div>
     
     
     <!-- Sezione suggerimenti categorie -->
@@ -25,15 +25,13 @@
     
     <!-- Banner Lavora con Noi -->
 
-    <div class="mt-5 mb-2 banner-container">
-        <a href="/register">
-        <img src="/storage/img/work-with-us.jpg" alt="" class="imgBanner w-100">
-        <h3 class="text-banner">Lavora con Deliveboo per portare i tuoi piatti nelle case della città</h3>
-        </a>
-    </div>
-   
-
-</section>
+  <div class="mt-5 mb-2 banner-container">
+    <a href="/register">
+    <img src="/storage/img/work-with-us.jpg" alt="" class="imgBanner w-100">
+    <h3 class="text-banner">Lavora con Deliveboo per portare i tuoi piatti nelle case della città</h3>
+    </a>
+  </div>
+</div>
 
   
 
@@ -85,12 +83,12 @@ export default {
 
 .jumbo{
   height: 500px;
-  width: 110vw;
+  width: 100vw;
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
   position: relative;
-  margin-left: -19%;
+  // margin-left: -19%;
   box-shadow: 2px 4px 3px #313131;
    
     .title-jumbo{
@@ -138,9 +136,9 @@ export default {
 }
 .banner-container{
     box-shadow: 2px 3px 2px #313131;
-    width: 110vw;
+    width: 100vw;
     position: relative;
-    margin-left: -19%;
+    // margin-left: -19%;
     border-top: 1px solid black;
 
         

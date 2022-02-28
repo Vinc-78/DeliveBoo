@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="">
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-3 aside">
+        <div class="col-4 aside">
             <h2 class="title-aside"> Gestisci i tuoi dati</h2>
 
             <h4><a href="{{route('admin.home')}}">Torna alla dashboard</a></h4>
@@ -12,7 +12,7 @@
 
         </div>
     
-       <div class="col-6">
+       <div class="col-8">
 
             <div class="col-12 mb-5 text-center">
                 <h1>Piatto</h1>

@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="">
+    <div class="container">
         <div class="row justify-content-center ">
-            <div class="col-3  aside">
+            <div class="col-4  aside">
                 <h2 class="title-aside"> Gestisci i tuoi dati</h2>
                
                 <h4><a href="{{route('admin.home')}}">Torna alla dashboard</a></h4>
@@ -11,7 +11,7 @@
         
              </div>
 
-        <div class="col-6 page-admin">
+        <div class="col-8 page-admin">
         <h1 class="text-center my-3"> I tuoi  piatti</h1>
 
         @if (session('status'))

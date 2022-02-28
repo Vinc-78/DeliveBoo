@@ -1154,7 +1154,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".footer-container {\n  overflow: hidden;\n  margin-top: 250px;\n  background: #262626;\n  color: #627482 !important;\n  margin-bottom: 0;\n  padding-bottom: 0;\n  width: 100vw;\n}\nsmall {\n  font-size: calc(12px + 3 * (100vw - 360px) / 1240) !important;\n}\n.bold-text {\n  color: #989c9e !important;\n}\n.mt-55 {\n  margin-top: calc(50px + 10 * (100vw - 360px) / 1240) !important;\n}\nh3 {\n  font-size: calc(34px + 6 * (100vw - 360px) / 1240) !important;\n}\n.social {\n  font-size: 21px !important;\n}\n.rights {\n  font-size: calc(10px + 2 * (100vw - 360px) / 1240) !important;\n}", ""]);
+exports.push([module.i, ".footer-container {\n  overflow: hidden;\n  margin-top: 250px;\n  background: #262626;\n  color: #627482 !important;\n  margin-bottom: 0;\n  padding-bottom: 0;\n  width: 100%;\n}\nsmall {\n  font-size: calc(12px + 3 * (100vw - 360px) / 1240) !important;\n}\n.bold-text {\n  color: #989c9e !important;\n}\n.mt-55 {\n  margin-top: calc(50px + 10 * (100vw - 360px) / 1240) !important;\n}\nh3 {\n  font-size: calc(34px + 6 * (100vw - 360px) / 1240) !important;\n}\n.social {\n  font-size: 21px !important;\n}\n.rights {\n  font-size: calc(10px + 2 * (100vw - 360px) / 1240) !important;\n}", ""]);
 
 // exports
 

@@ -1,19 +1,18 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container bg-light p-2">
+<div class="">
     <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 ">
+        <div class="col-3 aside">
+            <h2 class="title-aside"> Gestisci i tuoi dati</h2>
 
-            <a href="{{route('admin.home')}}" class="btn btn-secondary text-white rounded-0"> Torna alla Dashaboard</a>
-            
-            <a href="{{route('admin.dishes.index')}}"  class="btn btn-secondary text-white rounded-0 ml-2"> Tutti i piatti</a>
+            <h4><a href="{{route('admin.home')}}">Torna alla dashboard</a></h4>
+
+            <h4><a href="{{route('admin.dishes.index')}}">Tutti i piatti</a></h4>
+
         </div>
-    </div>
-
-    <div class="row justify-content-center mt-5">
-
-        <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12">
+    
+       <div class="col-6">
 
             <div class="col-12 mb-5 text-center">
                 <h1>Piatto</h1>
@@ -114,9 +113,9 @@
                 </form>
             </div>
         </div>
-    </div>
+    
 
-
+</div>
   
 </div>
 @endsection

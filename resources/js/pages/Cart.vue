@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <h1 class="text-center my-4 ">Riepilogo ordine</h1>
+        <h1 class="text-center my-4 title-search">Riepilogo ordine</h1>
 
         <div class="row box-dish"> 
 

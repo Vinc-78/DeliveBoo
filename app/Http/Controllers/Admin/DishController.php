@@ -32,10 +32,12 @@ class DishController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'description' => ['required'],
-            'price' => ['required', 'min:1'],
+            'price' => ['required'],
             'image_url'=>['nullable|file']
                                    
         ]);
+
+        
     }
     /**
      * Show the form for creating a new resource.
@@ -60,7 +62,9 @@ class DishController extends Controller
         
         $data = $request->all(); 
         $newDish = new Dish();
-
+        
+        /* dd($data['price']); */
+        strval($data['price']);
         $newDish->fill($request->all());
 
         
@@ -122,6 +126,7 @@ class DishController extends Controller
         $data = $request->all();
         $oldImg =$dish->image_url; 
         
+        strval($data['price']);
         $dish->fill($data);
 
         if($request->file("image_url")) {

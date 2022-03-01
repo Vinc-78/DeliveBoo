@@ -67,7 +67,7 @@
                         <label for="price" class="p-0 col-12"><h5>Prezzo</h5></label>
 
                         <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
-                            <input id="price" type="text" class="form-control rounded-0 border @error('price') is-invalid @enderror" name="price" value="{{ $dish->price}}" >
+                            <input id="price"  type="number" min="0" step="0.01"  class="form-control rounded-0 border @error('price') is-invalid @enderror" name="price" value="{{ $dish->price}}" >
 
                             @error('price')
                                 <span class="invalid-feedback" role="alert">

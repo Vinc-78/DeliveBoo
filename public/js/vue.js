@@ -3754,7 +3754,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", { staticClass: "text-center my-4 " }, [
+    _c("h1", { staticClass: "text-center my-4 title-search" }, [
       _vm._v("Riepilogo ordine"),
     ]),
     _vm._v(" "),

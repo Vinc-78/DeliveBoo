@@ -72,7 +72,7 @@
                         
                         <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8 px-0">
                             
-                            <input type="email_client" id="email_client" name="email_client" placeholder="Inserisci la tua email" class="form-control rounded-0 border  @error('email_client') is-invalid @enderror"
+                            <input type="email" id="email_client" name="email_client" placeholder="Inserisci la tua email" class="form-control rounded-0 border  @error('email_client') is-invalid @enderror"
                             value="{{ old("email_client") }}" required autocomplete="email_client">
                             
                             @error('email_client')
